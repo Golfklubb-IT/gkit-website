@@ -66,31 +66,35 @@ service cloud.firestore {
 
 ## Hva skal IKKE committes til Git?
 
-### ❌ ALDRI commit disse:
+### ❌ ALDRI commit disse
 
 1. **Firebase Service Account Keys** (`.json` filer)
-   ```
+
+   ```text
    golfklubb-it-website-firebase-adminsdk-xxxxx.json
    ```
 
 2. **Environment variabler med hemmeligheter**
-   ```
+
+   ```text
    .env.local
    .env.production
    ```
 
 3. **Private API nøkler** (tredjepartstjenester)
-   ```
+
+   ```text
    STRIPE_SECRET_KEY=sk_live_xxxxx
    SENDGRID_API_KEY=SG.xxxxx
    ```
 
 4. **OAuth Client Secrets**
-   ```
+
+   ```text
    GOOGLE_CLIENT_SECRET=xxxxx
    ```
 
-### ✅ Trygt å committe:
+### ✅ Trygt å committe
 
 1. **Firebase client-side konfigurasjon** (`src/firebase.ts`)
 2. **Firestore Security Rules** (`firestore.rules`)
@@ -155,6 +159,7 @@ const stripeKey = functions.config().stripe.secret;
 ```
 
 Sett med:
+
 ```bash
 firebase functions:config:set stripe.secret="sk_live_xxxxx"
 ```
@@ -170,11 +175,13 @@ firebase emulators:start --only firestore
 ### 5. Aldri hardkod hemmeligheter
 
 ❌ FEIL:
+
 ```typescript
 const apiKey = "sk_live_123456789";
 ```
 
 ✅ RIKTIG:
+
 ```typescript
 const apiKey = process.env.VITE_API_KEY;
 ```

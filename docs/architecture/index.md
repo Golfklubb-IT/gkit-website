@@ -25,7 +25,7 @@ GKIT Website er bygget som en moderne single-page application (SPA) med følgend
 
 ## Mappestruktur
 
-```
+```text
 gkit-website/
 ├── src/
 │   ├── components/      # React-komponenter
@@ -107,6 +107,7 @@ firebase deploy
 ```
 
 Build-prosessen:
+
 1. TypeScript kompileres til JavaScript
 2. Vite bygger optimalisert produksjonsbuild
 3. Output genereres i `dist/`

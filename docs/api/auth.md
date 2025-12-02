@@ -70,6 +70,7 @@ await getAuth().setCustomUserClaims(uid, {
 Firebase API-nøkler er offentlige og trygt å dele i frontend-koden.
 
 Sikkerhet håndteres av:
+
 - Firestore Security Rules
 - Firebase Functions autorisasjon
 - CORS-konfigurasjon
@@ -84,7 +85,8 @@ VITE_SECRET_KEY=your-secret-key
 ```
 
 Legg til i `.gitignore`:
-```
+
+```text
 .env.local
 ```
 

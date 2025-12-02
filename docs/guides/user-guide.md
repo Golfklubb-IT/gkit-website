@@ -109,7 +109,7 @@ Har du problemer eller spørsmål?
 
 ### Hvordan kontakter jeg GKIT?
 
-Bruk kontaktskjemaet på nettsiden eller send e-post til post@gkit.no.
+Bruk kontaktskjemaet på nettsiden eller send e-post til <post@gkit.no>.
 
 ### Kan jeg bestille tjenester direkte?
 
@@ -121,7 +121,7 @@ Vi svarer normalt innen 24 timer på hverdager.
 
 ### Kan jeg endre min henvendelse?
 
-Kontakt oss på post@gkit.no for å endre eller kansellere en henvendelse.
+Kontakt oss på <post@gkit.no> for å endre eller kansellere en henvendelse.
 
 ## Neste steg
 

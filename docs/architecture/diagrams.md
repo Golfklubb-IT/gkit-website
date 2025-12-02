@@ -4,7 +4,7 @@ Visuelle representasjoner av GKIT Website arkitekturen.
 
 ## Systemdiagram
 
-```
+```text
 ┌─────────────┐
 │   Bruker    │
 └──────┬──────┘
@@ -35,7 +35,7 @@ Visuelle representasjoner av GKIT Website arkitekturen.
 
 ## Komponent-hierarki
 
-```
+```text
 App
 ├── Navbar
 └── Routes
@@ -60,7 +60,7 @@ App
 
 ## Deployment-flyt
 
-```
+```text
 ┌──────────────┐
 │ Developer    │
 │ (npm run     │
@@ -95,7 +95,7 @@ App
 
 ## Dataflyt - Kontaktskjema
 
-```
+```text
 ┌─────────────┐
 │   Bruker    │
 │ (fyller ut  │
@@ -123,7 +123,7 @@ App
 
 ## Firebase Services
 
-```
+```text
 Firebase Project: golfklubb-it-website
 │
 ├── Hosting

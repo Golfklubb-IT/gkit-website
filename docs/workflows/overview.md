@@ -51,7 +51,7 @@ firebase deploy
 
 Følg konvensjon:
 
-```
+```text
 type(scope): beskrivelse
 
 Eksempler:
@@ -61,7 +61,8 @@ docs(readme): oppdater installasjonsinstruks
 style(button): endre farger på CTA-knapper
 ```
 
-### Types:
+### Types
+
 - `feat` - Ny funksjonalitet
 - `fix` - Bugfix
 - `docs` - Dokumentasjon
@@ -128,6 +129,7 @@ firebase emulators:start
 ```
 
 Tester:
+
 - Firestore lokalt
 - Functions lokalt
 - Hosting lokalt
@@ -193,6 +195,7 @@ firebase hosting:clone <source>:<target>
 ### Firebase Console
 
 Monitor i Firebase Console:
+
 - Hosting metrics
 - Function logs
 - Firestore usage
@@ -201,6 +204,7 @@ Monitor i Firebase Console:
 ### Google Analytics
 
 Se brukerstatistikk i GA4:
+
 - Sidevisninger
 - Brukerflyt
 - Konverteringer

@@ -12,6 +12,7 @@ Før du starter, må følgende være installert:
 - Last ned fra [nodejs.org](https://nodejs.org/)
 
 Verifiser installasjon:
+
 ```bash
 node --version
 npm --version
@@ -23,6 +24,7 @@ npm --version
 - Last ned fra [python.org](https://www.python.org/downloads/)
 
 Verifiser installasjon:
+
 ```bash
 python --version
 ```
@@ -30,11 +32,13 @@ python --version
 ### Firebase CLI
 
 Installer Firebase CLI globalt:
+
 ```bash
 npm install -g firebase-tools
 ```
 
 Verifiser installasjon:
+
 ```bash
 firebase --version
 ```
@@ -44,6 +48,7 @@ firebase --version
 - Last ned fra [git-scm.com](https://git-scm.com/)
 
 Verifiser installasjon:
+
 ```bash
 git --version
 ```
@@ -77,6 +82,7 @@ cd ..
 pip install mkdocs mkdocs-material
 ```
 
+
 ## Kjør lokalt
 
 ### Utviklingsserver (Frontend)
@@ -90,6 +96,7 @@ npm run dev
 ### Firebase Emulator
 
 For å teste Firebase Functions lokalt:
+
 ```bash
 firebase emulators:start
 ```
@@ -97,6 +104,7 @@ firebase emulators:start
 ### Dokumentasjon
 
 For å kjøre dokumentasjonen lokalt:
+
 ```bash
 mkdocs serve
 ```

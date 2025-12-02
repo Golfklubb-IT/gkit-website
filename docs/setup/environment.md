@@ -27,9 +27,10 @@ const firebaseConfig = {
 For lokal utvikling med Firebase Emulator:
 
 1. Start emulatoren:
-```bash
-firebase emulators:start
-```
+
+   ```bash
+   firebase emulators:start
+   ```
 
 2. Applikasjonen vil automatisk koble seg til lokal emulator når den kjører.
 
@@ -61,6 +62,7 @@ Prosjektet bruker flere TypeScript-konfigurasjonsfiler:
 ESLint er konfigurert i `eslint.config.js` for kodekvalitet og konsistens.
 
 Kjør linting:
+
 ```bash
 npm run lint
 ```

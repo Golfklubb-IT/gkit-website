@@ -39,18 +39,23 @@ Denne dokumentasjonen inneholder:
 Dokumentasjonen er strukturert slik:
 
 ### Komme i gang
+
 Installasjon, miljøoppsett og konfigurasjon for å komme i gang med utviklingen.
 
 ### Arkitektur
+
 Oversikt over systemarkitekturen, komponenter og tekniske valg.
 
 ### API
+
 Dokumentasjon av API-endepunkter og autentisering.
 
 ### Workflows
+
 Oversikt over arbeidsflyter, automatisering og deployment.
 
 ### Guider
+
 Brukerhåndbøker og administratorhåndbøker for drift av løsningen.
 
 ## Kontakt

@@ -13,6 +13,7 @@ Håndterer kontaktskjema-innsendinger.
 **Metode**: `POST`
 
 **Request Body**:
+
 ```json
 {
   "name": "string",
@@ -24,6 +25,7 @@ Håndterer kontaktskjema-innsendinger.
 ```
 
 **Response**:
+
 ```json
 {
   "success": true,
@@ -32,6 +34,7 @@ Håndterer kontaktskjema-innsendinger.
 ```
 
 **Feilmeldinger**:
+
 - `400 Bad Request` - Mangler påkrevde felter
 - `500 Internal Server Error` - Serverfeil
 
@@ -42,6 +45,7 @@ Håndterer kontaktskjema-innsendinger.
 Lagrer kontaktskjema-innsendinger.
 
 **Struktur**:
+
 ```typescript
 interface Contact {
   name: string;
@@ -55,6 +59,7 @@ interface Contact {
 ```
 
 **Eksempel**:
+
 ```json
 {
   "name": "Ole Nordmann",
@@ -72,6 +77,7 @@ interface Contact {
 Lagrer brukeranalyse og metrics.
 
 **Struktur**:
+
 ```typescript
 interface Analytics {
   event: string;
