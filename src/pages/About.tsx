@@ -1,0 +1,72 @@
+import Navbar from '../components/Navbar'
+import GraphicFiller from '../components/GraphicFiller'
+import '../App.css'
+
+const About = () => {
+    return (
+        <div className="app">
+            <header className="header">
+                <Navbar />
+            </header>
+
+            <section className="hero" style={{ minHeight: '60vh' }}>
+                <div className="hero-content fade-in-up">
+                    <h1>Om <span className="text-gradient-green">GKIT</span></h1>
+                    <p style={{ fontSize: '1.5rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '0 auto' }}>
+                        Vi er bindeleddet mellom golfen og teknologien.
+                    </p>
+                </div>
+            </section>
+
+            <section className="container section-padding">
+                <div className="fade-in">
+                    <h2 style={{ marginBottom: '2rem' }}>Hvem er vi?</h2>
+                    <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+                        GKIT ble etablert med en enkel visjon: Å profesjonalisere IT-hverdagen til norske golfklubber.
+                        Vi så at mange klubber satt på enorme mengder data og gode systemer, men manglet tid og kompetanse
+                        til å få dem til å snakke sammen.
+                    </p>
+                    <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+                        Vi er ikke bare utviklere; vi er golfere. Vi forstår utfordringene med starttider som ikke synker,
+                        frivillige som ikke får tilgang til e-post, og nettsider som er vanskelige å oppdatere.
+                        Derfor bygger vi løsninger som løser faktiske problemer.
+                    </p>
+
+                    <GraphicFiller index={0} />
+
+                    <div style={{ marginTop: '4rem' }}>
+                        <h2>Våre Partnere & Plattformkompetanse</h2>
+                        <p style={{ marginBottom: '2rem' }}>Vi jobber tett med de ledende aktørene i bransjen for å sikre at våre løsninger alltid spiller på lag med systemene dere allerede har.</p>
+
+                        <div className="partners-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', alignItems: 'center', textAlign: 'center' }}>
+                            <div className="partner-card glass" style={{ padding: '2rem' }}>
+                                <h3 style={{ color: '#fff' }}>GolfBox</h3>
+                                <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Integrasjonseksperter</p>
+                            </div>
+                            <div className="partner-card glass" style={{ padding: '2rem' }}>
+                                <h3 style={{ color: '#4285F4' }}>Google</h3>
+                                <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Workspace Partner</p>
+                            </div>
+                            <div className="partner-card glass" style={{ padding: '2rem' }}>
+                                <h3 style={{ color: '#fff' }}>ClubsiteCMS</h3>
+                                <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Sertifisert Utvikler</p>
+                            </div>
+                            <div className="partner-card glass" style={{ padding: '2rem' }}>
+                                <h3 style={{ color: '#FFD43B' }}>NextJS / React</h3>
+                                <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Moderne Webteknologi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer className="footer">
+                <div className="container">
+                    <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
+                </div>
+            </footer>
+        </div>
+    )
+}
+
+export default About

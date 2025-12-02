@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "title": "Hvorfor 2025 er året for digitalisering av golfklubben",
+        "date": "2025-01-15",
+        "author": "Owe Stangeland",
+        "category": "Teknologi",
+        "summary": "En gjennomgang av de viktigste trendene innen golf-IT og hvordan din klubb kan spare tid.",
+        "content": "Digitalisering er ikke lenger et valg, men en nødvendighet. I denne artikkelen ser vi på hvordan skybaserte løsninger som Google Workspace og moderne API-er kan transformere hverdagen til daglig leder...",
+        "imageUrl": "https://placehold.co/600x400/1a1a1a/4CAF50?text=Digitalisering"
+    },
+    {
+        "id": "2",
+        "title": "Slik sparer Ski GK 200 timer i året",
+        "date": "2025-02-01",
+        "author": "Owe Stangeland",
+        "category": "Case Study",
+        "summary": "En dybdykk i hvordan automatisering av golfbil-utleie endret hverdagen.",
+        "content": "Ved å koble sammen booking-systemet med en enkel app for de ansatte, fjernet vi behovet for manuelle lister...",
+        "imageUrl": "https://placehold.co/600x400/1a1a1a/FFD43B?text=Ski+GK+Case"
+    },
+    {
+        "id": "3",
+        "title": "Google Workspace vs. Microsoft 365 for Golfklubber",
+        "date": "2025-02-10",
+        "author": "Owe Stangeland",
+        "category": "Guide",
+        "summary": "Hva bør du velge? Vi sammenligner pris, funksjonalitet og brukervennlighet.",
+        "content": "For mange klubber er prisen avgjørende. Google Workspace for Non-profits er gratis, men hva ofrer du?...",
+        "imageUrl": "https://placehold.co/600x400/1a1a1a/4CAF50?text=Google+vs+MS"
+    }
+]

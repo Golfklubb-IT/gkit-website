@@ -1,0 +1,56 @@
+site_name: "GKIT Website Dokumentasjon"
+site_url: "https://gkit-enk.github.io/gkit-website"
+repo_url: "https://github.com/gkit-enk/gkit-website"
+repo_name: "gkit-enk/gkit-website"
+
+theme:
+  name: material
+  language: nb
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tracking
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - content.code.annotation
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.tasklist
+  - pymdownx.snippets
+  - pymdownx.magiclink
+
+nav:
+  - Hjem: index.md
+  - Komme i gang:
+      - Installasjon: setup/install.md
+      - Miljø & konfig: setup/environment.md
+  - Arkitektur:
+      - Oversikt: architecture/index.md
+      - Diagrammer: architecture/diagrams.md
+  - API:
+      - Endepunkter: api/endpoints.md
+      - Autentisering: api/auth.md
+  - Workflows:
+      - Flytoversikt: workflows/overview.md
+      - Automatisering: workflows/automations.md
+  - Guider:
+      - Brukerhåndbok: guides/user-guide.md
+      - Administratorhåndbok: guides/admin-guide.md
+
+plugins:
+  - search
