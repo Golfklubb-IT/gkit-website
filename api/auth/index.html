@@ -1151,18 +1151,20 @@
 </code></pre></div>
 <h2 id="api-keys">API Keys<a class="headerlink" href="#api-keys" title="Permanent link">&para;</a></h2>
 <p>Firebase API-nøkler er offentlige og trygt å dele i frontend-koden.</p>
-<p>Sikkerhet håndteres av:
-- Firestore Security Rules
-- Firebase Functions autorisasjon
-- CORS-konfigurasjon</p>
+<p>Sikkerhet håndteres av:</p>
+<ul>
+<li>Firestore Security Rules</li>
+<li>Firebase Functions autorisasjon</li>
+<li>CORS-konfigurasjon</li>
+</ul>
 <h3 id="miljvariabler">Miljøvariabler<a class="headerlink" href="#miljvariabler" title="Permanent link">&para;</a></h3>
 <p>For sensitive nøkler (hvis nødvendig i fremtiden):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># .env.local (ikke commit til git)</span>
 <span class="nv">VITE_SECRET_KEY</span><span class="o">=</span>your-secret-key
 </code></pre></div>
-<p>Legg til i <code>.gitignore</code>:
+<p>Legg til i <code>.gitignore</code>:</p>
 <div class="highlight"><pre><span></span><code>.env.local
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="https">HTTPS<a class="headerlink" href="#https" title="Permanent link">&para;</a></h2>
 <p>All kommunikasjon går over HTTPS:</p>
 <ul>

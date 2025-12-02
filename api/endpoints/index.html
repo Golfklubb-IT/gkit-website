@@ -1078,7 +1078,7 @@
 <p>Håndterer kontaktskjema-innsendinger.</p>
 <p><strong>URL</strong>: <code>https://us-central1-golfklubb-it-website.cloudfunctions.net/handleContactForm</code></p>
 <p><strong>Metode</strong>: <code>POST</code></p>
-<p><strong>Request Body</strong>:
+<p><strong>Request Body</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
@@ -1086,20 +1086,22 @@
 <span class="w">  </span><span class="nt">&quot;interest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Response</strong>:
+</code></pre></div>
+<p><strong>Response</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;document-id&quot;</span>
 <span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Feilmeldinger</strong>:
-- <code>400 Bad Request</code> - Mangler påkrevde felter
-- <code>500 Internal Server Error</code> - Serverfeil</p>
+</code></pre></div>
+<p><strong>Feilmeldinger</strong>:</p>
+<ul>
+<li><code>400 Bad Request</code> - Mangler påkrevde felter</li>
+<li><code>500 Internal Server Error</code> - Serverfeil</li>
+</ul>
 <h2 id="firestore-collections">Firestore Collections<a class="headerlink" href="#firestore-collections" title="Permanent link">&para;</a></h2>
 <h3 id="contacts">contacts<a class="headerlink" href="#contacts" title="Permanent link">&para;</a></h3>
 <p>Lagrer kontaktskjema-innsendinger.</p>
-<p><strong>Struktur</strong>:
+<p><strong>Struktur</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Contact</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -1109,8 +1111,8 @@
 <span class="w">  </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="kt">Timestamp</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;new&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;contacted&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;closed&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Eksempel</strong>:
+</code></pre></div>
+<p><strong>Eksempel</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ole Nordmann&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ole@example.com&quot;</span><span class="p">,</span>
@@ -1120,17 +1122,17 @@
 <span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-02T10:30:00Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="analytics">analytics<a class="headerlink" href="#analytics" title="Permanent link">&para;</a></h3>
 <p>Lagrer brukeranalyse og metrics.</p>
-<p><strong>Struktur</strong>:
+<p><strong>Struktur</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Analytics</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">userId?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="kt">Timestamp</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="google-analytics-4">Google Analytics 4<a class="headerlink" href="#google-analytics-4" title="Permanent link">&para;</a></h2>
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
 <p>Følgende events trackes via GA4:</p>

@@ -977,7 +977,7 @@
   <a href="#aldri-commit-disse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ❌ ALDRI commit disse:
+        ❌ ALDRI commit disse
       
     </span>
   </a>
@@ -988,7 +988,7 @@
   <a href="#trygt-a-committe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ✅ Trygt å committe:
+        ✅ Trygt å committe
       
     </span>
   </a>
@@ -1321,32 +1321,30 @@
 <li>✅ <strong>Kun Firebase Admin SDK</strong> (server-side) kan administrere data</li>
 </ul>
 <h2 id="hva-skal-ikke-committes-til-git">Hva skal IKKE committes til Git?<a class="headerlink" href="#hva-skal-ikke-committes-til-git" title="Permanent link">&para;</a></h2>
-<h3 id="aldri-commit-disse">❌ ALDRI commit disse:<a class="headerlink" href="#aldri-commit-disse" title="Permanent link">&para;</a></h3>
+<h3 id="aldri-commit-disse">❌ ALDRI commit disse<a class="headerlink" href="#aldri-commit-disse" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>Firebase Service Account Keys</strong> (<code>.json</code> filer)
-   <div class="highlight"><pre><span></span><code>golfklubb-it-website-firebase-adminsdk-xxxxx.json
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Environment variabler med hemmeligheter</strong>
-   <div class="highlight"><pre><span></span><code>.env.local
-.env.production
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Private API nøkler</strong> (tredjepartstjenester)
-   <div class="highlight"><pre><span></span><code>STRIPE_SECRET_KEY=sk_live_xxxxx
-SENDGRID_API_KEY=SG.xxxxx
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>OAuth Client Secrets</strong>
-   <div class="highlight"><pre><span></span><code>GOOGLE_CLIENT_SECRET=xxxxx
-</code></pre></div></p>
-</li>
+<li><strong>Firebase Service Account Keys</strong> (<code>.json</code> filer)</li>
 </ol>
-<h3 id="trygt-a-committe">✅ Trygt å committe:<a class="headerlink" href="#trygt-a-committe" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>golfklubb-it-website-firebase-adminsdk-xxxxx.json
+</code></pre></div>
+<ol>
+<li><strong>Environment variabler med hemmeligheter</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>.env.local
+.env.production
+</code></pre></div>
+<ol>
+<li><strong>Private API nøkler</strong> (tredjepartstjenester)</li>
+</ol>
+<div class="highlight"><pre><span></span><code>STRIPE_SECRET_KEY=sk_live_xxxxx
+SENDGRID_API_KEY=SG.xxxxx
+</code></pre></div>
+<ol>
+<li><strong>OAuth Client Secrets</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>GOOGLE_CLIENT_SECRET=xxxxx
+</code></pre></div>
+<h3 id="trygt-a-committe">✅ Trygt å committe<a class="headerlink" href="#trygt-a-committe" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Firebase client-side konfigurasjon</strong> (<code>src/firebase.ts</code>)</li>
 <li><strong>Firestore Security Rules</strong> (<code>firestore.rules</code>)</li>
@@ -1396,20 +1394,20 @@ ui-debug.log
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">stripeKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">functions</span><span class="p">.</span><span class="nx">config</span><span class="p">().</span><span class="nx">stripe</span><span class="p">.</span><span class="nx">secret</span><span class="p">;</span>
 </code></pre></div>
-<p>Sett med:
+<p>Sett med:</p>
 <div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>functions:config:set<span class="w"> </span>stripe.secret<span class="o">=</span><span class="s2">&quot;sk_live_xxxxx&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="4-test-security-rules">4. Test Security Rules<a class="headerlink" href="#4-test-security-rules" title="Permanent link">&para;</a></h3>
 <p>Test alltid Security Rules før deployment:</p>
 <div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>emulators:start<span class="w"> </span>--only<span class="w"> </span>firestore
 </code></pre></div>
 <h3 id="5-aldri-hardkod-hemmeligheter">5. Aldri hardkod hemmeligheter<a class="headerlink" href="#5-aldri-hardkod-hemmeligheter" title="Permanent link">&para;</a></h3>
-<p>❌ FEIL:
+<p>❌ FEIL:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sk_live_123456789&quot;</span><span class="p">;</span>
-</code></pre></div></p>
-<p>✅ RIKTIG:
+</code></pre></div>
+<p>✅ RIKTIG:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VITE_API_KEY</span><span class="p">;</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="sjekkliste-fr-commit">Sjekkliste før commit<a class="headerlink" href="#sjekkliste-fr-commit" title="Permanent link">&para;</a></h2>
 <p>Før du committer til Git, sjekk:</p>
 <ul class="task-list">

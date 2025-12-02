@@ -1202,11 +1202,13 @@
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
 firebase<span class="w"> </span>deploy
 </code></pre></div>
-<p>Build-prosessen:
-1. TypeScript kompileres til JavaScript
-2. Vite bygger optimalisert produksjonsbuild
-3. Output genereres i <code>dist/</code>
-4. Firebase deployer <code>dist/</code> til hosting</p>
+<p>Build-prosessen:</p>
+<ol>
+<li>TypeScript kompileres til JavaScript</li>
+<li>Vite bygger optimalisert produksjonsbuild</li>
+<li>Output genereres i <code>dist/</code></li>
+<li>Firebase deployer <code>dist/</code> til hosting</li>
+</ol>
 <h2 id="sikkerhet">Sikkerhet<a class="headerlink" href="#sikkerhet" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Firestore-regler definert i <code>firestore.rules</code></li>
