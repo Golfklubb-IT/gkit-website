@@ -56,6 +56,48 @@ Denne dokumentasjonen inneholder:
 - 45+ golfklubber bruker ClubsiteCMS (inkl. Losby, Bærum, Asker, Vestfold)
 - 15+ sentre bruker CS Booking (61 simulatorer, 36 instruktører)
 
+## Nylige Oppdateringer (Desember 2025)
+
+### UI/UX Forbedringer - Hybrid Interaktiv Design
+**Dato:** 3. desember 2025
+
+**Implementert:**
+- ✅ **Interaktive kort** med hover-ekspansjon på forsiden
+- ✅ **Status badges**: 🟢 Live / 🟡 Testing på alle prosjekter
+- ✅ **Klikbare elementer**: Alle prosjekt- og tjeneste-kort navigerer til riktige sider
+- ✅ **Eksterne lenker**: "Åpne app" knapper for live apper
+- ✅ **Smooth animasjoner**: cubic-bezier transitions (0.4s)
+- ✅ **Mobile touch support**: Fungerer perfekt på touch-enheter
+- ✅ **Feature chips**: Vises ved hover på tjeneste-kort
+- ✅ **Hero padding fix**: Økt til 120px for bedre synlighet
+
+**Tekniske detaljer:**
+- CSS klasser: `.interactive-card`, `.status-badge`, `.card-hover-info`, `.feature-chips`
+- Ingen visuelle endringer i design/farger - kun funksjonalitet
+- Backup lagret i: `src/_old/Home.tsx.backup` og `src/_old/App.css.backup`
+
+### Content Oppdateringer
+**Dato:** 2. desember 2025
+
+**Lagt til:**
+- FAQ-seksjoner på alle 9 produkt/app-sider
+- Eksterne lenker til live apper og dokumentasjon
+- ClubsiteCMS tydeliggjort som Scangolf-produkt med GKIT-integrasjoner
+- 45+ referanseklubber listet
+- CS Booking info (15+ sentre, 61 simulatorer, 36 instruktører)
+- "Under testing" badges på apper under utvikling
+
+**Sider oppdatert:**
+- `/products/clubsite` - FAQ + referanser + Scangolf-info
+- `/apps/soknadsportalen` - Ekstern lenke + FAQ
+- `/apps/golfteam-time` - Live lenke + FAQ
+- `/apps/frivillig-kalender` - Testing badge + FAQ
+- `/apps/ai-file-analyzer` - Testing badge + FAQ
+- `/apps/golfbilkontroll` - Testing badge + FAQ
+- `/apps/booking-kalender` - Testing badge + FAQ + CS Booking info
+- `/products/workspace` - Dokumentasjonslenke + FAQ + prising
+- `/products/signage` - Demo-lenke + dokumentasjon + FAQ
+
 ## Innhold
 
 Dokumentasjonen er strukturert slik:
