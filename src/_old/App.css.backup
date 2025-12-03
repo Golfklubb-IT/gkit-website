@@ -211,9 +211,6 @@ section {
 
 .project-card {
   padding: var(--spacing-md);
-  position: relative;
-  min-height: 200px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card h3 {
@@ -225,140 +222,6 @@ section {
 .project-card p {
   color: var(--color-gray-light);
   font-size: var(--font-size-sm);
-}
-
-/* Interactive Card System */
-.interactive-card {
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.interactive-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.interactive-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(76, 175, 80, 0.25);
-}
-
-.interactive-card:hover::before {
-  opacity: 1;
-}
-
-/* Card Header with Icon and Badge */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-sm);
-}
-
-.project-icon {
-  font-size: 2rem;
-}
-
-/* Status Badges */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.status-live {
-  background: rgba(76, 175, 80, 0.15);
-  color: var(--color-gkit-green);
-  border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.status-testing {
-  background: rgba(255, 193, 7, 0.15);
-  color: #FFC107;
-  border: 1px solid rgba(255, 193, 7, 0.3);
-}
-
-/* Hover Info - Hidden by default */
-.card-hover-info {
-  opacity: 0;
-  max-height: 0;
-  transform: translateY(-10px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  margin-top: var(--spacing-sm);
-}
-
-.interactive-card:hover .card-hover-info {
-  opacity: 1;
-  max-height: 150px;
-  transform: translateY(0);
-}
-
-/* Hover Actions */
-.hover-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid rgba(76, 175, 80, 0.2);
-}
-
-.info-text {
-  font-size: 0.85rem;
-  color: var(--color-gray-light);
-  font-style: italic;
-}
-
-.external-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.5rem 1rem;
-  background: rgba(76, 175, 80, 0.1);
-  border: 1px solid var(--color-gkit-green);
-  border-radius: 6px;
-  color: var(--color-gkit-green);
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.external-link-btn:hover {
-  background: var(--color-gkit-green);
-  color: var(--color-bg-dark);
-  transform: translateX(3px);
-}
-
-/* Feature Chips for Services */
-.feature-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.feature-chips li {
-  padding: 0.25rem 0.75rem;
-  background: rgba(76, 175, 80, 0.1);
-  border: 1px solid rgba(76, 175, 80, 0.3);
-  border-radius: 12px;
-  font-size: 0.75rem;
-  color: var(--color-gkit-green);
-  white-space: nowrap;
 }
 
 /* About/Why GKIT Section */
@@ -431,53 +294,6 @@ section {
 .contact-item a {
   font-size: var(--font-size-lg);
   font-weight: 600;
-}
-
-/* Mobile Touch Support */
-@media (hover: none) and (pointer: coarse) {
-  /* On touch devices, show hover info by default (slightly) */
-  .card-hover-info {
-    opacity: 0.6;
-    max-height: 100px;
-    transform: translateY(0);
-  }
-
-  .interactive-card:active .card-hover-info {
-    opacity: 1;
-    max-height: 150px;
-  }
-
-  /* Remove hover transform on touch, use active instead */
-  .interactive-card:hover {
-    transform: none;
-  }
-
-  .interactive-card:active {
-    transform: scale(0.98);
-    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .projects-grid,
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-  }
-
-  .project-card,
-  .service-card {
-    min-height: auto;
-  }
-
-  .card-header {
-    flex-wrap: wrap;
-  }
-
-  .feature-chips {
-    font-size: 0.7rem;
-  }
 }
 
 /* Footer */
