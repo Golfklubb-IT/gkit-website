@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase'
+import companyConfig from '../config/companyConfig'
 import '../App.css'
 
 interface FormData {
@@ -52,7 +53,7 @@ const ContactForm = () => {
             })
         } catch (err: any) {
             console.error('Error submitting form:', err)
-            setError('Det oppsto en feil. Prøv igjen eller send e-post til kontakt@golfklubb-it.com')
+            setError(`Det oppsto en feil. Prøv igjen eller send e-post til ${companyConfig.email}`)
         } finally {
             setLoading(false)
         }

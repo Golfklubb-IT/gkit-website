@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import ContactForm from '../components/ContactForm'
+import companyConfig from '../config/companyConfig'
 import '../App.css'
 
 function Home() {
@@ -305,7 +306,7 @@ function Home() {
                         <div className="contact-info" style={{ flexDirection: 'row', justifyContent: 'center', marginTop: '3rem', fontSize: '0.9rem' }}>
                             <div style={{ opacity: 0.7 }}>
                                 <p>Eller send e-post direkte:</p>
-                                <a href="mailto:post@gkit.no" style={{ color: 'var(--color-gkit-green)' }}>post@gkit.no</a>
+                                <a href={`mailto:${companyConfig.email}`} style={{ color: 'var(--color-gkit-green)' }}>{companyConfig.email}</a>
                             </div>
                         </div>
                     </div>
@@ -316,9 +317,9 @@ function Home() {
             <footer className="footer">
                 <div className="container">
                     <p style={{ fontSize: 'var(--font-size-lg)', fontWeight: '700' }}>
-                        <span className="text-gradient-green">GKIT</span> – GolfKlubb IT
+                        <span className="text-gradient-green">{companyConfig.shortName}</span> – {companyConfig.name}
                     </p>
-                    <p>© 2025 GKIT. Stabil drift. Smarte systemer. Golfklubbens IT-partner.</p>
+                    <p>© {companyConfig.copyrightYear} {companyConfig.name}. {companyConfig.tagline} {companyConfig.slogan}.</p>
                     <div className="footer-links">
                         <a href="#hjem">Hjem</a>
                         <a href="#tjenester">Tjenester</a>
