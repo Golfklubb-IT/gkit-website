@@ -27,6 +27,20 @@ npm run build
 ```
 The output will be in the `dist` folder.
 
+### Documentation
+View and update the documentation:
+```bash
+# Preview docs locally
+mkdocs serve
+
+# Deploy docs to GitHub Pages (after code commit)
+./scripts/deploy-docs.sh  # macOS/Linux
+# or
+scripts/deploy-docs.bat   # Windows
+```
+
+See `.github/DOCS-UPDATE-CHECKLIST.md` for documentation workflow.
+
 ---
 
 ## 📂 Project Structure
