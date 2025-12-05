@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import GraphicFiller from '../components/GraphicFiller'
+import Footer from '../components/Footer'
 import '../App.css'
 
 const About = () => {
@@ -32,6 +33,24 @@ const About = () => {
                         Derfor bygger vi løsninger som løser faktiske problemer.
                     </p>
 
+                    <div style={{ marginTop: '4rem' }}>
+                        <h2>Hvorfor velge <span className="text-gradient-green">GKIT?</span></h2>
+                        <ul className="why-list" style={{ maxWidth: '800px', margin: '2rem auto', textAlign: 'left' }}>
+                            <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                                <strong>Spisskompetanse på norske golfklubber</strong> – Vi kjenner bransjen innenfra og vet hva som fungerer.
+                            </li>
+                            <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                                <strong>Dyp erfaring med tekniske systemer</strong> – GolfBox, ClubsiteCMS, Google Workspace – vi har jobbet med dem alle.
+                            </li>
+                            <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                                <strong>Profesjonell drift og leveransekvalitet</strong> – Vi tar ansvar for at systemene fungerer, døgnet rundt.
+                            </li>
+                            <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                                <strong>Effektive automasjoner</strong> – Vi sparer klubber tid og penger ved å automatisere kjedelige oppgaver.
+                            </li>
+                        </ul>
+                    </div>
+
                     <GraphicFiller index={0} />
 
                     <div style={{ marginTop: '4rem' }}>
@@ -60,11 +79,7 @@ const About = () => {
                 </div>
             </section>
 
-            <footer className="footer">
-                <div className="container">
-                    <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }

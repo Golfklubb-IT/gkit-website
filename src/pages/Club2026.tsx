@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Footer from '../components/Footer'
 import '../App.css'
 
 function Club2026() {
@@ -135,13 +136,17 @@ function Club2026() {
                                     borderRadius: '50%',
                                     background: '#333',
                                     overflow: 'hidden',
-                                    border: '2px solid var(--color-gkit-green)'
+                                    border: '2px solid var(--color-gkit-green)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '1.5rem'
                                 }}>
-                                    <img src="https://placehold.co/100x100/333/fff?text=OS" alt="Owe Stangeland" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    🏌️
                                 </div>
                                 <div>
-                                    <p style={{ fontWeight: '700', marginBottom: '0', fontSize: '1.1rem' }}>Owe Stangeland</p>
-                                    <p style={{ fontSize: '0.875rem', color: 'var(--color-gkit-green)' }}>Founder, GKIT</p>
+                                    <p style={{ fontWeight: '700', marginBottom: '0', fontSize: '1.1rem' }}>GKIT Team</p>
+                                    <p style={{ fontSize: '0.875rem', color: 'var(--color-gkit-green)' }}>Golfklubb IT ENK</p>
                                 </div>
                             </div>
                         </div>
@@ -150,11 +155,7 @@ function Club2026() {
             </section>
 
             {/* Footer */}
-            <footer className="footer">
-                <div className="container">
-                    <p>© 2025 GKIT. The 2026 Club.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }

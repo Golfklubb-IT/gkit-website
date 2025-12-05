@@ -1,9 +1,55 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import GraphicFiller from '../components/GraphicFiller'
+import Footer from '../components/Footer'
 import '../App.css'
 
 const Services = () => {
+    const services = [
+        {
+            icon: '⚙️',
+            title: 'GolfBox-automatisering',
+            description: 'Sømløs integrasjon og automatisering av GolfBox for effektiv drift.',
+            link: '/products/golfbox',
+            features: ['Auto-sync', 'Analytics', 'Live resultater']
+        },
+        {
+            icon: '☁️',
+            title: 'Google Workspace',
+            description: 'Profesjonell digital arbeidsflate med e-post og samarbeid.',
+            link: '/products/workspace',
+            features: ['E-post @dinklubb.no', 'Google Drive', 'Meet & Calendar']
+        },
+        {
+            icon: '🌐',
+            title: 'ClubsiteCMS',
+            description: 'Drift og integrasjoner for 45+ norske golfklubber.',
+            link: '/products/clubsite',
+            features: ['45+ klubber', 'Scangolf partner', 'Integrasjoner']
+        },
+        {
+            icon: '📺',
+            title: 'Digital skilting',
+            description: 'Moderne løsninger for sanntidsoppdateringer på skjermer.',
+            link: '/products/signage',
+            features: ['Live tee-tider', 'Væroppdateringer', 'Sponsorannonser']
+        },
+        {
+            icon: '🔌',
+            title: 'API-utvikling',
+            description: 'Skreddersydde API-er som kobler sammen systemer.',
+            link: '#api-development',
+            features: ['Custom APIs', 'System-integrasjon', 'Automatisering']
+        },
+        {
+            icon: '🏆',
+            title: 'Turneringsteknologi',
+            description: 'Avanserte verktøy for turneringsadministrasjon.',
+            link: '#tournament-tech',
+            features: ['Live score', 'SoMe-publisering', 'Turneringsadmin']
+        }
+    ]
+
     return (
         <div className="app">
             <header className="header">
@@ -17,6 +63,31 @@ const Services = () => {
                         Vi leverer ikke bare programvare – vi leverer en enklere hverdag.
                         Fra automatisering av GolfBox til komplette driftsløsninger.
                     </p>
+                </div>
+            </section>
+
+            {/* Services Grid Overview */}
+            <section className="container section-padding" style={{ background: 'var(--color-bg-dark)' }}>
+                <div className="services-grid">
+                    {services.map((service, index) => (
+                        <div 
+                            key={index} 
+                            className="service-card card interactive-card fade-in" 
+                            style={{ animationDelay: `${index * 0.1}s`, cursor: 'pointer' }}
+                            onClick={() => window.location.href = service.link}
+                        >
+                            <div className="service-icon">{service.icon}</div>
+                            <h3>{service.title}</h3>
+                            <p>{service.description}</p>
+                            <div className="card-hover-info">
+                                <ul className="feature-chips">
+                                    {service.features.map((feature, i) => (
+                                        <li key={i}>{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
@@ -117,11 +188,7 @@ const Services = () => {
 
             </section>
 
-            <footer className="footer">
-                <div className="container">
-                    <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 }
