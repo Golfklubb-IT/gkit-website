@@ -20,6 +20,7 @@
     {
       "source": "functions",
       "codebase": "default",
+      "region": ["europe-west1"],
       "ignore": [
         "node_modules",
         ".git",

@@ -4,8 +4,8 @@ import * as nodemailer from "nodemailer";
 
 admin.initializeApp();
 
-// Firestore trigger: Send email when new lead is created
-export const sendLeadNotification = functions.firestore
+// Firestore trigger: Send email when new lead is created (GDPR: europe-west1)
+export const sendLeadNotification = functions.region("europe-west1").firestore
     .document("leads/{leadId}")
     .onCreate(async (snap, context) => {
         const leadData = snap.data();
@@ -73,8 +73,8 @@ export const sendLeadNotification = functions.firestore
         }
     });
 
-// Legacy function (kept for backwards compatibility)
-export const submitContactForm = functions.https.onCall(async (data, _context) /* eslint-disable-line @typescript-eslint/no-unused-vars */ => {
+// Legacy function (kept for backwards compatibility) - GDPR: europe-west1
+export const submitContactForm = functions.region("europe-west1").https.onCall(async (data, _context) /* eslint-disable-line @typescript-eslint/no-unused-vars */ => {
     // 1. Validate Input
     const { name, email, club, subject, message } = data;
 
