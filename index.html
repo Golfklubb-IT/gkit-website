@@ -404,6 +404,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#e-post-notifikasjoner-kontaktskjema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E-post Notifikasjoner - Kontaktskjema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uiux-forbedringer-hybrid-interaktiv-design" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1203,6 +1214,43 @@
 <li>15+ sentre bruker CS Booking (61 simulatorer, 36 instruktører)</li>
 </ul>
 <h2 id="nylige-oppdateringer-desember-2025">Nylige Oppdateringer (Desember 2025)<a class="headerlink" href="#nylige-oppdateringer-desember-2025" title="Permanent link">&para;</a></h2>
+<h3 id="e-post-notifikasjoner-kontaktskjema">E-post Notifikasjoner - Kontaktskjema<a class="headerlink" href="#e-post-notifikasjoner-kontaktskjema" title="Permanent link">&para;</a></h3>
+<p><strong>Dato:</strong> 7. desember 2025</p>
+<p><strong>✅ Implementert:</strong>
+- ✅ <strong>Automatiske notifikasjoner</strong> til <code>kontakt-oss@golfklubb-it.com</code> distribusjonsliste
+- ✅ <strong>GDPR-compliant</strong> - Distribuert i europe-west1 (Belgia)
+- ✅ <strong>HTML-formatert e-post</strong> med alle skjemafelt
+- ✅ <strong>Lead-lagring</strong> i Firestore med tidsstempel og ID
+- ✅ <strong>Firebase Cloud Functions</strong> som utløser ved ny lead</p>
+<p><strong>E-post Format &amp; Tilpasning:</strong></p>
+<p>E-posten som sendes har følgende struktur:</p>
+<div class="highlight"><pre><span></span><code>Avsender: owe-admin@golfklubb-it.com (via Golfklubbens IT Website)
+Mottaker: kontakt-oss@golfklubb-it.com (distribusjonsliste)
+Subject: 🔔 Ny henvendelse fra [Fornavn] [Etternavn]
+
+Innhold:
+- Navn, mobilnummer, e-post
+- GolfBox ID (hvis oppgitt)
+- Lead ID (auto-generert)
+- Tidsstempel
+</code></pre></div>
+<p><strong>Å endre e-postmalen:</strong>
+1. Rediger <code>functions/src/index.ts</code>
+2. Finn seksjonen <code>const mailOptions = { ... html: ... }</code>
+3. Endre HTML-innholdet etter ønske
+4. Kjør: <code>firebase deploy --only functions</code></p>
+<p><strong>Eksempel på HTML-endring:</strong>
+<div class="highlight"><pre><span></span><code><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">    &lt;h2 style=&quot;color: #4CAF50;&quot;&gt;Din egen tittel her&lt;/h2&gt;</span>
+<span class="sb">    &lt;p&gt;&lt;strong&gt;Navn:&lt;/strong&gt; </span><span class="si">${</span><span class="nx">leadData</span><span class="p">.</span><span class="nx">firstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">leadData</span><span class="p">.</span><span class="nx">lastName</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">    &lt;!-- Legg til flere felt etter behov --&gt;</span>
+<span class="sb">`</span>
+</code></pre></div></p>
+<p><strong>⏳ Planlagt - Avsender-Notifikasjoner:</strong>
+- [ ] Send automatisk bekreftelse til avsender (via Cloud Function)
+- [ ] Tilpassbar malkalkul for avsender-e-posten
+- [ ] Opsjonal "Vi tar kontakt snart"-melding
+- [ ] Avsender-notifikasjoner basert på checkbox i skjema</p>
 <h3 id="uiux-forbedringer-hybrid-interaktiv-design">UI/UX Forbedringer - Hybrid Interaktiv Design<a class="headerlink" href="#uiux-forbedringer-hybrid-interaktiv-design" title="Permanent link">&para;</a></h3>
 <p><strong>Dato:</strong> 3. desember 2025</p>
 <p><strong>Implementert:</strong>
