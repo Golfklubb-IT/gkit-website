@@ -13,13 +13,13 @@ const ClubsiteCMS = () => {
                 <div className="hero-content fade-in-up">
                     <h1>
                         <span className="text-gradient-green">ClubsiteCMS</span><br />
-                        Integrasjoner & Support
+                        Implementering, integrasjon og drift
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        Vi integrerer med ClubsiteCMS fra Scangolf og tilbyr konsulentbistand for golfklubber. 45+ klubber bruker systemet.
+                        Vi implementerer og drifter ClubsiteCMS for golfklubber. 45+ klubber på løsningen. Rask oppstart (2–4 dager) med norsk support.
                     </p>
                     <div className="hero-cta">
-                        <a href="https://clubsite.no" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Besøk clubsite.no</a>
+                        <a href="#kontakt" className="btn btn-primary">Kontakt oss – vi setter opp alt</a>
                         <a href="#referanser" className="btn btn-secondary">Se referanser</a>
                     </div>
                 </div>
@@ -36,31 +36,79 @@ const ClubsiteCMS = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva kan systemet?</h2>
-
-                <div className="services-grid">
-                    <div className="service-card glass">
-                        <div className="service-icon">📰</div>
-                        <h3>Nyheter & Artikler</h3>
-                        <p>Publiser nyheter, turneringsresultater, og kunngjøringer. Enkel editor, ingen teknisk kunnskap nødvendig.</p>
+                <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Hvorfor ClubsiteCMS med oss?</h2>
+                <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
+                        <div className="service-icon">🏌️</div>
+                        <h3>Golfspesifikt CMS</h3>
+                        <p>Bygget for golfklubber: GolfBox-visning, turneringsnyheter, dokumentarkiv.</p>
                     </div>
-
-                    <div className="service-card glass">
-                        <div className="service-icon">📸</div>
-                        <h3>Bildegalleri</h3>
-                        <p>Last opp bilder fra turneringer og arrangementer. Automatisk bildekomprimering og responsivt galleri.</p>
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
+                        <div className="service-icon">🚀</div>
+                        <h3>Rask oppstart</h3>
+                        <p>2–4 dager til live. Vi håndterer domene, innhold og tilganger.</p>
                     </div>
-
-                    <div className="service-card glass">
-                        <div className="service-icon">📅</div>
-                        <h3>Arrangementskalender</h3>
-                        <p>Oversikt over turneringer, kurs, og styremøter. Synkroniseres med Google Calendar.</p>
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
+                        <div className="service-icon">🛠️</div>
+                        <h3>Drift & Support</h3>
+                        <p>Norsk support, feilretting, endringer og småutvikling. Vi eier driften for dere.</p>
                     </div>
-
-                    <div className="service-card glass">
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
                         <div className="service-icon">🔗</div>
-                        <h3>GolfBox Integrasjon</h3>
-                        <p>Automatisk visning av tee-tider, starttider, og resultatlister. Alltid oppdatert fra GolfBox.</p>
+                        <h3>Integrasjoner</h3>
+                        <p>GolfBox, Google Workspace, Display/Signage, Søknadsportalen, betalingsløsninger.</p>
+                    </div>
+                </div>
+
+                <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Moduler (valgfrie)</h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">📰</div>
+                        <h4>Nettside/CMS</h4>
+                        <p>Nyheter, artikler, dokumentarkiv, roller/rettigheter, enkel editor.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">⛳</div>
+                        <h4>GolfBox embed</h4>
+                        <p>Tee-times, startlister og resultater fra GolfBox – alltid oppdatert.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">📅</div>
+                        <h4>Kalender/Arrangementer</h4>
+                        <p>Kurs, turneringer, styremøter. Synk til Google Calendar ved behov.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">📸</div>
+                        <h4>Media/Galleri</h4>
+                        <p>Responsivt galleri, automatisk bildekomprimering, video-embed.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">💳</div>
+                        <h4>Påmelding & Betaling</h4>
+                        <p>Påmeldingsskjema m/betaling (Vipps/Stripe/Netaxept) for kurs og arrangementer.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.1rem' }}>
+                        <div className="service-icon">🧩</div>
+                        <h4>Integrasjoner</h4>
+                        <p>Signage/Display, Søknadsportalen, Google Workspace, e-postgrupper.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>CS Booking (Simulator & Instruktør)</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Dekning</h4>
+                        <p>15+ sentre, 75+ simulatorer, 40+ instruktører på CS Booking.</p>
+                    </div>
+                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Funksjoner</h4>
+                        <p>Kalender, betaling, kvittering, instruktørbooking, varsler, rapporter.</p>
+                    </div>
+                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Vår rolle</h4>
+                        <p>Vi setter opp, integrerer mot nettsiden, og gir support for drift og oppdateringer.</p>
                     </div>
                 </div>
             </section>
@@ -68,15 +116,15 @@ const ClubsiteCMS = () => {
             <section className="container section-padding" id="referanser">
                 <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>45+ Norske Golfklubber</h2>
                 <p style={{ textAlign: 'center', color: 'var(--color-gray-light)', maxWidth: '900px', margin: '0 auto 3rem' }}>
-                    Klubber som bruker ClubsiteCMS inkluderer:
+                    Losby, Bærum, Asker, Vestfold, Grimstad, Hauger, Kristiansand, Drøbak, Ski, Grini, Haga, Kjekstad m.fl.
                 </p>
-                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Losby GK • Bærum GK • Asker GK</div>
-                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Vestfold GK • Grimstad GK • Hauger GK</div>
-                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Kristiansand GK • Drøbak GK • Ski GK</div>
-                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Grini GK • Haga GK • Kjekstad GK</div>
+                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.8rem' }}>
+                    <div style={{ padding: '0.9rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Losby • Bærum • Asker</div>
+                    <div style={{ padding: '0.9rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Vestfold • Grimstad • Hauger</div>
+                    <div style={{ padding: '0.9rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Kristiansand • Drøbak • Ski</div>
+                    <div style={{ padding: '0.9rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Grini • Haga • Kjekstad</div>
                 </div>
-                <p style={{ textAlign: 'center', marginTop: '2rem' }}>
+                <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
                     <a href="https://clubsite.no/referanser" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gkit-green)' }}>Se alle 45+ referanseklubber →</a>
                 </p>
             </section>
@@ -115,27 +163,27 @@ const ClubsiteCMS = () => {
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
                         <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvem utvikler ClubsiteCMS?</h4>
-                        <p>ClubsiteCMS er utviklet av <strong>Scangolf</strong>. Golfklubb-IT tilbyr integrasjoner og konsulentbistand for klubber som bruker systemet.</p>
+                        <p>ClubsiteCMS utvikles av <strong>Scangolf</strong>. Golfklubbens IT leverer implementasjon, integrasjoner og drift for klubber.</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor mange klubber bruker ClubsiteCMS?</h4>
-                        <p>45+ norske golfklubber bruker ClubsiteCMS, inkludert Losby, Bærum, Asker, Vestfold, Grimstad og mange flere.</p>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor raskt kan vi gå live?</h4>
+                        <p>Typisk 2–4 dager uten migrering. Med migrering av innhold/filer: 1–2 uker avhengig av omfang.</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster ClubsiteCMS?</h4>
-                        <p>For prising, kontakt Scangolf direkte på <a href="tel:+4741520802" style={{ color: 'var(--color-gkit-green)' }}>415 20 802</a> eller <a href="mailto:post@scangolf.no" style={{ color: 'var(--color-gkit-green)' }}>post@scangolf.no</a>.</p>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster det?</h4>
+                        <p>Lisens prises av Scangolf (kontakt <a href="tel:+4741520802" style={{ color: 'var(--color-gkit-green)' }}>415 20 802</a> / <a href="mailto:post@scangolf.no" style={{ color: 'var(--color-gkit-green)' }}>post@scangolf.no</a>). Vi fakturerer timer/fastpris for implementasjon, integrasjoner og løpende drift/support.</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan Golfklubbens IT hjelpe oss med ClubsiteCMS?</h4>
-                        <p>Ja! Vi tilbyr integrasjoner mellom ClubsiteCMS og våre egne løsninger som Søknadsportalen, Display/Signage, og booking-systemer.</p>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan dere migrere gammel nettside?</h4>
+                        <p>Ja. Vi håndterer flytting av innhold, dokumenter og media, og rydder i strukturen samtidig.</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva er CS Booking?</h4>
-                        <p>CS Booking er Scangolfs spesialtilpassede bookingsystem for simulatorer og instruktører. 15+ sentre bruker systemet med 61 simulatorer og 36 instruktører.</p>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Får vi norsk support?</h4>
+                        <p>Ja, Golfklubbens IT leverer norsk support, feilretting og endringer. Vi koordinerer med Scangolf ved behov.</p>
                     </div>
                 </div>
             </section>

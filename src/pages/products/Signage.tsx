@@ -20,7 +20,7 @@ const Signage = () => {
                     </p>
                     <div className="hero-cta">
                         <a href="https://loftlogic-display.web.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Åpne demo</a>
-                        <a href="https://owe-s.github.io/GKIT-DigitalSignage-APP/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Les dokumentasjon</a>
+                        <a href="https://golfklubb-it.github.io/GKIT-DigitalSignage-APP/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Les dokumentasjon</a>
                     </div>
                 </div>
             </section>

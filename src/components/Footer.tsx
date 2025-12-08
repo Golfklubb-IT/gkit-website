@@ -47,6 +47,14 @@ const Footer = () => {
             <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginTop: '1rem' }}>
               Vi hjelper deg med alt fra setup, teknisk support, til langsiktig vedlikehold.
             </p>
+            <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
+              <li style={{ marginBottom: '0.4rem' }}>
+                <a href="/services" style={{ color: 'var(--color-gkit-green)', textDecoration: 'none' }}>Tjenester</a>
+              </li>
+              <li style={{ marginBottom: '0.4rem' }}>
+                <a href="/projects" style={{ color: 'var(--color-gkit-green)', textDecoration: 'none' }}>Prosjekter</a>
+              </li>
+            </ul>
           </div>
         </div>
 

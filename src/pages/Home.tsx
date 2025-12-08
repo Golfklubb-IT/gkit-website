@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import ContactForm from '../components/ContactForm'
-import companyConfig from '../config/companyConfig'
 import '../App.css'
 
 function Home() {
@@ -68,7 +66,7 @@ function Home() {
                             <h3>Google Workspace</h3>
                             <p>Profesjonell digital arbeidsflate for klubber.</p>
                         </div>
-                        <div className="service-card card fade-in" onClick={() => window.location.href = '/products/clubsite'}>
+                        <div className="service-card card fade-in" onClick={() => window.location.href = '/products/clubsitecms'}>
                             <div className="service-icon">🌐</div>
                             <h3>ClubsiteCMS</h3>
                             <p>Drift og integrasjoner for 45+ norske klubber.</p>
@@ -115,14 +113,10 @@ function Home() {
                             La oss snakke om hvordan vi kan hjelpe din klubb med teknologi og automatisering.
                         </p>
                     </div>
-                    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-                        <ContactForm />
-                        <div className="contact-info" style={{ flexDirection: 'row', justifyContent: 'center', marginTop: '3rem', fontSize: '0.9rem' }}>
-                            <div style={{ opacity: 0.7 }}>
-                                <p>Eller send e-post direkte:</p>
-                                <a href={`mailto:${companyConfig.email}`} style={{ color: 'var(--color-gkit-green)' }}>{companyConfig.email}</a>
-                            </div>
-                        </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <Link to="/contact" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
+                            Kontakt oss →
+                        </Link>
                     </div>
                 </div>
             </section>
