@@ -1,25 +1,36 @@
-import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import * as nodemailer from "nodemailer";
+import { onDocumentCreated } from "firebase-functions/v2/firestore";
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+import { defineString } from "firebase-functions/params";
 
 admin.initializeApp();
 
+// Environment parameters (replaces deprecated functions.config())
+const gmailUser = defineString("GMAIL_USER");
+const gmailPassword = defineString("GMAIL_APP_PASSWORD");
+
 // Firestore trigger: Send email when new lead is created (GDPR: europe-west1)
-// Fixed: Corrected Gmail password (removed spaces) - 2025-12-07 18:30
-export const sendLeadNotification = functions.region("europe-west1").firestore
-    .document("leads/{leadId}")
-    .onCreate(async (snap, context) => {
+// Migrated to firebase-functions v7 - 2025-12-08
+export const sendLeadNotification = onDocumentCreated(
+    { document: "leads/{leadId}", region: "europe-west1" },
+    async (event) => {
+        const snap = event.data;
+        if (!snap) {
+            console.log("No data associated with the event");
+            return;
+        }
         const leadData = snap.data();
-        const leadId = context.params.leadId;
+        const leadId = event.params.leadId;
 
         // Email configuration (using Gmail SMTP)
-        const gmailUser = functions.config().gmail?.user || process.env.GMAIL_USER;
-        const gmailPassword = functions.config().gmail?.password || process.env.GMAIL_APP_PASSWORD;
+        const emailUser = gmailUser.value();
+        const emailPassword = gmailPassword.value();
 
-        console.log("📧 Attempting to send email from:", gmailUser);
+        console.log("📧 Attempting to send email from:", emailUser);
 
-        if (!gmailUser || !gmailPassword) {
-            console.error("Gmail credentials not configured. Set with: firebase functions:config:set gmail.user=... gmail.password=...");
+        if (!emailUser || !emailPassword) {
+            console.error("Gmail credentials not configured. Set with: firebase functions:secrets:set GMAIL_USER and GMAIL_APP_PASSWORD");
             return;
         }
 
@@ -27,14 +38,14 @@ export const sendLeadNotification = functions.region("europe-west1").firestore
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: gmailUser,
-                pass: gmailPassword,
+                user: emailUser,
+                pass: emailPassword,
             },
         });
 
         // Email content
         const mailOptions = {
-            from: `"Golfklubbens IT Website" <${gmailUser}>`,
+            from: `"Golfklubbens IT Website" <${emailUser}>`,
             to: "kontakt-oss@golfklubb-it.com",
             subject: `🔔 Ny henvendelse fra ${leadData.firstName} ${leadData.lastName}`,
             html: `
@@ -74,15 +85,18 @@ export const sendLeadNotification = functions.region("europe-west1").firestore
         } catch (error) {
             console.error("❌ Error sending email:", error);
         }
-    });
+    }
+);
 
 // Legacy function (kept for backwards compatibility) - GDPR: europe-west1
-export const submitContactForm = functions.region("europe-west1").https.onCall(async (data, _context) /* eslint-disable-line @typescript-eslint/no-unused-vars */ => {
+// Migrated to firebase-functions v7 - 2025-12-08
+export const submitContactForm = onCall({ region: "europe-west1" }, async (request) => {
+    const data = request.data;
     // 1. Validate Input
     const { name, email, club, subject, message } = data;
 
     if (!name || !email || !message) {
-        throw new functions.https.HttpsError(
+        throw new HttpsError(
             "invalid-argument",
             "The function must be called with name, email, and message."
         );
@@ -105,7 +119,7 @@ export const submitContactForm = functions.region("europe-west1").https.onCall(a
         return { success: true, message: "Lead saved successfully" };
     } catch (error) {
         console.error("Error saving lead:", error);
-        throw new functions.https.HttpsError(
+        throw new HttpsError(
             "internal",
             "Unable to save lead details."
         );

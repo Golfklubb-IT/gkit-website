@@ -122,57 +122,86 @@ const Workspace = () => {
 
             {/* Pricing */}
             <section className="container section-padding">
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Prismodell</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Prismodell</h2>
+                <p style={{ textAlign: 'center', fontSize: '1.2rem', color: 'var(--color-gkit-green)', fontWeight: 'bold', marginBottom: '3rem' }}>
+                    💡 Alle norske golfklubber kvalifiserer som non-profit
+                </p>
 
-                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                    <div className="services-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                        <div className="service-card glass">
-                            <h3 style={{ color: 'var(--color-gkit-green)' }}>Business Standard</h3>
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '1.5rem 0', color: 'var(--color-gkit-green)' }}>
-                                10,80 EUR
+                <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                    <div className="services-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+                        <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Workspace for Nonprofits</h3>
+                            <div style={{ fontSize: '3rem', fontWeight: 'bold', margin: '1.5rem 0', color: 'var(--color-gkit-green)' }}>
+                                $0
                             </div>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginBottom: '1.5rem' }}>
-                                per bruker/måned
+                                per bruker/måned<br/>
+                                <strong>GRATIS for golfklubber</strong>
                             </p>
-                            <ul style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8' }}>
-                                <li>Ubegrenset lagring</li>
-                                <li>Meet (250 deltakere)</li>
+                            <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                                <li>30 GB lagring per bruker</li>
+                                <li>Gmail + Calendar</li>
+                                <li>Docs, Sheets, Slides</li>
+                                <li>Meet (100 deltakere)</li>
                                 <li>Shared Drives</li>
-                                <li>Admin Console</li>
-                                <li>24/7 support</li>
                             </ul>
                         </div>
 
-                        <div className="service-card glass" style={{ borderTop: '3px solid var(--color-gkit-green)' }}>
-                            <h3 style={{ color: 'var(--color-gkit-green)' }}>Business Plus</h3>
+                        <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Business Standard</h3>
                             <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '1.5rem 0', color: 'var(--color-gkit-green)' }}>
-                                18 EUR
+                                $3.50
                             </div>
-                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginBottom: '1.5rem' }}>
-                                per bruker/måned
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginBottom: '0.5rem' }}>
+                                per bruker/måned<br/>
+                                <strong>75% rabatt</strong>
                             </p>
-                            <ul style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8' }}>
-                                <li>Alt i Business Standard +</li>
-                                <li>5 TB lagring per bruker</li>
-                                <li>Google Vault (arkiv)</li>
-                                <li>Avansert sikkerhet</li>
+                            <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-light)', marginBottom: '1.5rem' }}>
+                                (ca. 40 kr/bruker/mnd)
+                            </p>
+                            <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                                <li>2 TB lagring per bruker</li>
+                                <li>Meet (150 deltakere)</li>
                                 <li>Meet opptak</li>
+                                <li>Avansert sikkerhet</li>
+                                <li>Admin Console</li>
+                            </ul>
+                        </div>
+
+                        <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Business Plus</h3>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '1.5rem 0', color: 'var(--color-gkit-green)' }}>
+                                $6.16
+                            </div>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginBottom: '0.5rem' }}>
+                                per bruker/måned<br/>
+                                <strong>72% rabatt</strong>
+                            </p>
+                            <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-light)', marginBottom: '1.5rem' }}>
+                                (ca. 70 kr/bruker/mnd)
+                            </p>
+                            <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                                <li>5 TB lagring per bruker</li>
+                                <li>Meet (500 deltakere)</li>
+                                <li>Google Vault (arkiv)</li>
+                                <li>Avansert DLP-sikkerhet</li>
+                                <li>eDiscovery</li>
                             </ul>
                         </div>
                     </div>
 
                     <div style={{ textAlign: 'center', marginTop: '3rem', padding: '2rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '12px' }}>
                         <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-                            <strong>Eksempel:</strong> 10 brukere = 1.296 EUR/år (ca. 14.500 kr/år)
+                            <strong>Eksempel Nonprofits (gratis):</strong> 10 brukere = $0/år 🎉
                         </p>
-                        <p style={{ fontSize: '1.2rem', color: 'var(--color-gkit-green)', fontWeight: 'bold' }}>
-                            💡 Er klubben ideell/non-profit?
+                        <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
+                            <strong>Eksempel Business Standard:</strong> 10 brukere = $420/år (ca. 4.800 kr/år)
                         </p>
-                        <p style={{ fontSize: '1.1rem', marginTop: '0.5rem', marginBottom: '1.5rem' }}>
-                            Dere kan kvalifisere for gratis eller 75% rabatt
+                        <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
+                            <strong>Eksempel Business Plus:</strong> 10 brukere = $739/år (ca. 8.400 kr/år)
                         </p>
                         <Link to="/products/workspace-nonprofit" className="btn btn-primary">
-                            Se gratis og rabatterte alternativer
+                            Les mer om Google for Nonprofits →
                         </Link>
                     </div>
                 </div>

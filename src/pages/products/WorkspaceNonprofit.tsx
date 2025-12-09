@@ -41,57 +41,63 @@ const WorkspaceNonprofit = () => {
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva får du?</h2>
 
-                <div className="services-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-                    <div className="service-card glass">
+                <div className="services-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+                    <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
                         <div className="service-icon">🎁</div>
-                        <h3>Gratis Google Workspace</h3>
-                        <ul style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8' }}>
+                        <h3>Workspace for Nonprofits</h3>
+                        <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
                             <li>Gmail Business (@dinklub.no)</li>
                             <li>30 GB lagring per bruker</li>
                             <li>Google Meet (100 deltakere)</li>
                             <li>Google Docs, Sheets, Slides</li>
                             <li>Google Calendar</li>
-                            <li><strong>Maks 2.000 brukere</strong></li>
-                        </ul>
-                        <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px' }}>
-                            <strong style={{ fontSize: '1.5rem', color: 'var(--color-gkit-green)' }}>0 kr/år</strong>
-                        </div>
-                    </div>
-
-                    <div className="service-card glass" style={{ borderTop: '3px solid var(--color-gkit-green)' }}>
-                        <div className="service-icon">💼</div>
-                        <h3>Business Standard (75% rabatt)</h3>
-                        <ul style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8' }}>
-                            <li>Alt i gratis-pakken +</li>
-                            <li><strong>Ubegrenset lagring</strong></li>
-                            <li>Google Meet (250 deltakere)</li>
                             <li>Shared Drives</li>
-                            <li>Admin Console</li>
-                            <li>Premium support</li>
                         </ul>
-                        <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px' }}>
-                            <strong style={{ fontSize: '1.5rem', color: 'var(--color-gkit-green)' }}>~2,70 EUR/bruker/mnd</strong>
+                        <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(76, 175, 80, 0.15)', borderRadius: '8px' }}>
+                            <strong style={{ fontSize: '2rem', color: 'var(--color-gkit-green)' }}>$0 USD</strong>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginTop: '0.5rem' }}>
-                                (ca. 385 kr/bruker/år)
+                                per bruker/måned<br/>
+                                <strong>100% GRATIS</strong>
                             </p>
                         </div>
                     </div>
 
-                    <div className="service-card glass">
-                        <div className="service-icon">🔒</div>
-                        <h3>Business Plus (75% rabatt)</h3>
-                        <ul style={{ textAlign: 'left', fontSize: '0.95rem', lineHeight: '1.8' }}>
-                            <li>Alt i Business Standard +</li>
-                            <li>Google Vault (e-arkiv)</li>
-                            <li>Avansert sikkerhet</li>
-                            <li>5 TB lagring per bruker</li>
-                            <li>Opptak av videomøter</li>
-                            <li>eDiscovery & retention</li>
+                    <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
+                        <div className="service-icon">💼</div>
+                        <h3>Business Standard</h3>
+                        <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                            <li>Alt i gratis-pakken +</li>
+                            <li><strong>2 TB lagring per bruker</strong></li>
+                            <li>Google Meet (150 deltakere)</li>
+                            <li>Meet opptak</li>
+                            <li>Admin Console</li>
+                            <li>Premium support</li>
                         </ul>
                         <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px' }}>
-                            <strong style={{ fontSize: '1.5rem', color: 'var(--color-gkit-green)' }}>~4,50 EUR/bruker/mnd</strong>
+                            <strong style={{ fontSize: '1.8rem', color: 'var(--color-gkit-green)' }}>$3.50 USD</strong>
                             <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginTop: '0.5rem' }}>
-                                (ca. 640 kr/bruker/år)
+                                per bruker/måned<br/>
+                                <strong>75% rabatt</strong> (ca. 40 kr/mnd)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="service-card glass" style={{ borderTop: '4px solid var(--color-gkit-green)' }}>
+                        <div className="service-icon">🔒</div>
+                        <h3>Business Plus</h3>
+                        <ul style={{ textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                            <li>Alt i Business Standard +</li>
+                            <li><strong>5 TB lagring per bruker</strong></li>
+                            <li>Meet (500 deltakere)</li>
+                            <li>Google Vault (e-arkiv)</li>
+                            <li>Avansert DLP-sikkerhet</li>
+                            <li>eDiscovery</li>
+                        </ul>
+                        <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px' }}>
+                            <strong style={{ fontSize: '1.8rem', color: 'var(--color-gkit-green)' }}>$6.16 USD</strong>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)', marginTop: '0.5rem' }}>
+                                per bruker/måned<br/>
+                                <strong>72% rabatt</strong> (ca. 70 kr/mnd)
                             </p>
                         </div>
                     </div>

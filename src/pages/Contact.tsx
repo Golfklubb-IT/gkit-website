@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar'
 import ContactForm from '../components/ContactForm'
-import Footer from '../components/Footer'
 import companyConfig from '../config/companyConfig'
 import '../App.css'
 
@@ -24,103 +23,47 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="contact" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
-        <div className="container">
-          <div className="contact-content" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginBottom: '3rem', alignItems: 'start' }}>
-              {/* Kontaktform */}
-              <div>
-                <h2 style={{ marginBottom: '2rem' }}>Send oss en melding</h2>
-                <ContactForm />
-              </div>
-
-              {/* Kontaktinfo */}
-              <div>
-                <h2 style={{ marginBottom: '2rem' }}>Kontaktinformasjon</h2>
-                
-                {/* Email */}
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px', borderLeft: '4px solid var(--color-gkit-green)' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>E-post</h4>
-                  <a href={`mailto:${companyConfig.email}`} style={{ color: 'var(--color-gkit-green)', textDecoration: 'none', fontSize: '1.1rem' }}>
-                    {companyConfig.email}
-                  </a>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-                    For generelle henvendelser
-                  </p>
-                </div>
-
-                {/* Telefon */}
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px', borderLeft: '4px solid var(--color-gkit-green)' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Telefon</h4>
-                  <a href={`tel:${companyConfig.phone.replace(/\s/g, '')}`} style={{ color: 'var(--color-gkit-green)', textDecoration: 'none', fontSize: '1.1rem' }}>
-                    {companyConfig.phone}
-                  </a>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-                    Support: {companyConfig.supportHours}
-                  </p>
-                </div>
-
-                {/* Adresse */}
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px', borderLeft: '4px solid var(--color-gkit-green)' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Besøksadresse</h4>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '1rem', marginBottom: '0.5rem' }}>
-                    {companyConfig.address}
-                  </p>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem' }}>
-                    Org.nr: {companyConfig.organizationNumber}
-                  </p>
-                </div>
-
-                {/* Åpningstider */}
-                <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px', borderLeft: '4px solid var(--color-gkit-green)' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Responstid</h4>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '1rem' }}>
-                    {companyConfig.supportHours} - Vi svarer normalt innen 24 timer på hverdager
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* FAQ */}
-            <div style={{ marginTop: '4rem', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-              <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte stilte spørsmål</h2>
-              
-              <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor lang tid tar det å få svar?</h4>
-                  <p style={{ color: 'var(--color-gray-light)' }}>
-                    Vi svarer på alle henvendelser innen 24 timer på hverdager. For hastesaker, ring oss direkte på {companyConfig.phone}.
-                  </p>
-                </div>
-
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Tilbyr dere gratis konsultasjon?</h4>
-                  <p style={{ color: 'var(--color-gray-light)' }}>
-                    Ja! Vi tilbyr en uforpliktende 30-minutters konsultasjon for å forstå din klubbs behov. Fyll ut skjemaet, så tar vi kontakt.
-                  </p>
-                </div>
-
-                <div style={{ marginBottom: '2rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan dere hjelpe oss selv om vi bruker annen plattform?</h4>
-                  <p style={{ color: 'var(--color-gray-light)' }}>
-                    Absolutt! Vi har erfaring med GolfBox, ClubsiteCMS, Google Workspace og mange andre systemer. Vi kan hjelpe deg uansett hvor du er i dag.
-                  </p>
-                </div>
-
-                <div style={{ padding: '1.5rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                  <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva er prisen?</h4>
-                  <p style={{ color: 'var(--color-gray-light)' }}>
-                    Prisene varierer basert på dine behov. Ring oss for et konkret tilbud, eller fyll ut skjemaet med så mye informasjon som mulig.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <section className="contact" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+        <div className="container" style={{ maxWidth: '960px' }}>
+          <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Send oss en melding</h2>
+          <div style={{ background: 'var(--color-bg-dark)', padding: '2rem', borderRadius: '12px', boxShadow: '0 12px 30px rgba(0,0,0,0.18)' }}>
+            {/* Full bredde skjema */}
+            <ContactForm />
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+      {/* Compact Contact Footer (dark theme) */}
+      <section style={{ background: 'var(--color-bg-dark)', padding: '1.25rem 1.5rem 1.75rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', alignItems: 'start' }}>
+          <div style={{ lineHeight: 1.5 }}>
+            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.35rem' }}>Golfklubbens IT</h3>
+            <p style={{ color: 'var(--color-gray-light)', margin: 0 }}>Stabil drift. Smarte systemer.</p>
+          </div>
+          <div style={{ lineHeight: 1.5 }}>
+            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.35rem' }}>Kontakt</h3>
+            <p style={{ color: 'var(--color-gray-light)', margin: 0 }}>{companyConfig.email}</p>
+            <p style={{ color: 'var(--color-gray-light)', margin: '0.2rem 0 0' }}>{companyConfig.phone}</p>
+            <p style={{ color: 'var(--color-gray-light)', margin: '0.2rem 0 0' }}>{companyConfig.address}</p>
+            <p style={{ color: 'var(--color-gray-light)', margin: '0.2rem 0 0' }}>Org.nr: {companyConfig.organizationNumber}</p>
+          </div>
+          <div style={{ lineHeight: 1.5 }}>
+            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.35rem' }}>Support</h3>
+            <p style={{ color: 'var(--color-gray-light)', margin: 0 }}>Responstid: {companyConfig.supportHours}</p>
+            <p style={{ color: 'var(--color-gray-light)', margin: '0.2rem 0 0' }}>Vi svarer normalt innen 24 timer på hverdager.</p>
+          </div>
+          <div style={{ lineHeight: 1.5 }}>
+            <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.35rem' }}>Snarveier</h3>
+            <p style={{ margin: 0 }}><a href="/" style={{ color: 'var(--color-gray-light)', textDecoration: 'none' }}>Hjem</a></p>
+            <p style={{ margin: 0 }}><a href="/products/workspace" style={{ color: 'var(--color-gray-light)', textDecoration: 'none' }}>Google Workspace</a></p>
+            <p style={{ margin: 0 }}><a href="/products/clubsitecms" style={{ color: 'var(--color-gray-light)', textDecoration: 'none' }}>ClubsiteCMS</a></p>
+            <p style={{ margin: 0 }}><a href="/products/signage" style={{ color: 'var(--color-gray-light)', textDecoration: 'none' }}>Digital skilting</a></p>
+          </div>
+        </div>
+        <div className="container" style={{ marginTop: '1rem', color: 'var(--color-gray-light)', fontSize: '0.9rem' }}>
+          © 2025 Golfklubbens IT – Stabil drift. Smarte systemer.
+        </div>
+      </section>
     </div>
   )
 }

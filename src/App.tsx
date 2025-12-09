@@ -47,6 +47,7 @@ function App() {
         <Route path="/products/workspace-tools" element={<WorkspaceTools />} />
         <Route path="/products/workspace-migration" element={<WorkspaceMigration />} />
         <Route path="/products/clubsitecms" element={<ClubsiteCMS />} />
+        <Route path="/products/clubsite" element={<ClubsiteCMS />} />
         <Route path="/apps/soknadsportalen" element={<Soknadsportalen />} />
         <Route path="/apps/golfteam-time" element={<GolfTeamTime />} />
         <Route path="/apps/frivillig-kalender" element={<FrivilligKalender />} />

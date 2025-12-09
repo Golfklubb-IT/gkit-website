@@ -55,7 +55,7 @@ function Home() {
                             Fra automatisering av kjedelige oppgaver til nye inntektsstrømmer via digitale flater.
                         </p>
                     </div>
-                    <div className="services-grid">
+                    <div className="services-grid" style={{ gridTemplateColumns: 'repeat(4, minmax(220px, 1fr))' }}>
                         <div className="service-card card fade-in" onClick={() => window.location.href = '/products/golfbox'}>
                             <div className="service-icon">⚙️</div>
                             <h3>GolfBox-automatisering</h3>
