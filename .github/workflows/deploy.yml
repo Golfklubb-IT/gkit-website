@@ -4,13 +4,15 @@ on:
   push:
     branches:
       - master
+      - '**'
   workflow_dispatch:
 
 jobs:
-  # Deploy React app to Firebase Hosting
-  deploy-firebase:
-    name: Deploy to Firebase
+  # Deploy React app to Firebase Hosting (PRODUCTION - master only)
+  deploy-firebase-production:
+    name: Deploy to Firebase (Production)
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,7 +29,7 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting (Live Channel)
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -35,10 +37,44 @@ jobs:
           projectId: golfklubb-it-website
           channelId: live
 
-  # Deploy MkDocs documentation to GitHub Pages
+  # Deploy React app to Firebase Hosting (PREVIEW - all non-master branches)
+  deploy-firebase-preview:
+    name: Deploy to Firebase (Preview)
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Extract branch name
+        id: branch
+        run: echo "name=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+
+      - name: Deploy to Firebase Hosting (Preview Channel)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          projectId: golfklubb-it-website
+          channelId: ${{ steps.branch.outputs.name }}
+
+  # Deploy MkDocs documentation to GitHub Pages (MASTER ONLY)
   deploy-docs:
     name: Deploy Documentation
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     permissions:
       contents: write
     steps:
