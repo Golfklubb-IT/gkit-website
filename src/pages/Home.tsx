@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import '../App.css'
 
 function Home() {
     const [scrolled, setScrolled] = useState(false)
@@ -16,163 +13,410 @@ function Home() {
     }, [])
 
     return (
-        <div className="app">
+        <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
             {/* Header */}
-            <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+            <header style={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 100,
+                backgroundColor: '#FFFFFF',
+                borderBottom: '1px solid #E5E7EB',
+                padding: '1rem 0'
+            }}>
                 <Navbar />
             </header>
 
-            {/* SECTION 1: HERO (LIGHT THEME, CLEAN PRO) */}
-            <section className="bg-white px-6 py-20 text-center">
-                <div className="max-w-3xl mx-auto">
-                    <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-4">
-                        [TAGLINE PLACEHOLDER]
+            {/* ==================== SECTION 1: HERO ==================== */}
+            <section style={{
+                backgroundColor: '#FFFFFF',
+                padding: '5rem 1.5rem',
+                textAlign: 'center',
+                minHeight: 'auto'
+            }}>
+                <div style={{ maxWidth: '48rem', margin: '0 auto' }}>
+                    <p style={{
+                        fontSize: '0.75rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.25em',
+                        color: '#9CA3AF',
+                        marginBottom: '1rem'
+                    }}>
+                        {{TAGLINE_PLACEHOLDER}}
                     </p>
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        [HERO HEADING PLACEHOLDER]
+                    <h1 style={{
+                        fontSize: 'clamp(1.875rem, 5vw, 2.25rem)',
+                        fontWeight: 'bold',
+                        color: '#111827',
+                        marginBottom: '1rem'
+                    }}>
+                        {{HERO_TITLE}}
                     </h1>
-                    <p className="text-base md:text-lg text-gray-600 mb-8">
-                        [SHORT SUBTEXT PLACEHOLDER – 1–2 LINES]
+                    <p style={{
+                        fontSize: 'clamp(1rem, 2vw, 1.125rem)',
+                        color: '#4B5563',
+                        marginBottom: '2rem'
+                    }}>
+                        {{HERO_SUBTITLE}}
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                        <a href="#"
-                           className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium
-                                    bg-blue-600 text-white hover:bg-blue-700 transition">
-                            [PRIMARY CTA PLACEHOLDER]
-                        </a>
-                        <a href="#"
-                           className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium
-                                    border border-blue-600 text-blue-600 hover:bg-blue-50 transition">
-                            [SECONDARY CTA PLACEHOLDER]
-                        </a>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap',
+                        '@media (min-width: 640px)': {
+                            flexDirection: 'row'
+                        }
+                    }}>
+                        <button style={{
+                            padding: '0.75rem 1.5rem',
+                            backgroundColor: '#0057D9',
+                            color: '#FFFFFF',
+                            borderRadius: '0.5rem',
+                            border: 'none',
+                            fontSize: '0.875rem',
+                            fontWeight: '500',
+                            cursor: 'pointer',
+                            transition: 'background-color 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0047B3'}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0057D9'}
+                        >
+                            {{CTA_PRIMARY}}
+                        </button>
+                        <button style={{
+                            padding: '0.75rem 1.5rem',
+                            backgroundColor: '#FFFFFF',
+                            color: '#0057D9',
+                            borderRadius: '0.5rem',
+                            border: '1px solid #0057D9',
+                            fontSize: '0.875rem',
+                            fontWeight: '500',
+                            cursor: 'pointer',
+                            transition: 'background-color 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F0F9FF'}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#FFFFFF'}
+                        >
+                            {{CTA_SECONDARY}}
+                        </button>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 2: SERVICE / FEATURE CARDS (3 COLUMNS ON DESKTOP, 1 ON MOBILE) */}
-            <section className="bg-white px-6 py-16">
-                <div className="max-w-5xl mx-auto">
-                    <header className="text-center mb-10">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                            [SECTION HEADING PLACEHOLDER]
+            {/* ==================== SECTION 2: SERVICE CARDS ==================== */}
+            <section style={{
+                backgroundColor: '#FFFFFF',
+                padding: '4rem 1.5rem',
+                borderTop: '1px solid #E5E7EB'
+            }}>
+                <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <h2 style={{
+                            fontSize: '1.875rem',
+                            fontWeight: '600',
+                            color: '#111827',
+                            marginBottom: '0.5rem'
+                        }}>
+                            {{SECTION2_HEADING}}
                         </h2>
-                        <p className="text-sm md:text-base text-gray-600">
-                            [SHORT INTRO TEXT PLACEHOLDER – OPTIONAL]
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#4B5563'
+                        }}>
+                            {{SECTION2_SUBTEXT}}
                         </p>
-                    </header>
+                    </div>
 
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '1.5rem'
+                    }}>
                         {/* Card 1 */}
-                        <article className="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
-                            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{
+                            padding: '1.5rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                        }}>
+                            <div style={{
+                                width: '2.5rem',
+                                height: '2.5rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginBottom: '1rem',
+                                color: '#0057D9',
+                                fontSize: '1.25rem'
+                            }}>
+                                🔷
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                [CARD 1 TITLE PLACEHOLDER]
+                            <h3 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827',
+                                marginBottom: '0.5rem'
+                            }}>
+                                {{CARD1_TITLE}}
                             </h3>
-                            <p className="text-sm text-gray-600">
-                                [CARD 1 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                lineHeight: '1.5'
+                            }}>
+                                {{CARD1_TEXT}}
                             </p>
-                        </article>
+                        </div>
 
                         {/* Card 2 */}
-                        <article className="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
-                            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{
+                            padding: '1.5rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                        }}>
+                            <div style={{
+                                width: '2.5rem',
+                                height: '2.5rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginBottom: '1rem',
+                                color: '#0057D9',
+                                fontSize: '1.25rem'
+                            }}>
+                                🔷
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                [CARD 2 TITLE PLACEHOLDER]
+                            <h3 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827',
+                                marginBottom: '0.5rem'
+                            }}>
+                                {{CARD2_TITLE}}
                             </h3>
-                            <p className="text-sm text-gray-600">
-                                [CARD 2 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                lineHeight: '1.5'
+                            }}>
+                                {{CARD2_TEXT}}
                             </p>
-                        </article>
+                        </div>
 
                         {/* Card 3 */}
-                        <article className="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
-                            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{
+                            padding: '1.5rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+                        }}>
+                            <div style={{
+                                width: '2.5rem',
+                                height: '2.5rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginBottom: '1rem',
+                                color: '#0057D9',
+                                fontSize: '1.25rem'
+                            }}>
+                                🔷
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                [CARD 3 TITLE PLACEHOLDER]
+                            <h3 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827',
+                                marginBottom: '0.5rem'
+                            }}>
+                                {{CARD3_TITLE}}
                             </h3>
-                            <p className="text-sm text-gray-600">
-                                [CARD 3 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                lineHeight: '1.5'
+                            }}>
+                                {{CARD3_TEXT}}
                             </p>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 3: SHORT PROBLEM / BENEFIT LIST WITH ICON ROWS */}
-            <section className="bg-[#F7F9FC] px-6 py-16">
-                <div className="max-w-4xl mx-auto">
-                    <header className="text-center mb-10">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                            [SECTION HEADING PLACEHOLDER]
+            {/* ==================== SECTION 3: BENEFITS LIST ==================== */}
+            <section style={{
+                backgroundColor: '#F7F9FC',
+                padding: '4rem 1.5rem'
+            }}>
+                <div style={{ maxWidth: '64rem', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <h2 style={{
+                            fontSize: '1.875rem',
+                            fontWeight: '600',
+                            color: '#111827',
+                            marginBottom: '0.5rem'
+                        }}>
+                            {{SECTION3_HEADING}}
                         </h2>
-                        <p className="text-sm md:text-base text-gray-600">
-                            [OPTIONAL SUBTEXT PLACEHOLDER – MAX 1–2 LINES]
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#4B5563'
+                        }}>
+                            {{SECTION3_SUBTEXT}}
                         </p>
-                    </header>
+                    </div>
 
-                    <div className="space-y-4">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {/* Row 1 */}
-                        <div className="flex items-start gap-3">
-                            <div className="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                            <div style={{
+                                width: '2rem',
+                                height: '2rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#FFFFFF',
+                                border: '1px solid #E5E7EB',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginTop: '0.25rem',
+                                color: '#0057D9',
+                                fontSize: '0.875rem',
+                                flexShrink: 0
+                            }}>
+                                ✓
                             </div>
                             <div>
-                                <h3 className="text-sm font-semibold text-gray-900">
-                                    [ROW TITLE PLACEHOLDER 1]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{BENEFIT1_TITLE}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [ROW DESCRIPTION PLACEHOLDER 1 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{BENEFIT1_TEXT}}
                                 </p>
                             </div>
                         </div>
 
                         {/* Row 2 */}
-                        <div className="flex items-start gap-3">
-                            <div className="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                            <div style={{
+                                width: '2rem',
+                                height: '2rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#FFFFFF',
+                                border: '1px solid #E5E7EB',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginTop: '0.25rem',
+                                color: '#0057D9',
+                                fontSize: '0.875rem',
+                                flexShrink: 0
+                            }}>
+                                ✓
                             </div>
                             <div>
-                                <h3 className="text-sm font-semibold text-gray-900">
-                                    [ROW TITLE PLACEHOLDER 2]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{BENEFIT2_TITLE}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [ROW DESCRIPTION PLACEHOLDER 2 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{BENEFIT2_TEXT}}
                                 </p>
                             </div>
                         </div>
 
                         {/* Row 3 */}
-                        <div className="flex items-start gap-3">
-                            <div className="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                            <div style={{
+                                width: '2rem',
+                                height: '2rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#FFFFFF',
+                                border: '1px solid #E5E7EB',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginTop: '0.25rem',
+                                color: '#0057D9',
+                                fontSize: '0.875rem',
+                                flexShrink: 0
+                            }}>
+                                ✓
                             </div>
                             <div>
-                                <h3 className="text-sm font-semibold text-gray-900">
-                                    [ROW TITLE PLACEHOLDER 3]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{BENEFIT3_TITLE}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [ROW DESCRIPTION PLACEHOLDER 3 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{BENEFIT3_TEXT}}
                                 </p>
                             </div>
                         </div>
 
                         {/* Row 4 */}
-                        <div className="flex items-start gap-3">
-                            <div className="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                            <div style={{
+                                width: '2rem',
+                                height: '2rem',
+                                borderRadius: '50%',
+                                backgroundColor: '#FFFFFF',
+                                border: '1px solid #E5E7EB',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginTop: '0.25rem',
+                                color: '#0057D9',
+                                fontSize: '0.875rem',
+                                flexShrink: 0
+                            }}>
+                                ✓
                             </div>
                             <div>
-                                <h3 className="text-sm font-semibold text-gray-900">
-                                    [ROW TITLE PLACEHOLDER 4]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{BENEFIT4_TITLE}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [ROW DESCRIPTION PLACEHOLDER 4 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{BENEFIT4_TEXT}}
                                 </p>
                             </div>
                         </div>
@@ -180,144 +424,371 @@ function Home() {
                 </div>
             </section>
 
-            {/* SECTION 4: TWO HORIZONTAL CASE / PROJECT CARDS */}
-            <section className="bg-white px-6 py-16">
-                <div className="max-w-5xl mx-auto">
-                    <header className="text-center mb-10">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                            [SECTION HEADING PLACEHOLDER]
+            {/* ==================== SECTION 4: CASE CARDS ==================== */}
+            <section style={{
+                backgroundColor: '#FFFFFF',
+                padding: '4rem 1.5rem',
+                borderTop: '1px solid #E5E7EB'
+            }}>
+                <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <h2 style={{
+                            fontSize: '1.875rem',
+                            fontWeight: '600',
+                            color: '#111827',
+                            marginBottom: '0.5rem'
+                        }}>
+                            {{SECTION4_HEADING}}
                         </h2>
-                        <p className="text-sm md:text-base text-gray-600">
-                            [BRIEF SECTION DESCRIPTION PLACEHOLDER]
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#4B5563'
+                        }}>
+                            {{SECTION4_SUBTEXT}}
                         </p>
-                    </header>
+                    </div>
 
-                    <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-6">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '1.5rem'
+                    }}>
                         {/* Case 1 */}
-                        <article className="p-6 rounded-xl border border-gray-200 shadow-sm bg-white flex flex-col gap-3">
-                            <div className="w-full h-28 rounded-lg bg-gray-100 mb-2 flex items-center justify-center text-gray-400 text-xs">
-                                [THUMBNAIL / ILLUSTRATION PLACEHOLDER]
+                        <div style={{
+                            padding: '1.5rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '0.75rem'
+                        }}>
+                            <div style={{
+                                width: '100%',
+                                height: '7rem',
+                                borderRadius: '0.5rem',
+                                backgroundColor: '#F3F4F6',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#9CA3AF',
+                                fontSize: '0.75rem'
+                            }}>
+                                [IMAGE PLACEHOLDER]
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900">
-                                [CASE TITLE PLACEHOLDER 1]
+                            <h3 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827'
+                            }}>
+                                {{CASE1_TITLE}}
                             </h3>
-                            <p className="text-sm text-gray-600">
-                                [SHORT CASE DESCRIPTION PLACEHOLDER – 2–3 LINES]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                lineHeight: '1.5'
+                            }}>
+                                {{CASE1_TEXT}}
                             </p>
-                        </article>
+                        </div>
 
                         {/* Case 2 */}
-                        <article className="p-6 rounded-xl border border-gray-200 shadow-sm bg-white flex flex-col gap-3">
-                            <div className="w-full h-28 rounded-lg bg-gray-100 mb-2 flex items-center justify-center text-gray-400 text-xs">
-                                [THUMBNAIL / ILLUSTRATION PLACEHOLDER]
+                        <div style={{
+                            padding: '1.5rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF',
+                            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '0.75rem'
+                        }}>
+                            <div style={{
+                                width: '100%',
+                                height: '7rem',
+                                borderRadius: '0.5rem',
+                                backgroundColor: '#F3F4F6',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#9CA3AF',
+                                fontSize: '0.75rem'
+                            }}>
+                                [IMAGE PLACEHOLDER]
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900">
-                                [CASE TITLE PLACEHOLDER 2]
+                            <h3 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827'
+                            }}>
+                                {{CASE2_TITLE}}
                             </h3>
-                            <p className="text-sm text-gray-600">
-                                [SHORT CASE DESCRIPTION PLACEHOLDER – 2–3 LINES]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                lineHeight: '1.5'
+                            }}>
+                                {{CASE2_TEXT}}
                             </p>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 5: PRODUCT / MODULE LIST (STACKED ITEMS) */}
-            <section className="bg-white px-6 py-16">
-                <div className="max-w-4xl mx-auto">
-                    <header className="text-center mb-10">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                            [SECTION HEADING PLACEHOLDER]
+            {/* ==================== SECTION 5: PRODUCTS LIST ==================== */}
+            <section style={{
+                backgroundColor: '#FFFFFF',
+                padding: '4rem 1.5rem',
+                borderTop: '1px solid #E5E7EB'
+            }}>
+                <div style={{ maxWidth: '64rem', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <h2 style={{
+                            fontSize: '1.875rem',
+                            fontWeight: '600',
+                            color: '#111827',
+                            marginBottom: '0.5rem'
+                        }}>
+                            {{SECTION5_HEADING}}
                         </h2>
-                        <p className="text-sm md:text-base text-gray-600">
-                            [OPTIONAL SECTION SUBTEXT PLACEHOLDER]
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#4B5563'
+                        }}>
+                            {{SECTION5_SUBTEXT}}
                         </p>
-                    </header>
+                    </div>
 
-                    <div className="space-y-4">
-                        {/* Item 1 */}
-                        <article className="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
-                            <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        {/* Product 1 */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            padding: '1rem',
+                            borderRadius: '0.5rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF'
+                        }}>
+                            <div style={{
+                                width: '2.25rem',
+                                height: '2.25rem',
+                                borderRadius: '0.375rem',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#0057D9',
+                                fontSize: '1rem',
+                                flexShrink: 0
+                            }}>
+                                📦
                             </div>
                             <div>
-                                <h3 className="text-sm md:text-base font-semibold text-gray-900">
-                                    [PRODUCT / MODULE NAME PLACEHOLDER 1]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{PRODUCT1_NAME}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [SHORT DESCRIPTION PLACEHOLDER 1 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{PRODUCT1_TEXT}}
                                 </p>
                             </div>
-                        </article>
+                        </div>
 
-                        {/* Item 2 */}
-                        <article className="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
-                            <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        {/* Product 2 */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            padding: '1rem',
+                            borderRadius: '0.5rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF'
+                        }}>
+                            <div style={{
+                                width: '2.25rem',
+                                height: '2.25rem',
+                                borderRadius: '0.375rem',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#0057D9',
+                                fontSize: '1rem',
+                                flexShrink: 0
+                            }}>
+                                📦
                             </div>
                             <div>
-                                <h3 className="text-sm md:text-base font-semibold text-gray-900">
-                                    [PRODUCT / MODULE NAME PLACEHOLDER 2]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{PRODUCT2_NAME}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [SHORT DESCRIPTION PLACEHOLDER 2 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{PRODUCT2_TEXT}}
                                 </p>
                             </div>
-                        </article>
+                        </div>
 
-                        {/* Item 3 */}
-                        <article className="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
-                            <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
-                                <span className="text-xs text-blue-600">[ICON]</span>
+                        {/* Product 3 */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            padding: '1rem',
+                            borderRadius: '0.5rem',
+                            border: '1px solid #E5E7EB',
+                            backgroundColor: '#FFFFFF'
+                        }}>
+                            <div style={{
+                                width: '2.25rem',
+                                height: '2.25rem',
+                                borderRadius: '0.375rem',
+                                backgroundColor: '#F0F4FF',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#0057D9',
+                                fontSize: '1rem',
+                                flexShrink: 0
+                            }}>
+                                📦
                             </div>
                             <div>
-                                <h3 className="text-sm md:text-base font-semibold text-gray-900">
-                                    [PRODUCT / MODULE NAME PLACEHOLDER 3]
+                                <h3 style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#111827',
+                                    marginBottom: '0.25rem'
+                                }}>
+                                    {{PRODUCT3_NAME}}
                                 </h3>
-                                <p className="text-sm text-gray-600">
-                                    [SHORT DESCRIPTION PLACEHOLDER 3 – 1–2 LINES]
+                                <p style={{
+                                    fontSize: '0.875rem',
+                                    color: '#4B5563'
+                                }}>
+                                    {{PRODUCT3_TEXT}}
                                 </p>
                             </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 6: CONTACT / FOOTER (LIGHT THEME) */}
-            <footer className="bg-[#F7F9FC] px-6 py-12 border-t border-gray-200">
-                <div className="max-w-5xl mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
-                        {/* Left block */}
+            {/* ==================== SECTION 6: CONTACT FOOTER ==================== */}
+            <footer style={{
+                backgroundColor: '#F7F9FC',
+                padding: '3rem 1.5rem',
+                borderTop: '1px solid #E5E7EB'
+            }}>
+                <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '1.5rem',
+                        marginBottom: '2rem',
+                        '@media (max-width: 768px)': {
+                            gridTemplateColumns: '1fr'
+                        }
+                    }}>
+                        {/* Left */}
                         <div>
-                            <h2 className="text-lg font-semibold text-gray-900 mb-1">
-                                [CONTACT HEADING PLACEHOLDER]
+                            <h2 style={{
+                                fontSize: '1.125rem',
+                                fontWeight: '600',
+                                color: '#111827',
+                                marginBottom: '0.25rem'
+                            }}>
+                                {{FOOTER_HEADING}}
                             </h2>
-                            <p className="text-sm text-gray-600">
-                                [SHORT CONTACT OR CALL-TO-ACTION TEXT PLACEHOLDER]
+                            <p style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563'
+                            }}>
+                                {{FOOTER_SUBTEXT}}
                             </p>
                         </div>
 
-                        {/* Right block */}
-                        <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
-                            <a href="#"
-                               className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-                                [PRIMARY CONTACT CTA PLACEHOLDER]
-                            </a>
-                            <a href="#"
-                               className="text-sm text-gray-600 hover:text-gray-900 underline underline-offset-4">
-                                [SECONDARY CONTACT LINK PLACEHOLDER]
+                        {/* Right */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            flexDirection: 'column',
+                            '@media (min-width: 640px)': {
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'flex-end'
+                            }
+                        }}>
+                            <button style={{
+                                padding: '0.625rem 1.25rem',
+                                backgroundColor: '#0057D9',
+                                color: '#FFFFFF',
+                                borderRadius: '0.5rem',
+                                border: 'none',
+                                fontSize: '0.875rem',
+                                fontWeight: '500',
+                                cursor: 'pointer'
+                            }}>
+                                {{FOOTER_CTA}}
+                            </button>
+                            <a href="#" style={{
+                                fontSize: '0.875rem',
+                                color: '#4B5563',
+                                textDecoration: 'underline',
+                                textDecorationOffset: '0.25rem'
+                            }}>
+                                {{FOOTER_LINK}}
                             </a>
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-6 border-t border-gray-200">
-                        <p className="text-xs text-gray-500">
-                            [FOOTER SMALL PRINT PLACEHOLDER – E.G. COPYRIGHT / ORG INFO]
+                    {/* Bottom */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '1rem',
+                        paddingTop: '1.5rem',
+                        borderTop: '1px solid #E5E7EB',
+                        '@media (max-width: 768px)': {
+                            gridTemplateColumns: '1fr'
+                        }
+                    }}>
+                        <p style={{
+                            fontSize: '0.75rem',
+                            color: '#6B7280'
+                        }}>
+                            {{FOOTER_COPYRIGHT}}
                         </p>
-                        <div className="flex gap-4 text-xs text-gray-500">
-                            <a href="#" className="hover:text-gray-900">[LINK 1]</a>
-                            <a href="#" className="hover:text-gray-900">[LINK 2]</a>
-                            <a href="#" className="hover:text-gray-900">[LINK 3]</a>
+                        <div style={{
+                            display: 'flex',
+                            gap: '1rem',
+                            fontSize: '0.75rem',
+                            '@media (max-width: 768px)': {
+                                justifyContent: 'flex-start'
+                            }
+                        }}>
+                            <a href="#" style={{ color: '#6B7280', textDecoration: 'none' }}>
+                                {{FOOTER_LINK1}}
+                            </a>
+                            <a href="#" style={{ color: '#6B7280', textDecoration: 'none' }}>
+                                {{FOOTER_LINK2}}
+                            </a>
+                            <a href="#" style={{ color: '#6B7280', textDecoration: 'none' }}>
+                                {{FOOTER_LINK3}}
+                            </a>
                         </div>
                     </div>
                 </div>
