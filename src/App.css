@@ -559,4 +559,18 @@ section {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
 }

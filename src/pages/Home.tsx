@@ -90,12 +90,31 @@ function Home() {
                 }
                 .footer a { color: #FFFFFF; }
                 .footer a:hover { color: #4CAF50; }
+
+                /* Mobile Adjustments */
+                @media (max-width: 768px) {
+                    .card-slide { padding: 2rem 1rem; justify-content: flex-start; }
+                    .header { padding: 0.75rem 1rem; flex-direction: column; gap: 0.75rem; }
+                    .header-nav { gap: 1rem !important; }
+                    .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; text-align: center; }
+                    .hero-title { font-size: 2.25rem !important; }
+                    .hero-desc { margin-right: 0 !important; font-size: 1rem !important; }
+                    .hero-buttons { justify-content: center; flex-direction: column; }
+                    .hero-stats { justify-content: center; flex-direction: column; gap: 0.5rem !important; }
+                    .hero-image { min-height: 250px !important; font-size: 3rem !important; }
+                    .grid-2col { grid-template-columns: 1fr !important; }
+                    .grid-3col { grid-template-columns: 1fr !important; }
+                    .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+                    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+                    .section-title { font-size: 1.75rem !important; }
+                    .section-desc { font-size: 1rem !important; margin-bottom: 2rem !important; }
+                }
             `}</style>
 
             {/* HEADER */}
             <div className="header">
                 <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#4CAF50' }}>Golfklubbens IT</div>
-                <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                <div className="header-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     <button onClick={() => scrollToCard(0)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#4CAF50', fontWeight: '600', fontSize: '0.9rem' }}>Hjem</button>
                     <button onClick={() => scrollToCard(2)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#111827', fontWeight: '600', fontSize: '0.9rem' }}>Løsninger</button>
                     <button onClick={() => scrollToCard(3)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#111827', fontWeight: '600', fontSize: '0.9rem' }}>Apper</button>
@@ -112,16 +131,16 @@ function Home() {
             >
                 {/* CARD 1: HERO - ENGAGING */}
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', maxWidth: '72rem', width: '100%' }}>
+                    <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', maxWidth: '72rem', width: '100%' }}>
                         <div>
                             <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem', color: '#4CAF50', fontWeight: '700' }}>DIGITALE LØSNINGER FOR GOLF</p>
-                            <h1 style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: 1.1, color: '#111827' }}>
+                            <h1 className="hero-title" style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: 1.1, color: '#111827' }}>
                                 Moderniser Klubbdriften Din
                             </h1>
-                            <p style={{ fontSize: '1.125rem', marginBottom: '2rem', color: '#333333', lineHeight: 1.8, marginRight: '2rem' }}>
+                            <p className="hero-desc" style={{ fontSize: '1.125rem', marginBottom: '2rem', color: '#333333', lineHeight: 1.8, marginRight: '2rem' }}>
                                 Reduser driftskostnader med 40%, automatiser medlemsadministrasjon, og integrer alle systemene dine på én moderne plattform brukt av 50+ golfklubber i Norge.
                             </p>
-                            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+                            <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
                                 <button onClick={() => scrollToCard(4)} style={{ padding: '0.75rem 2rem', backgroundColor: '#4CAF50', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(76,175,80,0.2)' }}>
                                     Bestill Demo
                                 </button>
@@ -129,13 +148,13 @@ function Home() {
                                     Utforsk Apper
                                 </button>
                             </div>
-                            <div style={{ display: 'flex', gap: '2rem', fontSize: '0.9rem', color: '#333333', fontWeight: '500' }}>
+                            <div className="hero-stats" style={{ display: 'flex', gap: '2rem', fontSize: '0.9rem', color: '#333333', fontWeight: '500' }}>
                                 <div>✓ 50+ klubber stoler på oss</div>
                                 <div>✓ Norsk support 24/7</div>
                                 <div>✓ Enterprise sikkerhet</div>
                             </div>
                         </div>
-                        <div style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', borderRadius: '1rem', padding: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', color: '#FFFFFF', fontSize: '4rem' }}>
+                        <div className="hero-image" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', borderRadius: '1rem', padding: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', color: '#FFFFFF', fontSize: '4rem' }}>
                             ⛳
                         </div>
                     </div>
@@ -147,13 +166,13 @@ function Home() {
                 {/* CARD 2: PROBLEMS WITH LINKS */}
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
+                        <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
                             Utfordringene
                         </h2>
-                        <p style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center', maxWidth: '42rem', margin: '0 auto 3rem' }}>
+                        <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center', maxWidth: '42rem', margin: '0 auto 3rem' }}>
                             Golfklubber sløser tid og penger på fragmenterte systemer. Vi undersøkte 100+ klubber og fant disse kritiske problemene:
                         </p>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
+                        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
                             <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
                                 <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>40% Tidslekkasje</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Gamle systemer drener operasjonell tid</p>
@@ -181,13 +200,13 @@ function Home() {
                 {/* CARD 3: SOLUTION SYMMETRIC 2x2 */}
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
+                        <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
                             Vår Integrerte Løsning
                         </h2>
-                        <p style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
+                        <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
                             GKIT leverer IT-drift, integrasjoner og teknologiutvikling for norske golfklubber – alt fra GolfBox til ClubsiteCMS og Google Workspace.
                         </p>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                             <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚙️</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>GolfBox-automatisering</h3>
@@ -197,7 +216,7 @@ function Home() {
                             <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☁️</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>Google Workspace</h3>
-                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Komplett oppsett og forvaltning av Google Workspace skreddersydd for golfklubber med profesjonell e-post og sikkerhet.</p>
+                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Komplett oppsett og forvaltning av Google Workspace skreddersydd for golfklubber med profeshedell e-post og sikkerhet.</p>
                                 <a href="/products/workspace" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Oppsettveiledning →</a>
                             </div>
                             <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
@@ -219,13 +238,13 @@ function Home() {
                 {/* CARD 4: LIVE APPS WITH LINKS SYMMETRIC */}
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '60rem', width: '100%' }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
+                        <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
                             Live Applikasjoner
                         </h2>
-                        <p style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
+                        <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
                             6 produksjonsklar systemer i bruk på ledende golfklubber
                         </p>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
+                        <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
                             {[
                                 { icon: '📝', name: 'Søknadsportalen', status: '✅ Live', url: '/apps/soknadsportalen', desc: 'Digitaliser innsending, behandling og oppfølging av søknader.' },
                                 { icon: '⏱️', name: 'GolfTeam-Time', status: '✅ Live', url: '/apps/golfteam-time', desc: 'Personalplanlegging og timeføring for klubbansatte.' },
@@ -250,13 +269,13 @@ function Home() {
                 {/* CARD 5: BENEFITS + CONTACT FORM */}
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
+                        <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
                             Hvorfor Velge Golfklubbens IT
                         </h2>
-                        <p style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '2rem', textAlign: 'center' }}>
+                        <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '2rem', textAlign: 'center' }}>
                             Bli med 50+ klubber som stoler på oss
                         </p>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
+                        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
                             {[
                                 { icon: '⛳', title: 'Golfekspertise', desc: 'Bygget av golffolk som forstår klubboperasjoner' },
                                 { icon: '🔐', title: 'Enterprise Sikkerhet', desc: 'SOC2 sertifisert, GDPR godkjent, datakryptering' },
@@ -344,7 +363,7 @@ function Home() {
             {/* FOOTER */}
             <div className="footer">
                 <div style={{ maxWidth: '80rem', margin: '0 auto', marginBottom: '2rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem', marginBottom: '2rem' }}>
+                    <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem', marginBottom: '2rem' }}>
                         <div>
                             <h4 style={{ fontWeight: '700', marginBottom: '1rem', fontSize: '0.95rem' }}>Produkt</h4>
                             <ul style={{ listStyle: 'none' }}>
@@ -382,7 +401,7 @@ function Home() {
                             </ul>
                         </div>
                     </div>
-                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{ fontSize: '0.85rem', opacity: 0.8 }}>© 2025 Golfklubbens IT. Alle rettigheter reservert.</div>
                         <div style={{ display: 'flex', gap: '1.5rem' }}>
                             <a href="#" style={{ fontSize: '1.2rem' }}>LinkedIn</a>
