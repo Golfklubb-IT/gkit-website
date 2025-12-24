@@ -18,7 +18,7 @@ const FrivilligKalender = () => {
                         Planlegg frivillig arbeid
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        Digital kalender for planlegging av frivillig arbeid ved turneringer og arrangementer.
+                        Digital kalender for planlegging av frivillig arbeid ved turneringer og arrangementer. Gjør det enkelt for medlemmer å melde seg på vakter.
                     </p>
                     <div className="hero-cta">
                         <a href="#kontakt" className="btn btn-primary">Se demo</a>

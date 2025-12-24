@@ -18,7 +18,7 @@ const AIFileAnalyzer = () => {
                         Smart dokumentanalyse
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        AI-basert verktøy som analyserer dokumenter og produserer automatiske oppsummeringer.
+                        AI-basert verktøy som analyserer dokumenter og produserer automatiske oppsummeringer. Spar tid på administrasjon og få rask innsikt i store datamengder.
                     </p>
                     <div className="hero-cta">
                         <a href="#kontakt" className="btn btn-primary">Prøv gratis</a>

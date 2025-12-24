@@ -36,31 +36,31 @@ const ClubsiteCMS = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Hvorfor ClubsiteCMS med oss?</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Hva vi tilbyr</h2>
                 <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                     <div className="service-card glass" style={{ padding: '1.2rem' }}>
-                        <div className="service-icon">🏌️</div>
-                        <h3>Golfspesifikt CMS</h3>
-                        <p>Bygget for golfklubber: GolfBox-visning, turneringsnyheter, dokumentarkiv.</p>
-                    </div>
-                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
-                        <div className="service-icon">🚀</div>
-                        <h3>Rask oppstart</h3>
-                        <p>2–4 dager til live. Vi håndterer domene, innhold og tilganger.</p>
-                    </div>
-                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
-                        <div className="service-icon">🛠️</div>
-                        <h3>Drift & Support</h3>
-                        <p>Norsk support, feilretting, endringer og småutvikling. Vi eier driften for dere.</p>
+                        <div className="service-icon">🌐</div>
+                        <h3>Drift & Vedlikehold</h3>
+                        <p>Vi sørger for at nettsiden din alltid er oppdatert og fungerer optimalt i partnerskap med Scangolf.</p>
                     </div>
                     <div className="service-card glass" style={{ padding: '1.2rem' }}>
                         <div className="service-icon">🔗</div>
-                        <h3>Integrasjoner</h3>
-                        <p>GolfBox, Google Workspace, Display/Signage, Søknadsportalen, betalingsløsninger.</p>
+                        <h3>Sømløs Integrasjon</h3>
+                        <p>Vi kobler nettsiden mot GolfBox, kalendere og andre systemer for automatisk oppdatering av innhold.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
+                        <div className="service-icon">🛠️</div>
+                        <h3>Skreddersøm</h3>
+                        <p>Vi bygger tilpassede moduler og funksjonalitet som dekker klubbens unike behov og ønsker.</p>
+                    </div>
+                    <div className="service-card glass" style={{ padding: '1.2rem' }}>
+                        <div className="service-icon">🤝</div>
+                        <h3>Support & Rådgivning</h3>
+                        <p>Teknisk bistand og strategisk rådgivning for redaktører og administratorer i klubben.</p>
                     </div>
                 </div>
 
-                <h3 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Moduler (valgfrie)</h3>
+                <h3 style={{ textAlign: 'center', marginBottom: '1.5rem', marginTop: '3rem' }}>Moduler (valgfrie)</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
                     <div className="service-card glass" style={{ padding: '1.1rem' }}>
                         <div className="service-icon">📰</div>

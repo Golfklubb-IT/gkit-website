@@ -18,6 +18,8 @@ import WorkspaceMigration from './pages/products/WorkspaceMigration'
 import ClubsiteCMS from './pages/products/ClubsiteCMS'
 import Soknadsportalen from './pages/apps/Soknadsportalen'
 import GolfTeamTime from './pages/apps/GolfTeamTime'
+import GolfChart from './pages/apps/GolfChart'
+import SponsorDugnad from './pages/apps/SponsorDugnad'
 import FrivilligKalender from './pages/apps/FrivilligKalender'
 import AIFileAnalyzer from './pages/apps/AIFileAnalyzer'
 import Golfbilkontroll from './pages/apps/Golfbilkontroll'
@@ -50,6 +52,8 @@ function App() {
         <Route path="/products/clubsite" element={<ClubsiteCMS />} />
         <Route path="/apps/soknadsportalen" element={<Soknadsportalen />} />
         <Route path="/apps/golfteam-time" element={<GolfTeamTime />} />
+        <Route path="/apps/golfchart" element={<GolfChart />} />
+        <Route path="/apps/sponsor-dugnad" element={<SponsorDugnad />} />
         <Route path="/apps/frivillig-kalender" element={<FrivilligKalender />} />
         <Route path="/apps/ai-file-analyzer" element={<AIFileAnalyzer />} />
         <Route path="/apps/golfbilkontroll" element={<Golfbilkontroll />} />

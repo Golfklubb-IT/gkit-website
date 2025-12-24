@@ -36,31 +36,31 @@ const Signage = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva viser skjermene?</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva vi tilbyr</h2>
 
                 <div className="services-grid">
                     <div className="service-card glass">
-                        <div className="service-icon">⏰</div>
-                        <h3>Dagens Tee-tider</h3>
-                        <p>Oppdatert automatisk fra GolfBox. Vis neste spillere, tilgjengelige tider, og klubbinformasjon.</p>
+                        <div className="service-icon">🖥️</div>
+                        <h3>Oppsett & Drift</h3>
+                        <p>Vi setter opp og drifter infoskjermer for klubbhus, range og proshop, tilpasset deres lokaler.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">🌦️</div>
-                        <h3>Vær & Baneforhold</h3>
-                        <p>Lokal værmelding, UV-indeks, og dagens banestatus. Automatisk fra meteorologiske kilder.</p>
+                        <div className="service-icon">🔗</div>
+                        <h3>GolfBox Integrasjon</h3>
+                        <p>Automatisk visning av starttider, resultatlister og turneringsinfo direkte fra GolfBox.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">🏆</div>
-                        <h3>Turneringsresultater</h3>
-                        <p>Live score, leaderboards, og resultatlister. Hentet direkte fra GolfBox.</p>
+                        <div className="service-icon">ℹ️</div>
+                        <h3>Klubbinformasjon</h3>
+                        <p>Visning av værdata, banestatus, åpningstider og viktig klubbinformasjon i sanntid.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">📢</div>
-                        <h3>Annonser & Sponsorer</h3>
-                        <p>Roterende annonser for sponsorer, arrangementer og klubbtilbud. Enkel oppdatering fra CMS.</p>
+                        <div className="service-icon">💰</div>
+                        <h3>Sponsorvisning</h3>
+                        <p>Gi sponsorene deres ekstra synlighet med profesjonell visning av logoer og reklamebudskap.</p>
                     </div>
                 </div>
             </section>

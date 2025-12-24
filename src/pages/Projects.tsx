@@ -7,16 +7,32 @@ import '../App.css'
 const Projects = () => {
     const projects = [
         {
+            name: 'GolfChart MultiClub',
+            description: 'Komplett oversikt over klubbens baner, hull og statistikk. Inkluderer admin-panel for enkel oppdatering av banedata.',
+            status: 'live',
+            link: '/apps/golfchart',
+            externalUrl: 'https://golfchart.web.app/',
+            icon: '📊'
+        },
+        {
             name: 'Søknadsportalen',
-            description: 'Nettportal for håndtering av søknader, støtteordninger og medlemskap via brukervennlig webgrensesnitt.',
+            description: 'Elektronisk håndtering av søknader for medlemskap, støtteordninger og andre klubbrelaterte skjemaer.',
             status: 'live',
             link: '/apps/soknadsportalen',
             externalUrl: 'https://soknadsportalen.web.app/',
             icon: '📝'
         },
         {
+            name: 'Sponsor Dugnad',
+            description: 'Verktøy for å administrere sponsoravtaler og dugnadsarbeid. Gir full kontroll over avtaler, kontakter og oppgaver.',
+            status: 'live',
+            link: '/apps/sponsor-dugnad',
+            externalUrl: 'https://sponsor-dugnad.web.app',
+            icon: '🤝'
+        },
+        {
             name: 'GolfTeam-Time',
-            description: 'Tidregistrering og oppgavehåndtering for golfklubbers personale og frivillige team.',
+            description: 'Tidregistrering og oppgavehåndtering for golfklubbers personale og frivillige team. Enkel oversikt over timer og ressurser.',
             status: 'live',
             link: '/apps/golfteam-time',
             externalUrl: 'https://golfteam-time-eur.web.app',
@@ -24,31 +40,31 @@ const Projects = () => {
         },
         {
             name: 'Frivillig-kalender',
-            description: 'Digital kalender for planlegging av frivillig arbeid ved turneringer og arrangementer.',
+            description: 'Digital kalender for planlegging av frivillig arbeid ved turneringer og arrangementer. Gjør det enkelt for medlemmer å melde seg.',
             status: 'testing',
             link: '/apps/frivillig-kalender',
             icon: '📅'
         },
         {
-            name: 'Workspace AI File Analyzer',
-            description: 'AI-basert verktøy som analyserer dokumenter og produserer automatiske oppsummeringer.',
-            status: 'testing',
-            link: '/apps/ai-file-analyzer',
-            icon: '🤖'
-        },
-        {
             name: 'Golfbilkontroll',
-            description: 'Oversikt over klubbens golfbiler med booking- og vedlikeholdsstyring.',
+            description: 'Oversikt over klubbens golfbiler med booking- og vedlikeholdsstyring. Hold kontroll på flåten og utleie.',
             status: 'testing',
             link: '/apps/golfbilkontroll',
             icon: '🚗'
         },
         {
             name: 'Booking & Kalenderløsninger',
-            description: 'Systemer for simulator, instruktør og frivillige timeplanlegging.',
+            description: 'Systemer for simulator, instruktør og frivillige timeplanlegging. Tilpasset klubbens spesifikke behov.',
             status: 'testing',
             link: '/apps/booking-kalender',
             icon: '📱'
+        },
+        {
+            name: 'Workspace AI File Analyzer',
+            description: 'AI-basert verktøy som analyserer dokumenter og produserer automatiske oppsummeringer. Spar tid på administrasjon.',
+            status: 'testing',
+            link: '/apps/ai-file-analyzer',
+            icon: '🤖'
         }
     ]
 

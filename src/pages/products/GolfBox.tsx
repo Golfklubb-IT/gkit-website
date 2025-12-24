@@ -39,31 +39,31 @@ const GolfBox = () => {
 
             {/* Features Section */}
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva gjør vi?</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva vi tilbyr</h2>
 
                 <div className="services-grid">
                     <div className="service-card glass">
-                        <div className="service-icon">📧</div>
-                        <h3>E-post Automatisering</h3>
-                        <p>Automatiske bekreftelser, påminnelser og oppfølginger direkte fra GolfBox. Spar timer hver uke.</p>
+                        <div className="service-icon">⚙️</div>
+                        <h3>Oppsett & Optimalisering</h3>
+                        <p>Vi hjelper klubben med å sette opp GolfBox riktig fra start, og optimaliserer eksisterende oppsett for bedre flyt.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">🔄</div>
-                        <h3>Data-synkronisering</h3>
-                        <p>Hold medlemsdata, betalinger og bookinger synkronisert mellom GolfBox, nettside og regnskapssystem.</p>
+                        <div className="service-icon">🔗</div>
+                        <h3>Sømløs Integrasjon</h3>
+                        <p>Vi kobler GolfBox mot regnskap, CRM, nettside og andre systemer slik at data flyter automatisk.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">📊</div>
-                        <h3>Rapportering</h3>
-                        <p>Automatiske rapporter til styret: økonomi, medlemsutvikling, baneutlastning. Alltid oppdatert.</p>
+                        <div className="service-icon">🤖</div>
+                        <h3>Automatisering</h3>
+                        <p>Automatisering av medlemskommunikasjon, fakturering og repeterende oppgaver. Spar tid og unngå manuelle feil.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">🔐</div>
-                        <h3>Sikker Integrasjon</h3>
-                        <p>Google Cloud-basert. GDPR-kompatibel. Alltid kryptert. Ingen data lagres lokalt.</p>
+                        <div className="service-icon">🎓</div>
+                        <h3>Opplæring & Support</h3>
+                        <p>Vi gir ansatte og frivillige den nødvendige opplæringen for å bruke systemet effektivt, og tilbyr løpende support.</p>
                     </div>
                 </div>
             </section>

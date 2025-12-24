@@ -37,16 +37,19 @@ const About = () => {
                         <h2>Hvorfor velge <span className="text-gradient-green">Golfklubbens IT?</span></h2>
                         <ul className="why-list" style={{ maxWidth: '800px', margin: '2rem auto', textAlign: 'left' }}>
                             <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
-                                <strong>Spisskompetanse på norske golfklubber</strong> – Vi kjenner bransjen innenfra og vet hva som fungerer.
+                                <strong>Spisskompetanse på norske golfklubber</strong> – Vi kjenner bransjen innenfra og vet hva som fungerer for norske klubber.
                             </li>
                             <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
-                                <strong>Dyp erfaring med tekniske systemer</strong> – GolfBox, ClubsiteCMS, Google Workspace – vi har jobbet med dem alle.
+                                <strong>Dyp erfaring med tekniske systemer</strong> – GolfBox, ClubsiteCMS, Google Workspace – vi har jobbet med dem alle i mange år.
                             </li>
                             <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
-                                <strong>Profesjonell drift og leveransekvalitet</strong> – Vi tar ansvar for at systemene fungerer, døgnet rundt.
+                                <strong>Profesjonell drift og leveransekvalitet</strong> – Vi tar ansvar for at systemene fungerer, slik at dere kan fokusere på banen.
                             </li>
                             <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
-                                <strong>Effektive automasjoner</strong> – Vi sparer klubber tid og penger ved å automatisere kjedelige oppgaver.
+                                <strong>Effektive automasjoner</strong> – Vi sparer klubber tid og penger ved å automatisere kjedelige og manuelle oppgaver.
+                            </li>
+                            <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                                <strong>Strategisk partner</strong> – Vi er ikke bare en leverandør, men en partner som hjelper dere å nå deres mål.
                             </li>
                         </ul>
                     </div>

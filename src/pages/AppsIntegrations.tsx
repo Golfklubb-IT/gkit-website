@@ -4,11 +4,12 @@ import Footer from '../components/Footer'
 import '../App.css'
 
 const appsReady = [
-    { name: 'Golfklubbens IT Website', url: 'https://golfklubb-it-website.web.app', status: 'Live', description: 'Offisiell nettside og leads.' },
-    { name: 'Loftlogic Display', url: 'https://loftlogic-display.web.app', status: 'Live', description: 'Digital skilting på klubbhus og range.' },
-    { name: 'Søknadsportalen', url: 'https://soknadsportalen.web.app/', status: 'Live', description: 'Elektronisk søknadshåndtering.' },
-    { name: 'Sponsor Dugnad', url: 'https://sponsor-dugnad.web.app', status: 'Live', description: 'Sponsor- og dugnadsapp for klubber.' },
-    { name: 'GolfTeam-Time', url: 'https://golfTeam-time.web.app', status: 'Live', description: 'Tidsregistrering for ansatte og frivillige.' }
+    { name: 'GolfChart MultiClub', url: 'https://golfchart.web.app/', status: 'Live', description: 'Komplett oversikt over klubbens baner, hull og statistikk.' },
+    { name: 'Søknadsportalen', url: 'https://soknadsportalen.web.app/', status: 'Live', description: 'Elektronisk håndtering av søknader for medlemskap og støtte.' },
+    { name: 'Sponsor Dugnad', url: 'https://sponsor-dugnad.web.app', status: 'Live', description: 'Verktøy for å administrere sponsoravtaler og dugnadsarbeid.' },
+    { name: 'GolfTeam-Time', url: 'https://golfteam-time-eur.web.app', status: 'Live', description: 'Tidregistrering og oppgavehåndtering for ansatte og frivillige.' },
+    { name: 'Loftlogic Display', url: 'https://loftlogic-display.web.app', status: 'Live', description: 'Digital skilting for klubbhus, range og proshop.' },
+    { name: 'Golfklubbens IT Website', url: 'https://golfklubb-it-website.web.app', status: 'Live', description: 'Vår egen plattform for informasjon og kundekontakt.' }
 ]
 
 const docsAndGuides = [

@@ -28,31 +28,31 @@ const Workspace = () => {
 
             {/* Value Props */}
             <section className="container section-padding">
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hvorfor Google Workspace?</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva vi leverer</h2>
 
                 <div className="services-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
                     <div className="service-card glass">
-                        <div className="service-icon">📧</div>
-                        <h3>Profesjonell E-post</h3>
-                        <p>@dinklub.no for alle ansatte og tillitsvalgte. Gmail-kvalitet uten annonser. Spam- og virusbeskyttelse inkludert.</p>
+                        <div className="service-icon">🛠️</div>
+                        <h3>Oppsett & Administrasjon</h3>
+                        <p>Vi setter opp og administrerer Google Workspace for klubben, inkludert domeneoppsett og brukerhåndtering.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">💼</div>
-                        <h3>Ubegrenset Lagring</h3>
-                        <p>Google Drive med ubegrenset plass. Alle dokumenter, bilder og videoer på ett sted. Tilgjengelig overalt.</p>
+                        <div className="service-icon">🚚</div>
+                        <h3>Sømløs Migrering</h3>
+                        <p>Vi flytter e-post og data fra deres nåværende systemer til Google Workspace uten nedetid eller tap av data.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">👥</div>
-                        <h3>Samarbeid i Sanntid</h3>
-                        <p>Flere personer kan redigere samme dokument samtidig. Ingen e-post med vedlegg fram og tilbake.</p>
+                        <div className="service-icon">🛡️</div>
+                        <h3>Sikkerhet & Tilgang</h3>
+                        <p>Vi sørger for riktig sikkerhetsoppsett og tilgangsstyring, slik at klubbens data er trygg og kun tilgjengelig for de rette personene.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">🔐</div>
-                        <h3>Sikkerhet & GDPR</h3>
-                        <p>2-faktor autentisering, kryptert lagring, backup, admin-kontroll. Fullt GDPR-kompatibel.</p>
+                        <div className="service-icon">🎓</div>
+                        <h3>Opplæring & Support</h3>
+                        <p>Vi gir ansatte og frivillige opplæring i bruk av Google Drive, Docs, Sheets og Meet for mer effektivt samarbeid.</p>
                     </div>
                 </div>
             </section>

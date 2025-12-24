@@ -38,31 +38,31 @@ const GolfTeamTime = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Funksjoner</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva vi tilbyr</h2>
 
                 <div className="services-grid">
                     <div className="service-card glass">
                         <div className="service-icon">⏱️</div>
-                        <h3>Enkel Timeregistrering</h3>
-                        <p>Ansatte og frivillige registrerer timer enkelt fra mobilen. Full oversikt over tidsbruk på ulike prosjekter.</p>
+                        <h3>Tidregistrering</h3>
+                        <p>Enkel og rask registrering av timer for både fast ansatte og frivillige teammedlemmer.</p>
                     </div>
 
                     <div className="service-card glass">
                         <div className="service-icon">📋</div>
-                        <h3>Oppgavestyring</h3>
-                        <p>Tildel oppgaver til teamet. Følg fremdrift og få beskjed når jobben er gjort.</p>
+                        <h3>Oppgavehåndtering</h3>
+                        <p>Full kontroll på oppgaver og prosjekter. Fordel ressurser der det trengs mest på banen eller i klubbhuset.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">👥</div>
-                        <h3>Team-oversikt</h3>
-                        <p>Se hvem som er på jobb, hvem som har ferie, og planlegg bemanningen effektivt.</p>
+                        <div className="service-icon">📊</div>
+                        <h3>Ressursoversikt</h3>
+                        <p>Få sanntidsoversikt over hvem som jobber med hva, og planlegg bemanningen mer effektivt.</p>
                     </div>
 
                     <div className="service-card glass">
                         <div className="service-icon">📱</div>
-                        <h3>Mobilapp</h3>
-                        <p>Alt fungerer sømløst på mobil. Ingen behov for PC ute på banen.</p>
+                        <h3>Mobilvennlig</h3>
+                        <p>Appen er optimalisert for bruk på farten, slik at ansatte kan registrere timer direkte fra banen.</p>
                     </div>
                 </div>
             </section>

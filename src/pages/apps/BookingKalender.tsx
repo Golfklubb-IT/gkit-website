@@ -18,7 +18,7 @@ const BookingKalender = () => {
                         For simulator og instruktør
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        Systemer for simulator, instruktør og frivillige timeplanlegging.
+                        Systemer for simulator, instruktør og frivillige timeplanlegging. Skreddersydde løsninger tilpasset klubbens spesifikke behov.
                     </p>
                     <div className="hero-cta">
                         <a href="#kontakt" className="btn btn-primary">Kom i gang</a>

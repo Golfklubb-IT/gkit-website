@@ -18,7 +18,7 @@ const Golfbilkontroll = () => {
                         Oversikt over golfbiler
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        Oversikt over klubbens golfbiler med booking- og vedlikeholdsstyring.
+                        Oversikt over klubbens golfbiler med booking- og vedlikeholdsstyring. Hold full kontroll på flåten, utleie og servicebehov.
                     </p>
                     <div className="hero-cta">
                         <a href="#kontakt" className="btn btn-primary">Be om demo</a>

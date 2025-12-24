@@ -36,31 +36,31 @@ const Soknadsportalen = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Funksjoner</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva vi tilbyr</h2>
 
                 <div className="services-grid">
                     <div className="service-card glass">
                         <div className="service-icon">📝</div>
-                        <h3>Digitale Søknader</h3>
-                        <p>Medlemmer søker om tilskudd, støtte og medlemskap direkte i portalen. Automatisk validering og behandling.</p>
+                        <h3>Elektronisk Håndtering</h3>
+                        <p>Full kontroll på søknader for medlemskap, støtteordninger og andre klubbrelaterte skjemaer i ett system.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">📊</div>
-                        <h3>Saksbehandling</h3>
-                        <p>Styret håndterer søknader digitalt. Oversikt, status-tracking og automatiske varsler.</p>
+                        <div className="service-icon">⚡</div>
+                        <h3>Effektiv Behandling</h3>
+                        <p>Spar tid på administrasjon med automatiserte prosesser for mottak og behandling av søknader.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">📄</div>
-                        <h3>Dokumentarkiv</h3>
-                        <p>Alle søknader og vedlegg arkiveres automatisk. Søkbart, sikkert og GDPR-kompatibelt.</p>
+                        <div className="service-icon">🔒</div>
+                        <h3>Sikker Lagring</h3>
+                        <p>Alle søknader og personopplysninger lagres trygt og i henhold til gjeldende personvernregler.</p>
                     </div>
 
                     <div className="service-card glass">
-                        <div className="service-icon">✅</div>
-                        <h3>Automatisk Godkjenning</h3>
-                        <p>Sett opp regler for automatisk godkjenning av enkle søknader. Spar tid på administrasjon.</p>
+                        <div className="service-icon">📈</div>
+                        <h3>Oversikt & Rapportering</h3>
+                        <p>Få full oversikt over antall søknader, status og historikk med innebygde rapporteringsverktøy.</p>
                     </div>
                 </div>
             </section>

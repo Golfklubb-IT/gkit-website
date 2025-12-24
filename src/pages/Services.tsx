@@ -60,8 +60,8 @@ const Services = () => {
                 <div className="hero-content fade-in-up">
                     <h1>Våre <span className="text-gradient-green">Tjenester</span></h1>
                     <p style={{ fontSize: '1.2rem', color: 'var(--color-gray-light)', maxWidth: '700px', margin: '0 auto' }}>
-                        Vi leverer ikke bare programvare – vi leverer en enklere hverdag.
-                        Fra automatisering av GolfBox til komplette driftsløsninger.
+                        GKIT leverer IT-drift, integrasjoner og teknologiutvikling for norske golfklubber. 
+                        Vi tar ansvar for teknologien, slik at klubbens ansatte og frivillige kan bruke tiden på det som betyr mest.
                     </p>
                 </div>
             </section>
@@ -100,14 +100,15 @@ const Services = () => {
                         <h2>GolfBox Automatisering & Integrasjon</h2>
                         <p className="lead">Få mer ut av systemet du bruker mest.</p>
                         <p>
-                            GolfBox er hjertet i norske golfklubber, men mange bruker mye tid på manuelle prosesser.
-                            Golfklubbens IT er eksperter på GolfBox-APIet og kan automatisere dataflyten din.
+                            Sømløs integrasjon og automatisering av klubbens GolfBox-system for effektiv drift. 
+                            Vi kobler GolfBox med andre verktøy slik at man unngår dobbeltarbeid og sparer tid på 
+                            håndtering av turneringsdata, starttider og resultater.
                         </p>
                         <ul className="feature-list">
-                            <li><strong>Automatisk synkronisering:</strong> Hold medlemslister oppdatert i nyhetsbrevsystemer (MailChimp, etc.) og regnskapssystemer helt automatisk.</li>
-                            <li><strong>Starttids-analyser:</strong> Få skreddersydde rapporter på belegg, no-show og bookingmønstre som GolfBox ikke gir deg standard.</li>
-                            <li><strong>Turneringsvisning:</strong> Vis live resultater og startlister på infoskjermer og nettsider med eget design, uten iframes som knekker.</li>
-                            <li><strong>Custom Booking:</strong> Trenger du egne regler for booking av simulator eller pro-timer? Vi bygger skreddersydde bookingløsninger på toppen av GolfBox.</li>
+                            <li><strong>Automatisk synkronisering:</strong> Hold medlemslister oppdatert i nyhetsbrevsystemer og regnskapssystemer helt automatisk.</li>
+                            <li><strong>Live resultater:</strong> Vis live resultater og startlister på infoskjermer og nettsider med eget design.</li>
+                            <li><strong>Betalingsintegrasjon:</strong> Koble GolfBox mot moderne betalingsløsninger som Nets Easy og Vipps.</li>
+                            <li><strong>Custom Booking:</strong> Skreddersydde bookingløsninger for simulator, pro-timer og anlegg på toppen av GolfBox.</li>
                         </ul>
                         <Link to="/products/golfbox" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
                             Les mer →
@@ -121,17 +122,18 @@ const Services = () => {
                 <div className="service-deep-dive fade-in">
                     <div className="service-content">
                         <div className="service-icon-large">📺</div>
-                        <h2>Digital Skilting / Infoskjermer</h2>
-                        <p className="lead">Kommuniser med medlemmene der de er.</p>
+                        <h2>Digital skilting og dataflyt</h2>
+                        <p className="lead">Moderne løsninger for sanntidsoppdateringer på skjermer.</p>
                         <p>
-                            Glem USB-pinner og manuelle oppdateringer. Vår løsning for infoskjermer er skybasert,
-                            alltid oppdatert, og krever ingen dyr hardware.
+                            Vi tilbyr Loftlogic Display, en webapp for sanntidsoppdaterte infoskjermer på anlegget. 
+                            Dette gir medlemmer og gjester oppdatert informasjon (starttider, vær, kampanjer m.m.) 
+                            på skjermer, helt automagisk.
                         </p>
                         <ul className="feature-list">
-                            <li><strong>Hardware-uavhengig:</strong> Bruk hvilken som helst Smart-TV eller skjerm med nettleser. Ingen dyre bokser nødvendig.</li>
-                            <li><strong>Sanntidsdata:</strong> Vis ledige starttider, dagens vær, banestatus (åpen/stengt) og turneringsresultater live.</li>
-                            <li><strong>Enkel administrasjon:</strong> Oppdater innholdet fra mobilen, uansett hvor du er.</li>
+                            <li><strong>Sanntidsdata:</strong> Vis ledige starttider, dagens vær, banestatus og turneringsresultater live.</li>
+                            <li><strong>Hardware-uavhengig:</strong> Bruk hvilken som helst Smart-TV eller skjerm med nettleser.</li>
                             <li><strong>Sponsorplass:</strong> Dedikerte soner for sponsorer gir en ny inntektskilde for klubben.</li>
+                            <li><strong>Enkel administrasjon:</strong> Oppdater innholdet fra mobilen, uansett hvor du er.</li>
                         </ul>
                         <Link to="/products/signage" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
                             Les mer →
@@ -145,17 +147,17 @@ const Services = () => {
                 <div className="service-deep-dive fade-in">
                     <div className="service-content">
                         <div className="service-icon-large">☁️</div>
-                        <h2>Google Workspace for Golfklubber</h2>
-                        <p className="lead">En proff digital arbeidsplass for administrasjon og styre.</p>
+                        <h2>Google Workspace for klubber</h2>
+                        <p className="lead">Komplett oppsett og forvaltning skreddersydd for golfklubber.</p>
                         <p>
-                            Mange klubber sliter med blanding av private e-poster, mistede dokumenter ved styrebytter,
-                            og dårlig datasikkerhet. Vi setter opp og drifter en profesjonell Google Workspace-løsning.
+                            Vi sørger for profesjonell e-postdomene, delte kalendere og sikre filområder, 
+                            slik at klubbens kommunikasjon og samarbeid flyter problemfritt mellom administrasjon og styre.
                         </p>
                         <ul className="feature-list">
-                            <li><strong>Profesjonell E-post:</strong> `post@dinklubb.no` og personlige adresser til ansatte. Ser proft ut, og sikrer at e-posten kommer frem.</li>
-                            <li><strong>Felles Disk (Shared Drives):</strong> Sikre at dokumenter eies av klubben, ikke privatpersoner. Gjør overganger i styret sømløse.</li>
-                            <li><strong>Samhandling:</strong> Bruk Google Meet, Chat og Kalender for effektiv kommunikasjon mellom administrasjon, pro, greenkeepere og styret.</li>
-                            <li><strong>Sikkerhet:</strong> Vi setter opp 2-faktor autentisering og sikkerhetsregler så klubbens data er trygge.</li>
+                            <li><strong>Profesjonell e-post:</strong> E-postadresser med klubbens eget domene (@dinklubb.no).</li>
+                            <li><strong>Sikkert samarbeid:</strong> Delte stasjoner for styre og administrasjon med kontrollert tilgang.</li>
+                            <li><strong>Utrullingsverktøy:</strong> Vi bruker egne verktøy for rask og sikker utrulling av kontoer for nye klubber.</li>
+                            <li><strong>Support:</strong> Norsk support for alle brukere i klubben.</li>
                         </ul>
                         <Link to="/products/workspace" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
                             Les mer →
@@ -169,16 +171,18 @@ const Services = () => {
                 <div className="service-deep-dive fade-in">
                     <div className="service-content">
                         <div className="service-icon-large">🌐</div>
-                        <h2>ClubsiteCMS & Webutvikling</h2>
+                        <h2>ClubsiteCMS drift og integrasjoner</h2>
                         <p className="lead">Vi kjenner plattformen din.</p>
                         <p>
-                            Som sertifisert partner på ClubsiteCMS hjelper vi deg å utnytte plattformen maksimalt.
-                            Vi bygger også moderne tilleggsapplikasjoner som integreres sømløst.
+                            Drift av klubbens nettside gjennom ClubsiteCMS, Norges ledende golfplattform (benyttes av 45+ klubber). 
+                            Vi integrerer klubbens webside med GolfBox og andre systemer, og tilpasser funksjonalitet etter klubbens behov 
+                            – alt i partnerskap med Scangolf.
                         </p>
                         <ul className="feature-list">
-                            <li><strong>Drift og Vedlikehold:</strong> Vi sørger for at nettsiden din alltid er oppdatert og fungerer.</li>
-                            <li><strong>Innholdsproduksjon:</strong> Vi hjelper med tekst og bilder som selger klubben.</li>
-                            <li><strong>Skreddersøm:</strong> Trenger du en funksjon Clubsite ikke har? Vi bygger den som en "widget" og integrerer den.</li>
+                            <li><strong>Drift og Vedlikehold:</strong> Vi sørger for at nettsiden din alltid er oppdatert og fungerer i partnerskap med Scangolf.</li>
+                            <li><strong>Sømløs integrasjon:</strong> Vi kobler nettsiden mot GolfBox, kalendere og andre systemer for automatisk oppdatering.</li>
+                            <li><strong>Skreddersøm:</strong> Vi bygger tilpassede moduler og funksjonalitet som dekker klubbens unike behov.</li>
+                            <li><strong>Support:</strong> Teknisk bistand og rådgivning for redaktører og administratorer.</li>
                         </ul>
                         <Link to="/products/clubsite" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
                             Les mer →
