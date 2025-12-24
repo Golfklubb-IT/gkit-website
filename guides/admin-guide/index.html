@@ -959,32 +959,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mock-cms" class="md-nav__link">
+  <a href="#firestore-cms-nytt-i-desember-2025" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mock CMS
+        Firestore CMS (Nytt i Desember 2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firestore CMS (Nytt i Desember 2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slik-endrer-du-innholdet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slik endrer du innholdet:
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#endre-innhold" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endre innhold
-      
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fremtidig-cms" class="md-nav__link">
+  <a href="#mock-cms-gammelt-oppsett" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fremtidig CMS
+        Mock CMS (Gammelt oppsett)
       
     </span>
   </a>
@@ -1448,29 +1454,25 @@
 <li><code>closed</code> - Lukket</li>
 </ol>
 <h2 id="administrere-innhold">Administrere innhold<a class="headerlink" href="#administrere-innhold" title="Permanent link">&para;</a></h2>
-<h3 id="mock-cms">Mock CMS<a class="headerlink" href="#mock-cms" title="Permanent link">&para;</a></h3>
-<p>Innhold styres foreløpig av <code>src/mock_cms.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;blog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="endre-innhold">Endre innhold<a class="headerlink" href="#endre-innhold" title="Permanent link">&para;</a></h3>
+<h3 id="firestore-cms-nytt-i-desember-2025">Firestore CMS (Nytt i Desember 2025)<a class="headerlink" href="#firestore-cms-nytt-i-desember-2025" title="Permanent link">&para;</a></h3>
+<p>Nettsiden henter nå innholdet sitt dynamisk fra <strong>Firebase Firestore</strong>. Dette betyr at du kan endre tekst, ikoner og lenker uten å skrive kode.</p>
+<h4 id="slik-endrer-du-innholdet">Slik endrer du innholdet:<a class="headerlink" href="#slik-endrer-du-innholdet" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Åpne <code>src/mock_cms.json</code></li>
-<li>Endre JSON-data</li>
-<li>Commit og push til GitHub</li>
-<li>Automatisk deployment</li>
-</ol>
-<h3 id="fremtidig-cms">Fremtidig CMS<a class="headerlink" href="#fremtidig-cms" title="Permanent link">&para;</a></h3>
-<p>GKIT Website vil få et fullverdig CMS (ClubsiteCMS):</p>
-<ul>
-<li>Web-basert admin-panel</li>
-<li>WYSIWYG-editor</li>
-<li>Bildehåndtering</li>
-<li>Versjonskontroll</li>
+<li>Logg inn på <a href="https://console.firebase.google.com/">Firebase Console</a>.</li>
+<li>Gå til <strong>Firestore Database</strong>.</li>
+<li>Finn samlingen (Collection) <code>content</code>.</li>
+<li>Velg dokumentet <code>home</code>.</li>
+<li>Her ser du alle feltene som styrer forsiden:<ul>
+<li><code>hero</code>: Overskrift, tagline, beskrivelse og knapper.</li>
+<li><code>challenges</code>: Liste over utfordringer.</li>
+<li><code>solutions</code>: Liste over løsninger med ikoner.</li>
+<li><code>apps</code>: Oversikt over live applikasjoner.</li>
+<li><code>benefits</code>: Fordeler ved å velge GKIT.</li>
 </ul>
+</li>
+</ol>
+<h3 id="mock-cms-gammelt-oppsett">Mock CMS (Gammelt oppsett)<a class="headerlink" href="#mock-cms-gammelt-oppsett" title="Permanent link">&para;</a></h3>
+<p>Innhold for blogg og visse tjenester styres fortsatt av <code>src/mock_cms.json</code>:</p>
 <h2 id="firebase-hosting">Firebase Hosting<a class="headerlink" href="#firebase-hosting" title="Permanent link">&para;</a></h2>
 <h3 id="deploy-ny-versjon">Deploy ny versjon<a class="headerlink" href="#deploy-ny-versjon" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Build</span>

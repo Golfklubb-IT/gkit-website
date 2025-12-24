@@ -1191,10 +1191,10 @@
 </ul>
 <h2 id="dataflyt">Dataflyt<a class="headerlink" href="#dataflyt" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Bruker navigerer til siden</li>
-<li>React Router laster riktig side-komponent</li>
-<li>Komponenter henter data fra Firestore (hvis nødvendig)</li>
-<li>Firebase Functions håndterer server-side logikk</li>
+<li>Bruker navigerer til siden.</li>
+<li>React Router laster riktig side-komponent.</li>
+<li><strong>Firestore CMS</strong>: Forsiden (<code>Home.tsx</code>) henter dynamisk innhold fra Firestore-samlingen <code>content/home</code>. Hvis Firestore er utilgjengelig, brukes lokale fallback-filer (<code>src/config/homeContent.ts</code>).</li>
+<li>Firebase Functions håndterer server-side logikk (f.eks. e-postvarsling ved nye leads).</li>
 <li>Google Analytics tracker brukeraktivitet</li>
 </ol>
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
