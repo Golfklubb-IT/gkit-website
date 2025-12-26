@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { HelmetProvider } from 'react-helmet-async'
-import ReactGA from 'react-ga4'
+import { usePageTracking } from './hooks/usePageTracking'
 import Home from './pages/Home'
 import Club2026 from './pages/Club2026'
 import About from './pages/About'
@@ -38,14 +37,13 @@ import SpleisIntegration from './pages/integrations/Spleis'
 import GrasrotandelenIntegration from './pages/integrations/Grasrotandelen'
 import './App.css'
 
-// Initialize GA4 - Replace with your actual Measurement ID
-ReactGA.initialize('G-XXXXXXXXXX')
-
 function App() {
+  // Track page views on route changes
+  usePageTracking()
+
   return (
-    <HelmetProvider>
-      <Router>
-        <Routes>
+    <Router>
+      <Routes>
           {/* Main Pages */}
           <Route path="/" element={<Home />} />
         <Route path="/2026" element={<Club2026 />} />
@@ -88,7 +86,6 @@ function App() {
         <Route path="/integrations/grasrotandelen" element={<GrasrotandelenIntegration />} />
       </Routes>
     </Router>
-    </HelmetProvider>
   )
 }
 
