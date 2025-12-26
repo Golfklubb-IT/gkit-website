@@ -18,6 +18,13 @@ Denne dokumentasjonen inneholder:
 - **Administratorer** som skal drifte løsningen
 - **Prosjektledere** som trenger oversikt
 
+## 📚 Dokumentasjon
+
+### SEO Implementasjon (NYT!)
+- **[Phase 1 SEO Completion Report](PHASE1_COMPLETION_REPORT.md)** - Oversikt over Phase 1 implementasjon
+- **[SEO Optimization Guide](SEO_OPTIMIZATION.md)** - Detaljert SEO guide med alle schemas og best practices
+- **[SEO Quick Reference](SEO_QUICK_REFERENCE.md)** - Lynguide for rask SEO optimalisering av flere sider
+
 ## Hurtigstart
 
 1. Installer Python 3.10+
