@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const DigitalSignage = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'Digital Skilting', path: '/products/digital-signage' }
+    ]
+
     return (
+        <SEOMeta
+            title="Digital Skilting | Moderne signage for golfklubber"
+            description="Digital skilting og infoskårmer for golfklubber. Styr turneringer, medlemsinfo og nyheter på skårmer rundt klubben."
+            keywords={['digital skilting', 'signage', 'skjermer', 'golfklubb', 'infoskårm']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Digital Skilting',
+                    description: 'Moderne signage og infoskårmer for golfklubber',
+                    url: 'https://golfklubb-it-website.web.app/products/digital-signage'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -204,6 +227,7 @@ const DigitalSignage = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

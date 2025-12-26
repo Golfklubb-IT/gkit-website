@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const GrasrotandelenIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'Grasrotandelen', path: '/integrations/grasrotandelen' }
+    ]
+
     return (
+        <SEOMeta
+            title="Grasrotandelen | Automatisert giverprogramm for golfklubb"
+            description="Grasrotandelen-integrasjon for golfklubber. Automatiser gi-programmer og donasjonsamlinger direkte fra GolfBox."
+            keywords={['grasrotandelen', 'giverprogram', 'donasjon', 'golfklubb', 'fundraising']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Grasrotandelen',
+                    description: 'Grasrotandelen-integrasjon for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/integrations/grasrotandelen'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -170,6 +193,7 @@ const GrasrotandelenIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

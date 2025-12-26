@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const Golfbilkontroll = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'Golfbilkontroll', path: '/apps/golfbilkontroll' }
+    ]
+
     return (
+        <SEOMeta
+            title="Golfbilkontroll | Køretøykontroll og vedlikehold"
+            description="App for kontroll og vedlikehold av klubbens køretøyer. Registrer inspeksjoner, serviceoppdrag og sikkerhet."
+            keywords={['golfbil', 'kontroll', 'vedlikehold', 'bil', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Golfbilkontroll',
+                    description: 'Køretøykontroll og vedliholdssystem for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/apps/golfbilkontroll'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -163,6 +186,7 @@ const Golfbilkontroll = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

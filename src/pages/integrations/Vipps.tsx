@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const VippsIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'Vipps', path: '/integrations/vipps' }
+    ]
+
     return (
+        <SEOMeta
+            title="Vipps | Mobilbetaling for golfklubb"
+            description="Vipps-integrasjon for GolfBox. Motta medlemsbetaling via Vipps - enkel og sikker betaling fra mobiltelefonen."
+            keywords={['vipps', 'mobilbetaling', 'betaling', 'golfklubb', 'medlemsbetaling']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Vipps',
+                    description: 'Vipps mobilbetaling-integrasjon for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/integrations/vipps'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -151,6 +174,7 @@ const VippsIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const ScangolfIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'Scangolf', path: '/integrations/scangolf' }
+    ]
+
     return (
+        <SEOMeta
+            title="Scangolf | Integrasjon av handicap og statistikk"
+            description="Scangolf-integrasjon for golfklubb. Synkroniser handicap, statistikk og resultater fra NGF."
+            keywords={['scangolf', 'handicap', 'ngf', 'statistikk', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Scangolf',
+                    description: 'Scangolf-integrasjon for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/integrations/scangolf'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -151,6 +174,7 @@ const ScangolfIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

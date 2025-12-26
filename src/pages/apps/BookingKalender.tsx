@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const BookingKalender = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'Booking Kalender', path: '/apps/booking-kalender' }
+    ]
+
     return (
+        <SEOMeta
+            title="Booking Kalender | Reservasjon og planlegging for golfklubb"
+            description="Smart bookingkalender for golfklubb. Reservering av banen, rom, utstyr og arrangementer. Integrert med GolfBox."
+            keywords={['booking', 'kalender', 'reservasjon', 'golfklubb', 'planlegging']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Booking Kalender',
+                    description: 'Smart booking- og reservasjonssystem for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/apps/booking-kalender'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -215,6 +238,7 @@ const BookingKalender = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

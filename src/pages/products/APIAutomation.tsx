@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const APIAutomation = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'API & Automasjon', path: '/products/api-automation' }
+    ]
+
     return (
+        <SEOMeta
+            title="API & Automasjon | Skreddersydde integrasjoner for golfklubber"
+            description="API-utvikling og automatiserte arbeidsflyter som binder sammen klubbens systemer. n8n, Zapier integrasjoner."
+            keywords={['api', 'automasjon', 'integrasjon', 'golfklubb', 'n8n', 'zapier']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'API & Automasjon',
+                    description: 'Skreddersydde integrasjoner og automatiserte arbeidsflyter for golfklubber',
+                    url: 'https://golfklubb-it-website.web.app/products/api-automation'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -202,6 +225,7 @@ const APIAutomation = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

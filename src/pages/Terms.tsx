@@ -1,9 +1,24 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../components/SEOMeta'
+import { breadcrumbSchema } from '../utils/seoSchemas'
 import Navbar from '../components/Navbar'
 import '../App.css'
 
 const Terms = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Vilkår', path: '/terms' }
+    ]
+
     return (
+        <SEOMeta
+            title="Vilkår og betingelser | Golfklubbens IT"
+            description="Juridiske vilkår og betingelser for bruk av Golfklubbens IT tjenester og produkter."
+            keywords={['vilkår', 'betingelser', 'juridisk', 'brukerbetingelser']}
+            ogImage="/images/og-image.jpg"
+            schemas={[breadcrumbSchema(breadcrumbs)]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -121,6 +136,7 @@ const Terms = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const GolfTeamTime = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'GolfTeam-Time', path: '/apps/golfteam-time' }
+    ]
+
     return (
+        <SEOMeta
+            title="GolfTeam-Time | Digital tidregistrering for golfklubb"
+            description="Digital tidregistrering og oppgaveplanlegging for klubbens ansatte og frivillige. Integrert med lønnssystemer."
+            keywords={['tidregistrering', 'GolfTeam', 'lønn', 'oppgaver', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'GolfTeam-Time',
+                    description: 'Digital tidregistrering og oppgaveplanlegging for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/apps/golfteam-time'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -180,6 +203,7 @@ const GolfTeamTime = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

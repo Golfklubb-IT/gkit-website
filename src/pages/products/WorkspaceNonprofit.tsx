@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const WorkspaceNonprofit = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'Workspace Nonprofit', path: '/products/workspace-nonprofit' }
+    ]
+
     return (
+        <SEOMeta
+            title="Workspace Nonprofit | Gratis Google Workspace for ideelle organisasjoner"
+            description="Gratis Google Workspace for ideelle organisasjoner og golfklubber. E-post, lagringsplass, samarbeid - alt gratis for nonprofit."
+            keywords={['workspace', 'nonprofit', 'ideell', 'gratis', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Workspace Nonprofit',
+                    description: 'Gratis Google Workspace for ideelle organisasjoner',
+                    url: 'https://golfklubb-it-website.web.app/products/workspace-nonprofit'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -339,6 +362,8 @@ const WorkspaceNonprofit = () => {
                 </div>
             </footer>
         </div>
+
+        </SEOMeta>
     )
 }
 

@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const GolfBoxModulesIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'GolfBox Moduler', path: '/integrations/golfbox-modules' }
+    ]
+
     return (
+        <SEOMeta
+            title="GolfBox Moduler | Utvidelser og add-ons for GolfBox"
+            description="Moduler og utvidelser for GolfBox. Utvid funksjonaliteten med nye features og integrasjoner."
+            keywords={['golfbox', 'moduler', 'utvidelser', 'add-ons', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'GolfBox Moduler',
+                    description: 'Moduler og utvidelser for GolfBox',
+                    url: 'https://golfklubb-it-website.web.app/integrations/golfbox-modules'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -199,6 +222,7 @@ const GolfBoxModulesIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

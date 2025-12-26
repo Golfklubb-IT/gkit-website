@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const NetsIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'Nets', path: '/integrations/nets' }
+    ]
+
     return (
+        <SEOMeta
+            title="Nets | Betalingsgateway for golfklubb"
+            description="Nets betalingsintegrasjon for GolfBox. Motta betalinger fra medlemmer og turneringer sikkert og enkelt."
+            keywords={['nets', 'betaling', 'gateway', 'medlemsbetaling', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Nets',
+                    description: 'Nets betalingsgateway for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/integrations/nets'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -174,6 +197,7 @@ const NetsIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

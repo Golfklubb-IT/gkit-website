@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const SponsorDugnad = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'Sponsor Dugnad', path: '/apps/sponsor-dugnad' }
+    ]
+
     return (
+        <SEOMeta
+            title="Sponsor Dugnad | Fundraising for golfklubb"
+            description="Sponsor- og dugnadsstyringsapp for golfklubber. Organiser innsamling, sponsorskap og frivillig innsats."
+            keywords={['sponsor', 'dugnad', 'fundraising', 'innsamling', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Sponsor Dugnad',
+                    description: 'Sponsor- og dugnadsstyringsapp for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/apps/sponsor-dugnad'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -73,6 +96,7 @@ const SponsorDugnad = () => {
                 </div>
             </section>
         </div>
+        </SEOMeta>
     )
 }
 

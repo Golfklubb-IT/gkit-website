@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
@@ -83,7 +85,28 @@ const WorkspaceTools = () => {
         setExpandedTool(expandedTool === id ? null : id)
     }
 
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'Workspace Tools', path: '/products/workspace-tools' }
+    ]
+
     return (
+        <SEOMeta
+            title="Workspace Tools | Verktøy og utvidelser for Google Workspace"
+            description="Kraftfulle verktøy og integrasjoner som utvider Google Workspace for golfklubber. Automatisering, rapportering og samarbeid."
+            keywords={['workspace', 'tools', 'google', 'integrasjon', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Workspace Tools',
+                    description: 'Verktøy og utvidelser for Google Workspace',
+                    url: 'https://golfklubb-it-website.web.app/products/workspace-tools'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -255,6 +278,7 @@ const WorkspaceTools = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import SEOMeta from '../components/SEOMeta'
+import { breadcrumbSchema } from '../utils/seoSchemas'
 import Footer from '../components/Footer'
 import '../App.css'
 
@@ -7,7 +9,20 @@ function Club2026() {
         window.scrollTo(0, 0)
     }, [])
 
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Club2026', path: '/club2026' }
+    ]
+
     return (
+        <SEOMeta
+            title="Club2026 | Golfklubbens vision for 2026"
+            description="Club2026 er Golfklubbens visjon for fremtiden - moderne digitale løsninger som gjør golfklubben mer effektiv."
+            keywords={['club2026', 'vision', 'golfklubb', 'digitalisering']}
+            ogImage="/images/og-image.jpg"
+            schemas={[breadcrumbSchema(breadcrumbs)]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             {/* Header - Simplified for Landing Page */}
             <header className="header" style={{ background: 'rgba(26, 26, 26, 0.95)' }}>
@@ -157,6 +172,7 @@ function Club2026() {
             {/* Footer */}
             <Footer />
         </div>
+        </SEOMeta>
     )
 }
 

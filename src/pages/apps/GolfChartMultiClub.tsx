@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const GolfChartMultiClub = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'GolfChart Multi-Club', path: '/apps/golfchart-multiclub' }
+    ]
+
     return (
+        <SEOMeta
+            title="GolfChart Multi-Club | Statistikk og analyse av golfdeltakelse"
+            description="GolfChart analyser golfdeltakelse på tvers av flere klubber. Statistikk, handicap-utvikling og resultatanalyse."
+            keywords={['golfchart', 'statistikk', 'analyse', 'golf', 'handicap']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'GolfChart Multi-Club',
+                    description: 'Statistikk- og analyseapp for golfdeltagelse på tvers av klubber',
+                    url: 'https://golfklubb-it-website.web.app/apps/golfchart-multiclub'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -138,6 +161,10 @@ const GolfChartMultiClub = () => {
                 </div>
             </footer>
         </div>
+    )
+}
+
+        </SEOMeta>
     )
 }
 

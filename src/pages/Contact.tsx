@@ -1,10 +1,34 @@
+import SEOMeta from '../components/SEOMeta'
+import { contactPointSchema, breadcrumbSchema } from '../utils/seoSchemas'
 import Navbar from '../components/Navbar'
 import ContactForm from '../components/ContactForm'
 import companyConfig from '../config/companyConfig'
 import '../App.css'
 
 const Contact = () => {
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Kontakt', path: '/contact' }
+  ]
+
   return (
+    <SEOMeta
+      title="Kontakt Golfklubbens IT | Support & Spørsmål"
+      description="Kontakt oss for spørsmål, demo eller hjelp. Responstid under 24 timer på hverdager. E-post, telefon og fysisk adresse."
+      keywords={['kontakt', 'support', 'golfklubb it', 'demo', 'hjelp']}
+      ogImage="/images/og-image.jpg"
+      twitterCreator="@golfklubbIT"
+      schemas={[
+        contactPointSchema({
+          contactType: 'Customer Service',
+          telephone: companyConfig.phone,
+          email: companyConfig.email,
+          url: 'https://golfklubb-it-website.web.app/contact'
+        }),
+        breadcrumbSchema(breadcrumbs)
+      ]}
+      breadcrumbs={breadcrumbs}
+    >
     <div className="app">
       <header className="header">
         <Navbar />
@@ -65,6 +89,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </SEOMeta>
   )
 }
 

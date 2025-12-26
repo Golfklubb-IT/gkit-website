@@ -1,10 +1,16 @@
 import { useState } from 'react'
+import SEOMeta from '../components/SEOMeta'
+import { breadcrumbSchema } from '../utils/seoSchemas'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../App.css'
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' }
+  ]
 
   const blogPosts = [
     {
@@ -43,6 +49,14 @@ const Blog = () => {
     : blogPosts.filter(post => post.category === selectedCategory)
 
   return (
+    <SEOMeta
+      title="Blog | Golfklubbens IT Nyheter & Artikler"
+      description="Les artikler om golf-IT, digitalisering av golfklubber, tips og trender innen klubbledelse."
+      keywords={['blog', 'golfklubb', 'digitalisering', 'tips', 'nyheter']}
+      ogImage="/images/og-image.jpg"
+      schemas={[breadcrumbSchema(breadcrumbs)]}
+      breadcrumbs={breadcrumbs}
+    >
     <div className="app">
       <header className="header">
         <Navbar />
@@ -156,6 +170,7 @@ const Blog = () => {
       {/* Footer */}
       <Footer />
     </div>
+    </SEOMeta>
   )
 }
 

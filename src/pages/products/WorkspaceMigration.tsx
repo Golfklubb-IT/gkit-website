@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const WorkspaceMigration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'Workspace Migrering', path: '/products/workspace-migration' }
+    ]
+
     return (
+        <SEOMeta
+            title="Workspace Migrering | Sikker overgang til Google Workspace"
+            description="Profesjonell migrering til Google Workspace for golfklubber. Vi håndterer hele prosessen fra planlegging til implementering."
+            keywords={['workspace', 'migrering', 'google', 'e-post', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Workspace Migrering',
+                    description: 'Profesjonell migrering til Google Workspace',
+                    url: 'https://golfklubb-it-website.web.app/products/workspace-migration'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -278,6 +301,7 @@ const WorkspaceMigration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

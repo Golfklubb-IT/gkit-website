@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const GolfBoxAutomation = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Produkter', path: '/products' },
+        { name: 'GolfBox Automasjon', path: '/products/golfbox-automation' }
+    ]
+
     return (
+        <SEOMeta
+            title="GolfBox Automasjon | Automatisere GolfBox prosesser"
+            description="Automatiser GolfBox prosesser, integrasjoner og datahåndtering. Sparer tid og reduserer manuelle feil i klubbadministrasjonen."
+            keywords={['golfbox', 'automasjon', 'integrasjon', 'golfklubb', 'effektivitet']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'GolfBox Automasjon',
+                    description: 'Automatisering av GolfBox prosesser og integrasjoner',
+                    url: 'https://golfklubb-it-website.web.app/products/golfbox-automation'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -171,6 +194,10 @@ const GolfBoxAutomation = () => {
                 </div>
             </footer>
         </div>
+    )
+}
+
+        </SEOMeta>
     )
 }
 

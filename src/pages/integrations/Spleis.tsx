@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const SpleisIntegration = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Integrasjoner', path: '/integrations' },
+        { name: 'Spleis', path: '/integrations/spleis' }
+    ]
+
     return (
+        <SEOMeta
+            title="Spleis | Crowdfunding for golfklubb"
+            description="Spleis-integrasjon for golfklubber. Samle inn penger fra medlemmer og donorer for klubbprosjekter."
+            keywords={['spleis', 'crowdfunding', 'innsamling', 'donasjon', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Spleis',
+                    description: 'Spleis crowdfunding-integrasjon for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/integrations/spleis'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -182,6 +205,7 @@ const SpleisIntegration = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

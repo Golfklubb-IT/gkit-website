@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const Soknadsportalen = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'Søknadsportalen', path: '/apps/soknadsportalen' }
+    ]
+
     return (
+        <SEOMeta
+            title="Søknadsportalen | Elektroniske søknader for golfklubb"
+            description="Elektronisk søknadsportal for golfklubb. Håndter søknader, skjema og godkjenningsprosesser automatisk."
+            keywords={['søknad', 'portal', 'elektronisk', 'godkjenning', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'Søknadsportalen',
+                    description: 'Elektronisk søknadsportal for golfklubb',
+                    url: 'https://golfklubb-it-website.web.app/apps/soknadsportalen'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -177,6 +200,7 @@ const Soknadsportalen = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 

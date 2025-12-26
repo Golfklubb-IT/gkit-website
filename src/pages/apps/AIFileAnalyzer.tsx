@@ -1,9 +1,32 @@
 import { Link } from 'react-router-dom'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
 
 const AIFileAnalyzer = () => {
+    const breadcrumbs = [
+        { name: 'Home', path: '/' },
+        { name: 'Apps', path: '/apps' },
+        { name: 'AI File Analyzer', path: '/apps/ai-file-analyzer' }
+    ]
+
     return (
+        <SEOMeta
+            title="AI File Analyzer | Automatisk analyse av klubbdokumenter"
+            description="AI-drevet fil- og dokumentanalyse for golfklubber. Ekstrasser data, skaper sammendrag og organiserer informasjon automatisk."
+            keywords={['ai', 'analyse', 'dokumenter', 'automatisering', 'golfklubb']}
+            ogImage="/images/og-image.jpg"
+            schemas={[
+                softwareApplicationSchema({
+                    name: 'AI File Analyzer',
+                    description: 'AI-drevet fil- og dokumentanalyse for golfklubber',
+                    url: 'https://golfklubb-it-website.web.app/apps/ai-file-analyzer'
+                }),
+                breadcrumbSchema(breadcrumbs)
+            ]}
+            breadcrumbs={breadcrumbs}
+        >
         <div className="app">
             <header className="header">
                 <Navbar />
@@ -153,6 +176,7 @@ const AIFileAnalyzer = () => {
                 </div>
             </footer>
         </div>
+        </SEOMeta>
     )
 }
 
