@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SEOMeta from '../components/SEOMeta'
-import { breadcrumbSchema } from '../utils/seoSchemas'
+import { breadcrumbSchema, articleSchema } from '../utils/seoSchemas'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../App.css'
@@ -20,7 +20,7 @@ const Blog = () => {
       category: 'Teknologi',
       summary: 'En gjennomgang av de viktigste trendene innen golf-IT og hvordan din klubb kan spare tid.',
       image: 'https://placehold.co/600x400/1a1a1a/4CAF50?text=Digitalisering',
-      content: 'Digitalisering er ikke lenger en valgfri service - det er en nødvendighet. Les hvorfor 2025 blir vendepunktet for norske golfklubber.'
+      content: 'Digitalisering er ikke lenger en valgfri service - det er en nødvendighet. Les hvorfor 2025 blir vendepunktet for norske golfklubber. Moderne golfklubber trenger digitale løsninger som kan håndtere medlemskap, booking, medlemsgebyr, og kommunikasjon med medlemmene. Disse systemene sparer tid, reduserer kostander og forbedrer medlemstilfredshet.'
     },
     {
       id: '2',
@@ -29,7 +29,7 @@ const Blog = () => {
       category: 'Case Study',
       summary: 'En dybdykk i hvordan automatisering av golfbil-utleie endret hverdagen.',
       image: 'https://placehold.co/600x400/1a1a1a/FFD43B?text=Ski+GK+Case',
-      content: 'Se hvordan Ski Golfklubb bruker smarte systemer til å spare 200 timer årlig på golfbil-administrasjon.'
+      content: 'Se hvordan Ski Golfklubb bruker smarte systemer til å spare 200 timer årlig på golfbil-administrasjon. Gjennom implementering av automatisering av golfbil-utleie, booking, og rapportering, klarte Ski Golfklubb å redusere administrative oppgaver betydelig. Resultatet har vært økt medlemstilfredshet, færre administrative feil, og en mer effektiv drift.'
     },
     {
       id: '3',
@@ -38,7 +38,7 @@ const Blog = () => {
       category: 'Guide',
       summary: 'Hva bør du velge? Vi sammenligner pris, funksjonalitet og brukervennlighet.',
       image: 'https://placehold.co/600x400/1a1a1a/4CAF50?text=Google+vs+MS',
-      content: 'En grundig sammenligning av de to største produktivitetsplattformene for norske golfklubber.'
+      content: 'En grundig sammenligning av de to største produktivitetsplattformene for norske golfklubber. Begge tilbyr kraftige verktøy for epostsamarbeid, dokumentsamarbeid, og kommunikasjon. Google Workspace er ofte rimeligere og lettere å bruke, mens Microsoft 365 tilbyr dypere integrasjon med desktop-programmer og bedre Outlook-funksjonalitet. Velg basert på dine klubs behov og budsjett.'
     }
   ]
 
@@ -49,15 +49,15 @@ const Blog = () => {
     : blogPosts.filter(post => post.category === selectedCategory)
 
   return (
-    <SEOMeta
-      title="Blog | Golfklubbens IT Nyheter & Artikler"
-      description="Les artikler om golf-IT, digitalisering av golfklubber, tips og trender innen klubbledelse."
-      keywords={['blog', 'golfklubb', 'digitalisering', 'tips', 'nyheter']}
-      ogImage="/images/og-image.jpg"
-      schemas={[breadcrumbSchema(breadcrumbs)]}
-      breadcrumbs={breadcrumbs}
-    >
-    <div className="app">
+    <>
+      <SEOMeta
+        title="Blog | Golfklubbens IT Nyheter & Artikler"
+        description="Les artikler om golf-IT, digitalisering av golfklubber, tips og trender innen klubbledelse."
+        keywords="blog, golfklubb, digitalisering, tips, nyheter"
+        url="https://golfklubb-it-website.web.app/blog"
+        breadcrumbs={breadcrumbs}
+      />
+      <div className="app">
       <header className="header">
         <Navbar />
       </header>
@@ -77,7 +77,8 @@ const Blog = () => {
       {/* Blog Section */}
       <section style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
         <div className="container">
-          {/* Kategorifilter */}
+          {/* Category Filter */}
+          <h2 style={{ fontSize: '1.3rem', marginBottom: '2rem', color: '#fff' }}>Filtrer etter kategori</h2>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
             {categories.map((category) => (
               <button
@@ -104,11 +105,14 @@ const Blog = () => {
           </div>
 
           {/* Blog Posts Grid */}
+          <h2 style={{ fontSize: '1.3rem', marginBottom: '2rem', color: '#fff' }}>Nyeste artikler</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
             {filteredPosts.map((post, index) => (
-              <div
+              <article
                 key={post.id}
                 className="blog-card card"
+                itemScope
+                itemType="https://schema.org/BlogPosting"
                 style={{
                   padding: 0,
                   overflow: 'hidden',
@@ -131,6 +135,7 @@ const Blog = () => {
                   <img
                     src={post.image}
                     alt={post.title}
+                    itemProp="image"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
@@ -139,21 +144,22 @@ const Blog = () => {
                     <span style={{ fontSize: '0.75rem', color: 'var(--color-gkit-green)', fontWeight: '600', textTransform: 'uppercase' }}>
                       {post.category}
                     </span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-light)' }}>
+                    <time itemProp="datePublished" dateTime={post.date} style={{ fontSize: '0.75rem', color: 'var(--color-gray-light)' }}>
                       {new Date(post.date).toLocaleDateString('no-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
-                    </span>
+                    </time>
                   </div>
-                  <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem', color: '#fff' }}>
+                  <h3 itemProp="headline" style={{ marginBottom: '0.5rem', fontSize: '1.1rem', color: '#fff' }}>
                     {post.title}
                   </h3>
-                  <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginBottom: '1rem', flex: 1 }}>
+                  <p itemProp="description" style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginBottom: '1rem', flex: 1 }}>
                     {post.summary}
                   </p>
-                  <a href="#" style={{ fontSize: '0.875rem', fontWeight: '600', color: 'var(--color-gkit-green)', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <meta itemProp="articleBody" content={post.content} />
+                  <a href={`/blog/${post.id}`} style={{ fontSize: '0.875rem', fontWeight: '600', color: 'var(--color-gkit-green)', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     Les mer <span>→</span>
                   </a>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
@@ -169,8 +175,8 @@ const Blog = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-    </SEOMeta>
+      </div>
+    </>
   )
 }
 

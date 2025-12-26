@@ -4,12 +4,32 @@ import GraphicFiller from '../components/GraphicFiller'
 import Footer from '../components/Footer'
 import '../App.css'
 import SEOMeta from '../components/SEOMeta'
-import { serviceSchema } from '../utils/seoSchemas'
+import { serviceSchema, faqSchema } from '../utils/seoSchemas'
 
 const Services = () => {
     const breadcrumbs = [
         { name: 'Hjem', url: 'https://golfklubb-it-website.web.app/' },
         { name: 'Tjenester', url: 'https://golfklubb-it-website.web.app/services' },
+    ]
+
+    // FAQ Schema for Services page
+    const serviceFAQs = [
+        {
+            question: 'Hva er GolfBox-automatisering?',
+            answer: 'GolfBox-automatisering er sømløs integrasjon og automatisering av klubbens GolfBox-system som sparer tid ved håndtering av turneringsdata, starttider og resultater. Vi kobler GolfBox med andre verktøy for å unngå dobbeltarbeid.'
+        },
+        {
+            question: 'Hvordan fungerer digital skilting?',
+            answer: 'Digital skilting viser sanntidsoppdaterte infoskjermer med ledige starttider, vær, banestatus og turneringsresultater. Du kan bruke hvilken som helst Smart-TV eller skjerm med nettleser og oppdaterer innholdet fra mobilen.'
+        },
+        {
+            question: 'Hva koster Google Workspace for klubber?',
+            answer: 'Google Workspace prises per bruker per måned. Vi hjelper til med oppsett, profesjonell e-post med klubbens domene, sikre samarbeidslokaler og norsk support.'
+        },
+        {
+            question: 'Hvor mange klubber bruker ClubsiteCMS?',
+            answer: 'Over 45 norske golfklubber bruker ClubsiteCMS. Vi er sertifiserte Scangolf-partnere og integrerer nettsiden din med GolfBox og andre systemer.'
+        }
     ]
 
     return (
@@ -19,14 +39,10 @@ const Services = () => {
                 description="Vi tilbyr komplette IT tjenester for golfklubber: GolfBox automatisering, Google Workspace, ClubsiteCMS implementering, integrasjoner og digital modernisering."
                 keywords="IT tjenester, golfklubb IT, GolfBox integrasjon, Google Workspace, ClubsiteCMS, IT konsultasjon"
                 url="https://golfklubb-it-website.web.app/services"
-                schema={serviceSchema(
-                    'IT Tjenester for Golfklubber',
-                    'Komplette IT løsninger og konsulentbistand for norske golfklubber',
-                    'https://golfklubb-it-website.web.app/services',
-                    '$$$'
-                )}
+                schema={faqSchema(serviceFAQs)}
                 breadcrumbs={breadcrumbs}
             />
+            <ServicesContent />
         </>
     )
 }
@@ -95,6 +111,7 @@ function ServicesContent() {
 
             {/* Services Grid Overview */}
             <section className="container section-padding" style={{ background: 'var(--color-bg-dark)' }}>
+                <h2 style={{ fontSize: '1.5rem', marginBottom: '3rem', color: '#fff', textAlign: 'center' }}>Våre tjenestepakker</h2>
                 <div className="services-grid">
                     {services.map((service, index) => (
                         <div 
@@ -125,12 +142,13 @@ function ServicesContent() {
                     <div className="service-content">
                         <div className="service-icon-large">⚙️</div>
                         <h2>GolfBox Automatisering & Integrasjon</h2>
-                        <p className="lead">Få mer ut av systemet du bruker mest.</p>
+                        <h3 style={{ fontSize: '1.1rem', color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Få mer ut av systemet du bruker mest</h3>
                         <p>
                             Sømløs integrasjon og automatisering av klubbens GolfBox-system for effektiv drift. 
                             Vi kobler GolfBox med andre verktøy slik at man unngår dobbeltarbeid og sparer tid på 
                             håndtering av turneringsdata, starttider og resultater.
                         </p>
+                        <h3 style={{ fontSize: '1rem', marginTop: '1.5rem', marginBottom: '1rem', color: '#fff' }}>Hovedfunksjoner</h3>
                         <ul className="feature-list">
                             <li><strong>Automatisk synkronisering:</strong> Hold medlemslister oppdatert i nyhetsbrevsystemer og regnskapssystemer helt automatisk.</li>
                             <li><strong>Live resultater:</strong> Vis live resultater og startlister på infoskjermer og nettsider med eget design.</li>
@@ -150,12 +168,13 @@ function ServicesContent() {
                     <div className="service-content">
                         <div className="service-icon-large">📺</div>
                         <h2>Digital skilting og dataflyt</h2>
-                        <p className="lead">Moderne løsninger for sanntidsoppdateringer på skjermer.</p>
+                        <h3 style={{ fontSize: '1.1rem', color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Moderne løsninger for sanntidsoppdateringer</h3>
                         <p>
                             Vi tilbyr Loftlogic Display, en webapp for sanntidsoppdaterte infoskjermer på anlegget. 
                             Dette gir medlemmer og gjester oppdatert informasjon (starttider, vær, kampanjer m.m.) 
                             på skjermer, helt automagisk.
                         </p>
+                        <h3 style={{ fontSize: '1rem', marginTop: '1.5rem', marginBottom: '1rem', color: '#fff' }}>Hovedfunksjoner</h3>
                         <ul className="feature-list">
                             <li><strong>Sanntidsdata:</strong> Vis ledige starttider, dagens vær, banestatus og turneringsresultater live.</li>
                             <li><strong>Hardware-uavhengig:</strong> Bruk hvilken som helst Smart-TV eller skjerm med nettleser.</li>
@@ -175,11 +194,12 @@ function ServicesContent() {
                     <div className="service-content">
                         <div className="service-icon-large">☁️</div>
                         <h2>Google Workspace for klubber</h2>
-                        <p className="lead">Komplett oppsett og forvaltning skreddersydd for golfklubber.</p>
+                        <h3 style={{ fontSize: '1.1rem', color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Komplett oppsett og forvaltning skreddersydd for golfklubber</h3>
                         <p>
                             Vi sørger for profesjonell e-postdomene, delte kalendere og sikre filområder, 
                             slik at klubbens kommunikasjon og samarbeid flyter problemfritt mellom administrasjon og styre.
                         </p>
+                        <h3 style={{ fontSize: '1rem', marginTop: '1.5rem', marginBottom: '1rem', color: '#fff' }}>Hovedfunksjoner</h3>
                         <ul className="feature-list">
                             <li><strong>Profesjonell e-post:</strong> E-postadresser med klubbens eget domene (@dinklubb.no).</li>
                             <li><strong>Sikkert samarbeid:</strong> Delte stasjoner for styre og administrasjon med kontrollert tilgang.</li>
@@ -199,12 +219,13 @@ function ServicesContent() {
                     <div className="service-content">
                         <div className="service-icon-large">🌐</div>
                         <h2>ClubsiteCMS drift og integrasjoner</h2>
-                        <p className="lead">Vi kjenner plattformen din.</p>
+                        <h3 style={{ fontSize: '1.1rem', color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Vi kjenner plattformen din</h3>
                         <p>
                             Drift av klubbens nettside gjennom ClubsiteCMS, Norges ledende golfplattform (benyttes av 45+ klubber). 
                             Vi integrerer klubbens webside med GolfBox og andre systemer, og tilpasser funksjonalitet etter klubbens behov 
                             – alt i partnerskap med Scangolf.
                         </p>
+                        <h3 style={{ fontSize: '1rem', marginTop: '1.5rem', marginBottom: '1rem', color: '#fff' }}>Hovedfunksjoner</h3>
                         <ul className="feature-list">
                             <li><strong>Drift og Vedlikehold:</strong> Vi sørger for at nettsiden din alltid er oppdatert og fungerer i partnerskap med Scangolf.</li>
                             <li><strong>Sømløs integrasjon:</strong> Vi kobler nettsiden mot GolfBox, kalendere og andre systemer for automatisk oppdatering.</li>
@@ -214,6 +235,24 @@ function ServicesContent() {
                         <Link to="/products/clubsite" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
                             Les mer →
                         </Link>
+                    </div>
+                </div>
+
+                {/* FAQ Section */}
+                <div style={{ marginTop: '6rem', padding: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)' }} className="fade-in">
+                    <h2 style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#fff' }}>Ofte stilte spørsmål</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                        {[
+                            { q: 'Hva er GolfBox-automatisering?', a: 'Sømløs integrasjon og automatisering av GolfBox-systemet som sparer tid ved håndtering av turneringsdata og resultater.' },
+                            { q: 'Hvordan fungerer digital skilting?', a: 'Sanntidsoppdaterte infoskjermer som viser starttider, vær, og turneringsresultater. Du kan bruke hvilken som helst Smart-TV.' },
+                            { q: 'Hva koster Google Workspace?', a: 'Google Workspace prises per bruker per måned. Vi hjelper med profesjonell e-post, samarbeid og norsk support.' },
+                            { q: 'Hvor mange klubber bruker ClubsiteCMS?', a: 'Over 45 norske golfklubber. Vi er Scangolf-partnere og integrerer med GolfBox og andre systemer.' }
+                        ].map((item, idx) => (
+                            <div key={idx} style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                                <h3 style={{ fontSize: '1rem', color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>{item.q}</h3>
+                                <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem' }}>{item.a}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 

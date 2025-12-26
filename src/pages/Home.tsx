@@ -200,7 +200,7 @@ function Home() {
                         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
                             {content.challenges.items.map((item, i) => (
                                 <div key={i} style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
-                                    <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>{item.title}</h3>
+                                    <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827', fontSize: '1rem' }}>{item.title}</h3>
                                     <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>{item.desc}</p>
                                     <a href={item.link} style={{ fontSize: '0.85rem', fontWeight: '600' }}>{item.linkText}</a>
                                 </div>
