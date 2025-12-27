@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react';
 import { auth, db } from './firebase';
 import { signInWithPopup, GoogleAuthProvider, signOut, User } from 'firebase/auth';
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, setDoc } from 'firebase/firestore';
 import './App.css';
 
 interface ContentItem {
   id: string;
   title: string;
+  name?: string;
   description?: string;
   [key: string]: any;
+}
+
+interface FormData {
+  [key: string]: string;
 }
 
 export default function App() {
@@ -17,6 +22,8 @@ export default function App() {
   const [selectedCollection, setSelectedCollection] = useState<string>('home');
   const [items, setItems] = useState<ContentItem[]>([]);
   const [editingItem, setEditingItem] = useState<ContentItem | null>(null);
+  const [formData, setFormData] = useState<FormData>({});
+  const [showForm, setShowForm] = useState(false);
 
   // Check auth on mount
   useEffect(() => {
@@ -47,7 +54,8 @@ export default function App() {
         id: doc.id,
         ...doc.data(),
       })) as ContentItem[];
-      setItems(data);
+      setItems(data.filter(item => item.id !== '_metadata'));
+      console.log(`✅ Loaded ${collectionName}:`, data);
     } catch (error) {
       console.error('Error loading collection:', error);
     }
@@ -56,7 +64,6 @@ export default function App() {
   const handleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      // Add scopes
       provider.addScope('profile');
       provider.addScope('email');
       const result = await signInWithPopup(auth, provider);
@@ -65,7 +72,7 @@ export default function App() {
       console.error('❌ Login failed:', error);
       console.error('Error code:', error.code);
       console.error('Error message:', error.message);
-      alert(`Login failed: ${error.message}\n\nMake sure:\n1. Google provider is enabled in Firebase Console\n2. OAuth consent screen is configured\n3. You're using an authorized email`);
+      alert(`Login failed: ${error.message}`);
     }
   };
 
@@ -74,6 +81,65 @@ export default function App() {
       await signOut(auth);
     } catch (error) {
       console.error('Logout failed:', error);
+    }
+  };
+
+  const handleNewItem = () => {
+    setEditingItem(null);
+    setFormData({});
+    setShowForm(true);
+  };
+
+  const handleEdit = (item: ContentItem) => {
+    setEditingItem(item);
+    setFormData({ ...item });
+    setShowForm(true);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSave = async () => {
+    try {
+      if (!formData.title && !formData.name) {
+        alert('Title or Name is required');
+        return;
+      }
+
+      const docRef = editingItem ? doc(db, selectedCollection, editingItem.id) : collection(db, selectedCollection);
+      const dataToSave = {
+        ...formData,
+        updatedAt: new Date(),
+      };
+
+      if (editingItem) {
+        await updateDoc(docRef as any, dataToSave);
+        console.log('✅ Updated:', editingItem.id);
+      } else {
+        const newDoc = await addDoc(docRef as any, { ...dataToSave, createdAt: new Date() });
+        console.log('✅ Created:', newDoc.id);
+      }
+
+      setShowForm(false);
+      loadCollection(selectedCollection);
+    } catch (error) {
+      console.error('Error saving:', error);
+      alert('Error saving item');
+    }
+  };
+
+  const handleDelete = async (item: ContentItem) => {
+    if (confirm(`Delete "${item.title || item.name}"?`)) {
+      try {
+        await deleteDoc(doc(db, selectedCollection, item.id));
+        console.log('✅ Deleted:', item.id);
+        loadCollection(selectedCollection);
+      } catch (error) {
+        console.error('Error deleting:', error);
+        alert('Error deleting item');
+      }
     }
   };
 
@@ -123,13 +189,72 @@ export default function App() {
         </aside>
 
         <main className="content-area">
-          <h2>{selectedCollection.charAt(0).toUpperCase() + selectedCollection.slice(1)}</h2>
+          <div className="content-header">
+            <h2>{selectedCollection.charAt(0).toUpperCase() + selectedCollection.slice(1)}</h2>
+            {!showForm && <button onClick={handleNewItem} className="btn btn-primary">+ New Item</button>}
+          </div>
           
-          {editingItem ? (
+          {showForm ? (
             <div className="editor">
-              <h3>Edit Item</h3>
-              {/* Basic editor - can be expanded */}
-              <button onClick={() => setEditingItem(null)} className="btn btn-secondary">Cancel</button>
+              <h3>{editingItem ? 'Edit Item' : 'Create New Item'}</h3>
+              <div className="form-group">
+                <label>Title / Name</label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Title"
+                  value={formData.title || formData.name || ''}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Description</label>
+                <textarea
+                  name="description"
+                  placeholder="Description"
+                  value={formData.description || ''}
+                  onChange={handleInputChange}
+                  rows={4}
+                />
+              </div>
+              {selectedCollection === 'solutions' && (
+                <>
+                  <div className="form-group">
+                    <label>Category</label>
+                    <input
+                      type="text"
+                      name="category"
+                      placeholder="e.g., Collaboration"
+                      value={formData.category || ''}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Price</label>
+                    <input
+                      type="text"
+                      name="price"
+                      placeholder="e.g., Fra kr 29/bruker/måned"
+                      value={formData.price || ''}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </>
+              )}
+              {selectedCollection === 'apps' && (
+                <div className="form-group">
+                  <label>Status</label>
+                  <select name="status" value={formData.status || 'active'} onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value }))}>
+                    <option value="active">Active</option>
+                    <option value="beta">Beta</option>
+                    <option value="planned">Planned</option>
+                  </select>
+                </div>
+              )}
+              <div className="form-actions">
+                <button onClick={handleSave} className="btn btn-primary">Save</button>
+                <button onClick={() => setShowForm(false)} className="btn btn-secondary">Cancel</button>
+              </div>
             </div>
           ) : (
             <div className="list">
@@ -139,10 +264,13 @@ export default function App() {
                 <ul>
                   {items.map((item) => (
                     <li key={item.id}>
-                      <h3>{item.title}</h3>
+                      <h3>{item.title || item.name}</h3>
                       <p>{item.description}</p>
+                      {item.category && <p className="meta">📁 {item.category}</p>}
+                      {item.status && <p className="meta">📊 {item.status}</p>}
                       <div className="item-actions">
-                        <button onClick={() => setEditingItem(item)} className="btn btn-primary">Edit</button>
+                        <button onClick={() => handleEdit(item)} className="btn btn-primary">Edit</button>
+                        <button onClick={() => handleDelete(item)} className="btn btn-danger">Delete</button>
                       </div>
                     </li>
                   ))}
