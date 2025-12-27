@@ -49,17 +49,6 @@ const Signage = () => {
             </section>
 
             <section className="container section-padding">
-                <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <img
-                        src="/images/products/digital_signage.png"
-                        alt="Digital Signage - Infoskjermer for golfklubb"
-                        loading="lazy"
-                        style={{ maxWidth: '90%', height: 'auto', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', maxHeight: '500px' }}
-                    />
-                </div>
-            </section>
-
-            <section className="container section-padding">
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Nøkkelfunksjoner</h2>
 
                 <div className="services-grid">

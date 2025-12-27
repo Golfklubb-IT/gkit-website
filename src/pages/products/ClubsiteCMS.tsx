@@ -50,10 +50,9 @@ const ClubsiteCMS = () => {
             <section className="container section-padding">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <img
-                        src="/images/products/clubsite_cms.png"
-                        alt="ClubsiteCMS - Profesjonell nettside for golfklubb"
-                        loading="lazy"
-                        style={{ maxWidth: '90%', height: 'auto', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', maxHeight: '500px' }}
+                        src="/path/to/clubsite_cms.png"
+                        alt="ClubsiteCMS Dashboard"
+                        style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}
                     />
                 </div>
             </section>
