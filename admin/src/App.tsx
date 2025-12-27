@@ -20,10 +20,16 @@ export default function App() {
 
   // Check auth on mount
   useEffect(() => {
+    console.log('🔍 Checking Firebase initialization...');
+    console.log('Auth object:', auth);
+    console.log('DB object:', db);
+    
     const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log('👤 Auth state changed:', user?.email || 'Not authenticated');
       setUser(user);
       setLoading(false);
     });
+    
     return unsubscribe;
   }, []);
 
@@ -80,6 +86,12 @@ export default function App() {
       <div className="container auth-container">
         <h1>🚀 GolfKlubb Admin Panel</h1>
         <p>Sign in with your Google account to manage content</p>
+        <div style={{ fontSize: '12px', color: '#ccc', marginTop: '2rem', padding: '1rem', background: 'rgba(0,0,0,0.3)', borderRadius: '4px' }}>
+          <p>🔧 Debug Info:</p>
+          <p>• Firebase Auth: {auth ? '✅ Loaded' : '❌ Not loaded'}</p>
+          <p>• Firebase Firestore: {db ? '✅ Loaded' : '❌ Not loaded'}</p>
+          <p>• Check console (F12) for detailed logs</p>
+        </div>
         <button onClick={handleLogin} className="btn btn-primary">Sign In with Google</button>
       </div>
     );
