@@ -50,10 +50,16 @@ export default function App() {
   const handleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error('Login failed:', error);
-      alert('Login failed. Make sure you\'re using the authorized email.');
+      // Add scopes
+      provider.addScope('profile');
+      provider.addScope('email');
+      const result = await signInWithPopup(auth, provider);
+      console.log('✅ Login successful:', result.user.email);
+    } catch (error: any) {
+      console.error('❌ Login failed:', error);
+      console.error('Error code:', error.code);
+      console.error('Error message:', error.message);
+      alert(`Login failed: ${error.message}\n\nMake sure:\n1. Google provider is enabled in Firebase Console\n2. OAuth consent screen is configured\n3. You're using an authorized email`);
     }
   };
 
