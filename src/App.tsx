@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { usePageTracking } from './hooks/usePageTracking'
 import Home from './pages/Home'
 import Club2026 from './pages/Club2026'
 import About from './pages/About'
@@ -35,14 +34,13 @@ import NetsIntegration from './pages/integrations/Nets'
 import GolfBoxModulesIntegration from './pages/integrations/GolfBoxModules'
 import SpleisIntegration from './pages/integrations/Spleis'
 import GrasrotandelenIntegration from './pages/integrations/Grasrotandelen'
+import PageTracker from './components/PageTracker'
 import './App.css'
 
 function App() {
-  // Track page views on route changes
-  usePageTracking()
-
   return (
     <Router>
+      <PageTracker />
       <Routes>
           {/* Main Pages */}
           <Route path="/" element={<Home />} />
