@@ -1,0 +1,24 @@
+{
+  "name": "gkit-admin",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "FireCMS Admin Panel for gkit-website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "GKIT",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "firebase": "^12.7.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "typescript": "^5.3.3"
+  }
+}
