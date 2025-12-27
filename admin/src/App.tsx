@@ -176,7 +176,7 @@ export default function App() {
       <div className="admin-container">
         <aside className="sidebar">
           <nav>
-            {['home', 'solutions', 'apps', 'blog'].map((col) => (
+            {['home', 'solutions', 'apps'].map((col) => (
               <button
                 key={col}
                 className={`nav-button ${selectedCollection === col ? 'active' : ''}`}
