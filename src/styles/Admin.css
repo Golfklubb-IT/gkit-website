@@ -366,6 +366,144 @@
   font-weight: 500;
 }
 
+/* Toggle Switch Styles (Phase 1) */
+.admin-toggle-field {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-toggle-switch {
+  position: relative;
+  display: inline-flex;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.admin-toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.admin-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(220, 38, 38, 0.4);
+  transition: all 0.3s ease;
+  border-radius: 26px;
+  border: 1px solid rgba(220, 38, 38, 0.6);
+}
+
+.admin-toggle-slider::before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.admin-toggle-input:checked + .admin-toggle-slider {
+  background-color: rgba(16, 185, 129, 0.4);
+  border-color: rgba(16, 185, 129, 0.6);
+}
+
+.admin-toggle-input:checked + .admin-toggle-slider::before {
+  transform: translateX(24px);
+}
+
+.admin-toggle-label {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Number Field with Spinner (Phase 1) */
+.admin-number-field {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.admin-number-input {
+  padding-right: 50px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.admin-number-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-left: -50px;
+  margin-right: 0.5rem;
+}
+
+.admin-spinner-btn {
+  background: rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: rgba(16, 185, 129, 0.9);
+  width: 24px;
+  height: 13px;
+  padding: 0;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 700;
+}
+
+.admin-spinner-btn:hover {
+  background: rgba(16, 185, 129, 0.5);
+  border-color: rgba(16, 185, 129, 0.7);
+}
+
+.admin-spinner-up {
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.admin-spinner-down {
+  border-radius: 0 0 4px 4px;
+}
+
+/* Image Field with Preview (Phase 1) */
+.admin-image-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-image-preview {
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.admin-image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .admin-content {

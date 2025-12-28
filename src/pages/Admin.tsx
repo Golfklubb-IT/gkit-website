@@ -262,7 +262,28 @@ export default function Admin() {
                             <span className="admin-field-type">({type})</span>
                           </label>
 
-                          {type === 'string' && value.length > 100 ? (
+                          {/* Image URL Field with Preview */}
+                          {key === 'imageUrl' && type === 'string' ? (
+                            <div className="admin-image-field">
+                              <input
+                                id={key}
+                                type="text"
+                                value={value}
+                                onChange={e =>
+                                  handleInputChange(key, e.target.value)
+                                }
+                                placeholder="/assets/products/..."
+                                className="admin-input"
+                              />
+                              {value && (
+                                <div className="admin-image-preview">
+                                  <img src={value} alt="Preview" onError={(e) => {
+                                    (e.target as HTMLImageElement).style.display = 'none';
+                                  }} />
+                                </div>
+                              )}
+                            </div>
+                          ) : type === 'string' && value.length > 100 ? (
                             <textarea
                               id={key}
                               value={value}
@@ -283,29 +304,53 @@ export default function Admin() {
                               className="admin-input"
                             />
                           ) : type === 'number' ? (
-                            <input
-                              id={key}
-                              type="number"
-                              value={value}
-                              onChange={e =>
-                                handleInputChange(key, Number(e.target.value))
-                              }
-                              className="admin-input"
-                            />
-                          ) : type === 'boolean' ? (
-                            <div className="admin-checkbox-group">
+                            <div className="admin-number-field">
                               <input
                                 id={key}
-                                type="checkbox"
-                                checked={value}
+                                type="number"
+                                value={value}
                                 onChange={e =>
-                                  handleInputChange(key, e.target.checked)
+                                  handleInputChange(key, Number(e.target.value))
                                 }
-                                className="admin-checkbox"
+                                className="admin-input admin-number-input"
                               />
-                              <label htmlFor={key} className="admin-checkbox-label">
-                                {value ? 'Yes' : 'No'}
+                              <div className="admin-number-buttons">
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    handleInputChange(key, value + 1)
+                                  }
+                                  className="admin-spinner-btn admin-spinner-up"
+                                >
+                                  ▲
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    handleInputChange(key, Math.max(0, value - 1))
+                                  }
+                                  className="admin-spinner-btn admin-spinner-down"
+                                >
+                                  ▼
+                                </button>
+                              </div>
+                            </div>
+                          ) : type === 'boolean' ? (
+                            <div className="admin-toggle-field">
+                              <label className="admin-toggle-switch">
+                                <input
+                                  type="checkbox"
+                                  checked={value}
+                                  onChange={e =>
+                                    handleInputChange(key, e.target.checked)
+                                  }
+                                  className="admin-toggle-input"
+                                />
+                                <span className="admin-toggle-slider"></span>
                               </label>
+                              <span className="admin-toggle-label">
+                                {value ? '🟢 Aktiv' : '🔴 Inaktiv'}
+                              </span>
                             </div>
                           ) : type === 'object' ? (
                             <textarea
