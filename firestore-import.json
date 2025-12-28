@@ -4,8 +4,8 @@
     "home": {
       "documents": {
         "homepage": {
-          "createTime": "2025-12-28T12:19:47.637Z",
-          "updateTime": "2025-12-28T12:19:47.637Z",
+          "createTime": "2025-12-28T12:22:34.036Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "title": {
               "stringValue": "Golfklubb-IT - Din IT-Partner for Golfklubber"
@@ -41,7 +41,7 @@
               "stringValue": "Se våre løsninger"
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.637Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         }
@@ -50,8 +50,8 @@
     "solutions": {
       "documents": {
         "workspace-business": {
-          "createTime": "2025-12-28T12:19:47.637Z",
-          "updateTime": "2025-12-28T12:19:47.637Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Google Workspace - Business Edition"
@@ -111,13 +111,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.637Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "clubsite-cms": {
-          "createTime": "2025-12-28T12:19:47.637Z",
-          "updateTime": "2025-12-28T12:19:47.637Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "ClubsiteCMS - Nettstedadministrasjon"
@@ -177,13 +177,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "golfbox-automation": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "GolfBox - Automatisering & Integrasjon"
@@ -243,13 +243,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "digital-signage": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Digital Skilting - Info Display System"
@@ -309,7 +309,7 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         }
@@ -318,8 +318,8 @@
     "apps": {
       "documents": {
         "soknadsportalen": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Søknadsportalen"
@@ -367,13 +367,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "golfteam-time": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "GolfTeam Time"
@@ -421,13 +421,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "frivillig-kalender": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Frivillig Kalender"
@@ -475,13 +475,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "ai-file-analyzer": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "AI File Analyzer"
@@ -529,13 +529,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "golfbilkontroll": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Golfbil-Kontroll"
@@ -583,13 +583,13 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         },
         "booking-kalender": {
-          "createTime": "2025-12-28T12:19:47.638Z",
-          "updateTime": "2025-12-28T12:19:47.638Z",
+          "createTime": "2025-12-28T12:22:34.037Z",
+          "updateTime": "2025-12-28T12:22:34.037Z",
           "fields": {
             "name": {
               "stringValue": "Booking Kalender"
@@ -637,7 +637,7 @@
               "booleanValue": true
             },
             "updatedAt": {
-              "timestampValue": "2025-12-28T12:19:47.638Z"
+              "timestampValue": "2025-12-28T12:22:34.037Z"
             }
           }
         }
