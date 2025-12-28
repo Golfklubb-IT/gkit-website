@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut, User } from 'firebase/auth'
 import { getFirestore, collection, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore'
+import ArrayEditor from '../components/ArrayEditor'
+import IconPicker from '../components/IconPicker'
 import '../styles/Admin.css'
 
 interface DocData {
@@ -256,14 +258,27 @@ export default function Admin() {
                       const type = typeof value
 
                       return (
-                        <div key={key} className="admin-form-group">
+                        <div key={key} className="admin-form-group admin-form-group-full">
                           <label htmlFor={key}>
                             {key}
                             <span className="admin-field-type">({type})</span>
                           </label>
 
-                          {/* Image URL Field with Preview */}
-                          {key === 'imageUrl' && type === 'string' ? (
+                          {/* Array Editor for features, etc */}
+                          {type === 'object' && Array.isArray(value) && key === 'features' ? (
+                            <ArrayEditor
+                              value={value}
+                              onChange={v => handleInputChange(key, v)}
+                              fieldName={key}
+                            />
+                          ) : /* Icon Picker for icon field */
+                          key === 'icon' && type === 'string' ? (
+                            <IconPicker
+                              value={value}
+                              onChange={v => handleInputChange(key, v)}
+                            />
+                          ) : /* Image URL Field with Preview */
+                          key === 'imageUrl' && type === 'string' ? (
                             <div className="admin-image-field">
                               <input
                                 id={key}

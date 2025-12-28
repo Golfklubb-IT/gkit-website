@@ -292,6 +292,10 @@
   gap: 0.5rem;
 }
 
+.admin-form-group-full {
+  grid-column: 1 / -1;
+}
+
 .admin-form-group label {
   color: white;
   font-weight: 600;

@@ -1,0 +1,151 @@
+/* Icon Picker Styles */
+.admin-icon-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-icon-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-icon-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+.admin-icon-display {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+/* Icon Grid */
+.admin-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-icon-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  text-align: center;
+}
+
+.admin-icon-option:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(147, 197, 253, 0.5);
+}
+
+.admin-icon-option.active {
+  background: rgba(147, 197, 253, 0.2);
+  border-color: rgba(147, 197, 253, 0.8);
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.1);
+}
+
+.admin-icon-option-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.admin-icon-option-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.admin-icon-option.active .admin-icon-option-name {
+  opacity: 1;
+}
+
+/* Text Input for Custom Icons */
+.admin-icon-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: white;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.admin-icon-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.admin-icon-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+/* Scrollbar Styling */
+.admin-icon-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-icon-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.admin-icon-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.admin-icon-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+
+  .admin-icon-option-emoji {
+    font-size: 1.5rem;
+  }
+
+  .admin-icon-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
