@@ -8,6 +8,8 @@ import Projects from './pages/Projects'
 import AppsIntegrations from './pages/AppsIntegrations'
 import Contact from './pages/Contact'
 import Terms from './pages/Terms'
+import Admin from './pages/Admin'
+import AdminLogin from './pages/AdminLogin'
 // Products
 import GolfBox from './pages/products/GolfBox'
 import Signage from './pages/products/Signage'
@@ -52,6 +54,10 @@ function App() {
         <Route path="/apps" element={<AppsIntegrations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<Terms />} />
+        
+        {/* Admin Routes */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
         
         {/* Product Routes */}
         <Route path="/products/golfbox" element={<GolfBox />} />
