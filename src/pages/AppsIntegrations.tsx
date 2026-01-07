@@ -51,14 +51,6 @@ const fundraisingLinks = [
     { name: 'Grasrotandelen', url: 'https://www.norsk-tipping.no/grasrotandelen/for-lag-og-foreninger' }
 ]
 
-const cardStyle = {
-    padding: '1.5rem',
-    background: 'rgba(76, 175, 80, 0.05)',
-    borderRadius: '12px',
-    borderLeft: '4px solid var(--color-gkit-green)',
-    marginBottom: '1rem'
-}
-
 const AppsIntegrations = () => {
     return (
         <div className="app">
