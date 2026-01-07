@@ -402,7 +402,37 @@ _Space for observations as we work_
 **Status:** 🔴 Not Started  
 **Estimated Time:** 3 - 4 hours
 
-This involves creating or enhancing descriptions for 6 products. We'll handle them in order:
+This involves creating or enhancing descriptions for 6 products with **links to published Cloud Run services**. 
+
+#### 📱 Available Published APIs (20 Cloud Run Services)
+
+**golfbilkontroll-skigk (17 services):**
+- https://checkavailability-793476088060.europe-west3.run.app
+- https://createrental-793476088060.europe-west3.run.app
+- https://getallcarts-793476088060.europe-west3.run.app
+- https://getbookingdetails-793476088060.europe-west3.run.app
+- https://getbookingsbydate-793476088060.europe-west3.run.app
+- https://getcalendarbookings-793476088060.europe-west3.run.app
+- https://logactivity-793476088060.europe-west3.run.app
+- https://schedulecartmaintenance-793476088060.europe-west3.run.app
+- (+ 9 more...)
+
+**skigk-ai-sok (3 services):**
+- https://skigk-ai-sok-app-371015153209.europe-west1.run.app
+- https://skigk-chat-bot-371015153209.europe-north1.run.app
+- https://workspace-app-371015153209.europe-north1.run.app
+
+**Integration Points:**
+- 3.1 Display/Signage → Link to digital-signage admin/demo
+- 3.3 Golfbilkontroll → Link to all 17 golfbilkontroll APIs
+- 3.4 Booking-Kalender → Link to getcalendarbookings
+- 3.5 AI File Analyzer → Link to skigk-ai-sok-app & skigk-chat-bot
+- 3.2 Frivilligkalender → Link to workspace-app
+- 3.2 GolfTeamTime → Link to logactivity & getactivitylogs
+
+---
+
+#### Products to enhance - in order:
 
 ---
 

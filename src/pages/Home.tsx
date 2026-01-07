@@ -266,7 +266,7 @@ function Home() {
                         </div>
 
                         <div style={{ backgroundColor: '#F1F8E9', padding: '2.5rem', borderRadius: '1rem', border: '2px solid #4CAF50' }}>
-                            <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#111827', marginBottom: '1.5rem', textAlign: 'center' }}>Bestill Din Gratis Demo</h3>
+                            <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#111827', marginBottom: '1.5rem', textAlign: 'center' }}>Bestill din gratis demo</h3>
                             <form onSubmit={handleContactSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 <input
                                     type="text"

@@ -93,8 +93,160 @@ const Signage = () => {
                 </div>
             </section>
 
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hardware & Tekniske Krav</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🖥️ Display</h4>
+                            <p>Moderne TV eller digital signage-skjerm (42"-55" anbefalt)</p>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)' }}>4K eller Full HD</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📱 Strømenhet</h4>
+                            <p>Android TV-boks eller Raspberry Pi med Kodi</p>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)' }}>Wi-Fi eller kabel-internett</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🔌 Strøm</h4>
+                            <p>Strømkabel og monteringsutstyr</p>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)' }}>Plug-and-play setup</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📡 Internett</h4>
+                            <p>Stabil bredbands-forbindelse</p>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-light)' }}>Min 5 Mbps</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Innholdstyper & Integrasjoner</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <h4 style={{ marginBottom: '1.5rem', textAlign: 'center', color: 'var(--color-gkit-green)' }}>Hva kan vises på skjermen?</h4>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Turneringer & Arrangementer</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Fra Booking-Kalender</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Nyheter & Kunngjøringer</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Fra ClubsiteCMS</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Bane-Status</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Ledige baner, vedlikehold</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Værvarsel</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Sanntids værdata</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Turneringer & Resultater</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Fra GolfBox</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                            <p>✓ <strong>Sponsorkampanjer</strong></p>
+                            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)' }}>Logoer og annonser</p>
+                        </div>
+                    </div>
+                    <h4 style={{ marginBottom: '1.5rem', textAlign: 'center', color: 'var(--color-gkit-green)' }}>System-Integrasjoner</h4>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📋 ClubsiteCMS</h4>
+                            <p>Nyheter, arrangementer og kunngjøringer oppdateres automatisk.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📅 Booking-Kalender</h4>
+                            <p>Turneringer, kurs og møter synkroniseres i real-time.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>⛳ GolfBox</h4>
+                            <p>Start-tider, resultater og turneringsoversikter automatisk.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🌐 Google Calendar</h4>
+                            <p>Team-kalendre og møtetider kan vises på displayene.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🌤️ Værdata</h4>
+                            <p>Sanntids værvarsel fra eksterne kilder.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderLeft: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📊 Analytics</h4>
+                            <p>Se hvilken innhold som engasjerer medlemmene mest.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Brukstilfeller på Klubben</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🏛️ Klubbhus/Lobby</h4>
+                            <p>Turneringer, værvarsel, arrangementer og sponsorkampanjer.</p>
+                        </div>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🏪 Pro-shop</h4>
+                            <p>Nye produkter, kampanjer og spesial-tilbud på neste arrangement.</p>
+                        </div>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🍽️ Klubbrestaurant</h4>
+                            <p>Dagens spesialtilbud, turnering-info, turneringer som vises live.</p>
+                        </div>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🏌️ Startplan/Range</h4>
+                            <p>Live startlister, poengstillinger, værvarsel og bankestatus.</p>
+                        </div>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🎯 Treningsområde</h4>
+                            <p>Instruksjon-tips, golfkurs-info, og øvings-utsendinger.</p>
+                        </div>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.08)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📺 Møterom</h4>
+                            <p>Styremøter, årsmøter, medlemsmøter - lyd/video og dokumentering.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Administrasjon & Styring</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                    <p style={{ marginBottom: '1.5rem' }}>
+                        <strong>Web-basert administrasjonspanel</strong> som lar klubben enkelt styre innholdet på displayene:
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                        <div>
+                            <p>✓ Drag-and-drop layout</p>
+                        </div>
+                        <div>
+                            <p>✓ Content-rotasjon planning</p>
+                        </div>
+                        <div>
+                            <p>✓ Planering av spesial-kampanjer</p>
+                        </div>
+                        <div>
+                            <p>✓ Real-time oppdateringer</p>
+                        </div>
+                        <div>
+                            <p>✓ Multi-display styring</p>
+                        </div>
+                        <div>
+                            <p>✓ Statistikk & rapporter</p>
+                        </div>
+                    </div>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                        Ingen teknisk kunnskap nødvendig. Admin-panelet er intuitiv og brukervennlig.
+                    </p>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte stilte spørsmål</h2>
 
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>

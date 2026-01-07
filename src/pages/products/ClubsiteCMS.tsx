@@ -95,21 +95,167 @@ const ClubsiteCMS = () => {
                 </div>
             </section>
 
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Om Scangolf - Vår Partner</h2>
+                <div style={{ maxWidth: '900px', margin: '0 auto', padding: '2rem', background: 'rgba(76, 175, 80, 0.08)', borderLeft: '5px solid var(--color-gkit-green)', borderRadius: '8px', marginBottom: '2rem' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                        <strong>Scangolf</strong> er Norges ledende leverandør av golfclub-løsninger. Med over <strong>25 års erfaring</strong> i golf-industrien og <strong>45+ norske golfklubber</strong> som brukere, er de en solid og pålitelig partner.
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '6px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>25+ År</h4>
+                            <p>Erfaring som ledende leverandør av golf-løsninger</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '6px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>45+ Klubber</h4>
+                            <p>Aktive norske golfklubber på ClubsiteCMS</p>
+                        </div>
+                        <div style={{ padding: '1rem', background: 'var(--color-bg-dark)', borderRadius: '6px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Azure Hosting</h4>
+                            <p>Microsoft Azure infrastruktur, GDPR-kompatibel</p>
+                        </div>
+                    </div>
+                    <h4 style={{ marginBottom: '1rem' }}>Vår Partnership:</h4>
+                    <p style={{ marginBottom: '1rem' }}>
+                        <strong>Golfklubbens IT er sertifisert partner for Scangolf ClubsiteCMS</strong>. Vi tilbyr:
+                    </p>
+                    <ul style={{ marginLeft: '1.5rem', lineHeight: '1.8' }}>
+                        <li>✓ Integrasjoner med våre egne løsninger (Signage, Søknadsportalen, Booking-Kalender, Google Workspace)</li>
+                        <li>✓ Konsulentbistand ved implementasjon og oppstart</li>
+                        <li>✓ Opplæring av klubbens personale og redaktører</li>
+                        <li>✓ Løpende teknisk support og feilretting</li>
+                        <li>✓ Custom-modifikasjoner og tilpasset funksjonalitet</li>
+                    </ul>
+                </div>
+            </section>
+
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>CS Booking (Simulator & Instruktør)</h2>
-                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
-                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Dekning</h4>
-                        <p>15+ sentre, 75+ simulatorer, 40+ instruktører på CS Booking.</p>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hva får dere med ClubsiteCMS?</h2>
+                <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+                    <p style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem', color: 'var(--color-gray-light)' }}>
+                        ClubsiteCMS er en komplett løsning for klubbens nettside og interne kommunikasjon. Her er de viktigste funksjonene:
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📰 Nyheter & Blogg</h4>
+                            <p>Publiser nyheter, artikler og blogginnlegg. Enkelt editor, planlagt publisering, tagging og kategorisering.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📁 Dokumentarkiv</h4>
+                            <p>Sentralisert arkiv for protokoller, vedtekter, årsmeldinger, budsjetter og andre viktige dokumenter.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>⛳ Banemodul</h4>
+                            <p>Håndtering av banedata, handicap, regler, og baneinformasjon for medlemmer og gjester.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📚 Kurs & Opplæring</h4>
+                            <p>Administrer golfkurs, instruktørundervisning, booking av ressurser og deltakerlister.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🏆 Turneringer</h4>
+                            <p>Administrer turnering, melding, påmelding, startlister, resultater og premieutdeling.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📅 Dynamisk Kalender</h4>
+                            <p>Sentralisert kalender for arrangementer, turneringer, styremøter, og fellesarrangementer.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📸 Fotoalbum & Bildearkiv</h4>
+                            <p>Deling av klubbfoto, arrangementer, turneringer. Automatisk komprimering, responsivt galleri.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>👥 Kontaktlister</h4>
+                            <p>Medlemslister, frivillig-oversikt, styremedlemmer, instruktører. Organisert og søkbar.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🛒 Enkel Nettbutikk</h4>
+                            <p>Produktkatalog, handlekurv, betaling via Vipps/Stripe, og ordreoversikt for kundeservice.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🍽️ Restaurant/Kafe</h4>
+                            <p>Meny, bestilling, eventuelt integrasjon med bestillings- og betalingssystemer.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>📋 Skjemagenerator</h4>
+                            <p>Drag-and-drop bygger for egendefinerte skjemaer - ingen kodingskunnskap nødvendig.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', borderTop: '3px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ marginBottom: '0.5rem' }}>🎨 Dynamisk Layoutplassering</h4>
+                            <p>Drag-and-drop element-plassering, tilpasset responsivt design, og visuelle builder for hele nettsiden.</p>
+                        </div>
                     </div>
-                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Funksjoner</h4>
-                        <p>Kalender, betaling, kvittering, instruktørbooking, varsler, rapporter.</p>
+                    <p style={{ textAlign: 'center', marginTop: '2rem', fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                        Se komplett oversikt på <a href="https://clubsite.no/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gkit-green)', textDecoration: 'none' }}>clubsite.no</a>
+                    </p>
+                </div>
+            </section>
+
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Vår Integrasjoner Med ClubsiteCMS</h2>
+                <p style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 2rem' }}>
+                    Vi knytte ClubsiteCMS mot andre GKIT-løsninger for en helhetlig og integrert klubbhverdag:
+                </p>
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🔗 Søknadsportalen ↔ ClubsiteCMS</h4>
+                        <p>Søknader fra medlemmer og frivillige vises automatisk på klubbens nettside i eget administrasjons-avsnitt. Fullt integrasjon av søknads-data.</p>
                     </div>
-                    <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Vår rolle</h4>
-                        <p>Vi setter opp, integrerer mot nettsiden, og gir support for drift og oppdateringer.</p>
+                    <div style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📺 Display/Signage ↔ ClubsiteCMS</h4>
+                        <p>Digital skilting på klubben får live-oppdateringer direkte fra ClubsiteCMS. Nyheter, arrangementer, resultater vises på displayene automatisk.</p>
                     </div>
+                    <div style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📅 Booking-Kalender ↔ ClubsiteCMS</h4>
+                        <p>Turneringer, kurs og arrangementer synkroniseres automatisk mellom systemene. Endringer i en plass oppdateres overalt.</p>
+                    </div>
+                    <div style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🌐 Google Workspace ↔ ClubsiteCMS</h4>
+                        <p>Teamkalendere, dokumenter og e-postgrupper integreres for bedre samarbeid. Klubben får en samlet digital arbeidsflate.</p>
+                    </div>
+                    <div style={{ marginBottom: '1.5rem', padding: '1.5rem', background: 'var(--color-bg-dark)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📊 Analytics ↔ ClubsiteCMS</h4>
+                        <p>Besøksstatistikk, brukeraktivitet og innholdsanalyse hjelper klubben å forstå hva som fungerer og hvor man bør forbedre.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>CS Booking - Simulator & Instruktørbooking</h2>
+                <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                    <p style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem', color: 'var(--color-gray-light)' }}>
+                        Scangolfs spesialiserte bookingsystem for simulatorer og instruktørundervisning.
+                    </p>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📊 Dekning i Norge</h4>
+                            <p>15+ golfsentre, 61 simulatorer, 36 instruktører bruker CS Booking aktivt.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>⚙️ Automatisert Håndtering</h4>
+                            <p>Automatisk timetabell, instruktør-matching basert på ekspertise, SMS-påminnelser, betalingsintegrasjon.</p>
+                        </div>
+                        <div style={{ padding: '1.2rem', background: 'var(--color-bg-dark)', borderRadius: '8px', border: '1px solid rgba(76,175,80,0.3)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📈 Rapporter & Statistikk</h4>
+                            <p>Detaljerte rapporter over bookinger, instruksjonsinntekter, og brukeraktivitet for bedre planning.</p>
+                        </div>
+                    </div>
+                    <h4 style={{ marginBottom: '1rem', textAlign: 'center' }}>Hovedfunksjoner:</h4>
+                    <div style={{ padding: '1.5rem', background: 'var(--color-bg-dark)', borderRadius: '8px', marginBottom: '2rem' }}>
+                        <ul style={{ marginLeft: '1.5rem', lineHeight: '1.8', columns: 2, columnGap: '2rem' }}>
+                            <li>✓ Sanntidstimetabell for simulatorer</li>
+                            <li>✓ Instruktørbooking med matching</li>
+                            <li>✓ Betalingsintegrasjon</li>
+                            <li>✓ SMS-varsler til medlemmer</li>
+                            <li>✓ Automatisk fakturering</li>
+                            <li>✓ Statistikk og analyser</li>
+                            <li>✓ Integrert med ClubsiteCMS</li>
+                            <li>✓ Mobil-vennlig booking-app</li>
+                        </ul>
+                    </div>
+                    <p style={{ textAlign: 'center', fontSize: '0.95rem' }}>
+                        Interessert i CS Booking? Kontakt <a href="tel:+4741520802" style={{ color: 'var(--color-gkit-green)', textDecoration: 'none' }}>Scangolf: +47 415 20 802</a> eller <a href="https://clubsite.no/booking" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gkit-green)', textDecoration: 'none' }}>les mer på clubsite.no/booking</a>
+                    </p>
                 </div>
             </section>
 
@@ -158,7 +304,7 @@ const ClubsiteCMS = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
-                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte stilte spørsmål</h2>
 
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
