@@ -143,6 +143,8 @@ const ContactForm = () => {
                         onChange={handleChange}
                         placeholder="Fornavn"
                         disabled={loading}
+                        aria-invalid={!!errors.firstName}
+                        aria-describedby={errors.firstName ? "firstName-error" : undefined}
                         style={{
                             width: '100%',
                             padding: '0.75rem',
@@ -154,7 +156,7 @@ const ContactForm = () => {
                             cursor: loading ? 'not-allowed' : 'auto'
                         }}
                     />
-                    {errors.firstName && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.firstName}</span>}
+                    {errors.firstName && <span id="firstName-error" style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.firstName}</span>}
                 </div>
 
                 <div className="form-group" style={{ marginBottom: 0 }}>
@@ -169,6 +171,8 @@ const ContactForm = () => {
                         onChange={handleChange}
                         placeholder="Etternavn"
                         disabled={loading}
+                        aria-invalid={!!errors.lastName}
+                        aria-describedby={errors.lastName ? "lastName-error" : undefined}
                         style={{
                             width: '100%',
                             padding: '0.75rem',
@@ -180,7 +184,7 @@ const ContactForm = () => {
                             cursor: loading ? 'not-allowed' : 'auto'
                         }}
                     />
-                    {errors.lastName && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.lastName}</span>}
+                    {errors.lastName && <span id="lastName-error" style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.lastName}</span>}
                 </div>
             </div>
 
@@ -197,6 +201,8 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="+47 xxx xx xxx"
                     disabled={loading}
+                    aria-invalid={!!errors.mobile}
+                    aria-describedby={errors.mobile ? "mobile-error" : undefined}
                     style={{
                         width: '100%',
                         padding: '0.75rem',
@@ -208,7 +214,7 @@ const ContactForm = () => {
                         cursor: loading ? 'not-allowed' : 'auto'
                     }}
                 />
-                {errors.mobile && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.mobile}</span>}
+                {errors.mobile && <span id="mobile-error" style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.mobile}</span>}
             </div>
 
             {/* Email */}
@@ -224,6 +230,8 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="din@email.no"
                     disabled={loading}
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                     style={{
                         width: '100%',
                         padding: '0.75rem',
@@ -235,7 +243,7 @@ const ContactForm = () => {
                         cursor: loading ? 'not-allowed' : 'auto'
                     }}
                 />
-                {errors.email && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.email}</span>}
+                {errors.email && <span id="email-error" style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.email}</span>}
             </div>
 
             {/* GolfBox ID (Optional) */}
