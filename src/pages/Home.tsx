@@ -4,6 +4,7 @@ import '../styles/wireframe-light.css'
 import { homeContent as localHomeContent } from '../config/homeContent'
 import { db } from '../firebase'
 import { doc, getDoc } from 'firebase/firestore'
+import { updateMetaTags, generateSchemaMarkup, organizationSchema } from '../utils/seoUtils'
 
 function Home() {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -14,6 +15,17 @@ function Home() {
     useEffect(() => {
         document.documentElement.style.backgroundColor = '#FFFFFF'
         document.body.style.backgroundColor = '#FFFFFF'
+
+        // Update SEO meta tags for home page
+        updateMetaTags({
+          title: 'Golfklubbens IT | Stabil drift. Smarte systemer.',
+          description: 'Golfklubbens IT leverer stabil drift, smarte systemer og digital modernisering for norske golfklubber. ClubsiteCMS, Google Workspace, GolfBox og flere løsninger.',
+          keywords: ['golfklubb', 'IT', 'ClubsiteCMS', 'Google Workspace', 'GolfBox', 'digital løsninger'],
+          url: 'https://golfklubb-it-website.web.app'
+        })
+
+        // Add Organization schema
+        generateSchemaMarkup('Organization', organizationSchema)
 
         // Fetch dynamic content from Firestore
         const fetchContent = async () => {

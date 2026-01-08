@@ -1,10 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { updateMetaTags } from '../utils/seoUtils'
 import '../App.css'
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Update SEO meta tags for blog page
+    updateMetaTags({
+      title: 'Blog | Golfklubbens IT',
+      description: 'Les case studies, implementeringsveiledninger, og teknologitrends fra Golfklubbens IT. Lær fra andre klubber og få praktisk råd.',
+      keywords: ['blog', 'case study', 'guide', 'golfklubb', 'IT-løsninger'],
+      url: 'https://golfklubb-it-website.web.app/blog'
+    })
+  }, [])
 
   const blogPosts = [
     // CASE STUDIES

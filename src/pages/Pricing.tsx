@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { Check, X, ArrowRight } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { updateMetaTags, generateSchemaMarkup, serviceSchema } from '../utils/seoUtils'
 import '../App.css'
 
 interface PricingTier {
@@ -18,6 +20,23 @@ interface PricingTier {
 }
 
 const Pricing = () => {
+  useEffect(() => {
+    // Update SEO meta tags
+    updateMetaTags({
+      title: 'Transparent Prising | Golfklubbens IT',
+      description: 'Enkel og transparent prising for alle produkter og tjenester. Starter fra $99/mnd. Ingen skjulte kostnader. Non-profit rabatter og custom enterprise løsninger tilgjengelig.',
+      keywords: ['prising', 'kostnad', 'pris', 'Google Workspace', 'ClubsiteCMS', 'golfklubb'],
+      url: 'https://golfklubb-it-website.web.app/pricing'
+    })
+
+    // Add Service schema for pricing information
+    generateSchemaMarkup('Product', serviceSchema(
+      'Golfklubbens IT Services',
+      'Komplette IT-løsninger for golfklubber med transparent prising',
+      'https://golfklubb-it-website.web.app/images/og-image.png',
+      'https://golfklubb-it-website.web.app/pricing'
+    ))
+  }, [])
   const pricingTiers: PricingTier[] = [
     {
       name: 'Starter',

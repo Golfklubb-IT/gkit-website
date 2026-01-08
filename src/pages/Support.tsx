@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { Mail, Phone, HelpCircle, FileText, AlertCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { updateMetaTags, generateSchemaMarkup, faqSchema, localBusinessSchema } from '../utils/seoUtils'
 import '../App.css'
 
 interface SupportCategory {
@@ -13,6 +15,25 @@ interface SupportCategory {
 }
 
 const Support = () => {
+  useEffect(() => {
+    // Update SEO meta tags
+    updateMetaTags({
+      title: 'Kundesupport & Ressurser | Golfklubbens IT',
+      description: 'Komplett kundesupport med 25+ FAQ-er, kontaktmetoder, dokumentasjon og implementeringsveiledninger for alle produkter fra Golfklubbens IT.',
+      keywords: ['kundesupport', 'FAQ', 'hjelp', 'dokumentasjon', 'golfklubb', 'IT'],
+      url: 'https://golfklubb-it-website.web.app/support'
+    })
+
+    // Add FAQ and Local Business schemas
+    const allFaqs = [
+      { question: 'Hva er fordelen med Google Workspace for golfklubber?', answer: 'Google Workspace gir sikker e-post, lagring, og samarbeidsverktøy spesielt designet for organisasjoner. For golfklubber tilbyr vi særlige priser gjennom Non-Profit programmet.' },
+      { question: 'Hvordan kommer vi i gang med Google Workspace?', answer: 'Vi hjelper med hele prosessen: domeneregistrering, brukeropprett, e-postmigrasjon og opplæring av ditt team.' },
+      { question: 'Hva er ClubsiteCMS?', answer: 'Det er et innholdssystem spesielt designet for golfklubber til å administrere nettsiden, medlem informasjon og arrangementer.' },
+      { question: 'Kan jeg oppdatere nettsiden selv?', answer: 'Ja, ClubsiteCMS har et brukervennlig interface der klubblederen kan oppdatere innhold uten teknisk erfaring.' }
+    ]
+    generateSchemaMarkup('Product', faqSchema(allFaqs))
+    generateSchemaMarkup('LocalBusiness', localBusinessSchema)
+  }, [])
   const faqCategories: SupportCategory[] = [
     {
       id: 'workspace',
