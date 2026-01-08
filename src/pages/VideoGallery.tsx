@@ -269,111 +269,541 @@ const VideoGallery = () => {
 
           {/* Videos Grid */}
           <section>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-              {filteredVideos.map(video => (
-                <div
-                  key={video.id}
-                  style={{
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer'
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)'}
-                  onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'}
-                >
-                  {/* Thumbnail */}
-                  <div
-                    style={{
-                      position: 'relative',
-                      width: '100%',
-                      paddingBottom: '56.25%',
-                      backgroundColor: '#f0f0f0',
-                      overflow: 'hidden'
-                    }}
-                    onClick={() => openVideoModal(video)}
-                  >
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover'
-                      }}
-                    />
+            {/* PRODUCT DEMOS SECTION */}
+            {selectedCategory === 'all' || selectedCategory === 'demo' ? (
+              <div style={{ marginBottom: '4rem' }}>
+                <div style={{ marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '2px solid #eee' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '2rem' }}>🛠️</span>
+                    <h2 style={{ margin: 0 }}>Se verktøyene i aksjon</h2>
+                  </div>
+                  <p style={{ color: '#666', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+                    Glem kompliserte bruksanvisninger. Vi har samlet de beste produktdemoene som viser deg nøyaktig hvordan verktøyene fungerer i en travel hverdag. Her kan du se hvordan Google Workspace, avanserte bookingsystemer og flåtestyring for golfbiler faktisk ser ut og fungerer før du bestemmer deg. Spar tid og velg de rette løsningene for din klubb.
+                  </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+                  {videos.filter(v => v.category === 'demo').map(video => (
                     <div
+                      key={video.id}
                       style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        borderRadius: '50%',
-                        padding: '1rem',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease',
                         cursor: 'pointer'
                       }}
+                      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)'}
+                      onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'}
                     >
-                      <Play size={32} color="white" fill="white" />
-                    </div>
-                    <span
-                      style={{
-                        position: 'absolute',
-                        bottom: '0.75rem',
-                        right: '0.75rem',
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                        color: 'white',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '4px',
-                        fontSize: '0.85rem',
-                        fontWeight: '600'
-                      }}
-                    >
-                      {video.duration}
-                    </span>
-                  </div>
+                      {/* Thumbnail */}
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          paddingBottom: '56.25%',
+                          backgroundColor: '#f0f0f0',
+                          overflow: 'hidden'
+                        }}
+                        onClick={() => openVideoModal(video)}
+                      >
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            borderRadius: '50%',
+                            padding: '1rem',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <Play size={32} color="white" fill="white" />
+                        </div>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            bottom: '0.75rem',
+                            right: '0.75rem',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '4px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}
+                        >
+                          {video.duration}
+                        </span>
+                      </div>
 
-                  {/* Content */}
-                  <div style={{ padding: '1.5rem' }}>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#333' }}>
-                      {video.title}
-                    </h3>
-                    {video.instructor && (
-                      <p style={{ fontSize: '0.85rem', color: '#0066cc', marginBottom: '0.75rem', fontWeight: '500' }}>
-                        {video.instructor}
-                      </p>
-                    )}
-                    <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: '1.5', marginBottom: '1rem' }}>
-                      {video.description}
-                    </p>
-                    <a
-                      href={video.url || '#'}
-                      onClick={(e) => {
-                        if (!video.url) {
-                          e.preventDefault()
-                          openVideoModal(video)
-                        }
-                      }}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        color: '#0066cc',
-                        textDecoration: 'none',
-                        fontWeight: '600',
-                        fontSize: '0.95rem'
-                      }}
-                    >
-                      Se video →
-                    </a>
-                  </div>
+                      {/* Content */}
+                      <div style={{ padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#333' }}>
+                          {video.title}
+                        </h3>
+                        {video.instructor && (
+                          <p style={{ fontSize: '0.85rem', color: '#0066cc', marginBottom: '0.75rem', fontWeight: '500' }}>
+                            {video.instructor}
+                          </p>
+                        )}
+                        <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: '1.5', marginBottom: '1rem' }}>
+                          {video.description}
+                        </p>
+                        <a
+                          href={video.url || '#'}
+                          onClick={(e) => {
+                            if (!video.url) {
+                              e.preventDefault()
+                              openVideoModal(video)
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: '#0066cc',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem'
+                          }}
+                        >
+                          Se video →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  <a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('demo') }} style={{
+                    display: 'inline-block',
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#FF6633',
+                    color: '#fff',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>
+                    Se demoene nå →
+                  </a>
+                </div>
+              </div>
+            ) : null}
+
+            {/* HOW-TO GUIDES SECTION */}
+            {selectedCategory === 'all' || selectedCategory === 'guide' ? (
+              <div style={{ marginBottom: '4rem' }}>
+                <div style={{ marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '2px solid #eee' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '2rem' }}>📖</span>
+                    <h2 style={{ margin: 0 }}>Fra oppsett til daglig drift – vi viser deg hvordan</h2>
+                  </div>
+                  <p style={{ color: '#666', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+                    Har du verktøyene, men er usikker på hvordan du får mest ut av dem? Våre utvalgte guider tar deg gjennom alt fra rekruttering av frivillige til teknisk vedlikehold av klubbens nettside. Vi fokuserer på praktiske løsninger som gjør at du bruker mindre tid foran skjermen og mer tid på golfbanen.
+                  </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+                  {videos.filter(v => v.category === 'guide').map(video => (
+                    <div
+                      key={video.id}
+                      style={{
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)'}
+                      onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'}
+                    >
+                      {/* Thumbnail */}
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          paddingBottom: '56.25%',
+                          backgroundColor: '#f0f0f0',
+                          overflow: 'hidden'
+                        }}
+                        onClick={() => openVideoModal(video)}
+                      >
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            borderRadius: '50%',
+                            padding: '1rem',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <Play size={32} color="white" fill="white" />
+                        </div>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            bottom: '0.75rem',
+                            right: '0.75rem',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '4px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}
+                        >
+                          {video.duration}
+                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div style={{ padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#333' }}>
+                          {video.title}
+                        </h3>
+                        {video.instructor && (
+                          <p style={{ fontSize: '0.85rem', color: '#0066cc', marginBottom: '0.75rem', fontWeight: '500' }}>
+                            {video.instructor}
+                          </p>
+                        )}
+                        <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: '1.5', marginBottom: '1rem' }}>
+                          {video.description}
+                        </p>
+                        <a
+                          href={video.url || '#'}
+                          onClick={(e) => {
+                            if (!video.url) {
+                              e.preventDefault()
+                              openVideoModal(video)
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: '#0066cc',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem'
+                          }}
+                        >
+                          Se video →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  <a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('guide') }} style={{
+                    display: 'inline-block',
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#00AA00',
+                    color: '#fff',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>
+                    Lær mer →
+                  </a>
+                </div>
+              </div>
+            ) : null}
+
+            {/* CASE STUDIES SECTION */}
+            {selectedCategory === 'all' || selectedCategory === 'case' ? (
+              <div style={{ marginBottom: '4rem' }}>
+                <div style={{ marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '2px solid #eee' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '2rem' }}>📈</span>
+                    <h2 style={{ margin: 0 }}>Se hvordan andre klubber har lykkes</h2>
+                  </div>
+                  <p style={{ color: '#666', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+                    Hva skjer når en golfklubb tar steget fullt ut i den digitale verden? Bli inspirert av suksesshistorier fra klubber som St. Andrews og andre ledende aktører. Se hvordan automatisering av arbeidsoppgaver har frigjort hundrevis av timer, økt medlemsmassen og skapt en mer bærekraftig økonomi for klubbene.
+                  </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+                  {videos.filter(v => v.category === 'case').map(video => (
+                    <div
+                      key={video.id}
+                      style={{
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)'}
+                      onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'}
+                    >
+                      {/* Thumbnail */}
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          paddingBottom: '56.25%',
+                          backgroundColor: '#f0f0f0',
+                          overflow: 'hidden'
+                        }}
+                        onClick={() => openVideoModal(video)}
+                      >
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            borderRadius: '50%',
+                            padding: '1rem',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <Play size={32} color="white" fill="white" />
+                        </div>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            bottom: '0.75rem',
+                            right: '0.75rem',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '4px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}
+                        >
+                          {video.duration}
+                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div style={{ padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#333' }}>
+                          {video.title}
+                        </h3>
+                        {video.instructor && (
+                          <p style={{ fontSize: '0.85rem', color: '#0066cc', marginBottom: '0.75rem', fontWeight: '500' }}>
+                            {video.instructor}
+                          </p>
+                        )}
+                        <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: '1.5', marginBottom: '1rem' }}>
+                          {video.description}
+                        </p>
+                        <a
+                          href={video.url || '#'}
+                          onClick={(e) => {
+                            if (!video.url) {
+                              e.preventDefault()
+                              openVideoModal(video)
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: '#0066cc',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem'
+                          }}
+                        >
+                          Se video →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  <a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('case') }} style={{
+                    display: 'inline-block',
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#FF9900',
+                    color: '#fff',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>
+                    Bli inspirert →
+                  </a>
+                </div>
+              </div>
+            ) : null}
+
+            {/* PLAYLISTS SECTION */}
+            {selectedCategory === 'all' || selectedCategory === 'playlist' ? (
+              <div style={{ marginBottom: '4rem' }}>
+                <div style={{ marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '2px solid #eee' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '2rem' }}>🎓</span>
+                    <h2 style={{ margin: 0 }}>Din kilde til dypere innsikt og ekspertkunnskap</h2>
+                  </div>
+                  <p style={{ color: '#666', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+                    For deg som ønsker å bli en ekspert på moderne klubbdrift, har vi samlet de beste kursene og webinarene på ett sted. Her finner du alt fra Norges Golfforbunds nyeste webinarer til spesialiserte spillelister for Google Workspace. Hold deg oppdatert på bransjestandarder og beste praksis med våre kuraterte ressurser.
+                  </p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+                  {videos.filter(v => v.category === 'playlist').map(video => (
+                    <div
+                      key={video.id}
+                      style={{
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)'}
+                      onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)'}
+                    >
+                      {/* Thumbnail */}
+                      <div
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          paddingBottom: '56.25%',
+                          backgroundColor: '#f0f0f0',
+                          overflow: 'hidden'
+                        }}
+                        onClick={() => openVideoModal(video)}
+                      >
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            borderRadius: '50%',
+                            padding: '1rem',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <Play size={32} color="white" fill="white" />
+                        </div>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            bottom: '0.75rem',
+                            right: '0.75rem',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '4px',
+                            fontSize: '0.85rem',
+                            fontWeight: '600'
+                          }}
+                        >
+                          {video.duration}
+                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div style={{ padding: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#333' }}>
+                          {video.title}
+                        </h3>
+                        {video.instructor && (
+                          <p style={{ fontSize: '0.85rem', color: '#0066cc', marginBottom: '0.75rem', fontWeight: '500' }}>
+                            {video.instructor}
+                          </p>
+                        )}
+                        <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: '1.5', marginBottom: '1rem' }}>
+                          {video.description}
+                        </p>
+                        <a
+                          href={video.url || '#'}
+                          onClick={(e) => {
+                            if (!video.url) {
+                              e.preventDefault()
+                              openVideoModal(video)
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: '#0066cc',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem'
+                          }}
+                        >
+                          Se video →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  <a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('playlist') }} style={{
+                    display: 'inline-block',
+                    padding: '0.75rem 2rem',
+                    backgroundColor: '#9966FF',
+                    color: '#fff',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>
+                    Utforsk kurser →
+                  </a>
+                </div>
+              </div>
+            ) : null}
           </section>
 
           {/* Video Modal */}
