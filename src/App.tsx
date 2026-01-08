@@ -9,6 +9,8 @@ import Projects from './pages/Projects'
 import AppsIntegrations from './pages/AppsIntegrations'
 import Contact from './pages/Contact'
 import Terms from './pages/Terms'
+import Support from './pages/Support'
+import Pricing from './pages/Pricing'
 import GolfBox from './pages/products/GolfBox'
 import Signage from './pages/products/Signage'
 import Workspace from './pages/products/Workspace'
@@ -42,6 +44,8 @@ function App() {
         <Route path="/apps" element={<AppsIntegrations />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/products/golfbox" element={<GolfBox />} />
         <Route path="/products/signage" element={<Signage />} />
         <Route path="/products/workspace" element={<Workspace />} />
