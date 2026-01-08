@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import Terms from './pages/Terms'
 import Support from './pages/Support'
 import Pricing from './pages/Pricing'
+import VideoGallery from './pages/VideoGallery'
 import GolfBox from './pages/products/GolfBox'
 import Signage from './pages/products/Signage'
 import Workspace from './pages/products/Workspace'
@@ -46,6 +47,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/support" element={<Support />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/videos" element={<VideoGallery />} />
         <Route path="/products/golfbox" element={<GolfBox />} />
         <Route path="/products/signage" element={<Signage />} />
         <Route path="/products/workspace" element={<Workspace />} />
